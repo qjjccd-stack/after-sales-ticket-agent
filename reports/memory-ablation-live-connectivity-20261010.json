@@ -1,0 +1,496 @@
+{
+  "time": "2026-10-10T07:31:09.489904+00:00",
+  "status": "completed",
+  "mode": "live",
+  "model": "deepseek/deepseek-chat",
+  "contract_version": "memory-ablation-1",
+  "repeat": 1,
+  "planned_cases": 1,
+  "planned_runs": 2,
+  "planned_turns": 2,
+  "max_total_tokens": 1200000,
+  "human_review": "pending",
+  "source_sha256": {
+    "data/faq.json": "f776ca6f995a872ee56035e226fb2ca31e0e27b4107219b4cd443717bcb37788",
+    "data/memory_ablation_cases.json": "569210ac6b56fc1bdeb5433174b65ae9d4d7320601dffa627d23e857ca6ad813",
+    "scripts/evaluate.py": "74a994d820884c2f4f5a62516d22d431a294add9014ba495fd9d1ed1ae095fe6",
+    "scripts/evaluate_memory.py": "50b1bd38db5d147c44c50960dc6bdc7abf84b697094b2e060426267c2300fbfe",
+    "src/react_agent/__init__.py": "4b41592371030bbd4d58c76d6e923fc9b265c7c5af34dfcc01149622f5bfe78a",
+    "src/react_agent/actions.py": "9c5a36eef0e312a713b7039f2f2d08954b6d51549152bfd42f27fd53c69f91ff",
+    "src/react_agent/api.py": "65069ef16944e313e333d5277b32f0556e0798ff7077844467ac09715c8d8918",
+    "src/react_agent/auth.py": "454e4330e4e4890b591e139ac552544a01827fa2ea2d5fc9105489f8a9f71abf",
+    "src/react_agent/context.py": "41efb97baeb1eb9f80fe234983de8c3cdb639978f4c0fbf5f48b1748c3714754",
+    "src/react_agent/evaluation.py": "307cf19c25104b39b060074ec843e6089d569cbaa1a13736a82357c3136b38e0",
+    "src/react_agent/graph.py": "23c9f8f2d1bc04f9627e026571b2b8d1c6296b56fa7254cd9749f857f4a198b3",
+    "src/react_agent/knowledge.py": "09de1d8ee8e3f2ed5da63f98835b4dad914f6cc6e9131ebf9f3cd89899ada0c4",
+    "src/react_agent/prompts.py": "7c058a425b36edba60b6ce3ee66d7f4027e28315ad98417ee6fccf3b00df45ae",
+    "src/react_agent/quotas.py": "479dc8848f4583ab81787fb3b120a6b87de73ce4c68e87d9402ae750597387d9",
+    "src/react_agent/service.py": "8985c35efffc3a42f95647482585d19d2165b65bf114aa7d6945766bfe648fae",
+    "src/react_agent/sessions.py": "4facd59f2c777e6b51d0f75d7247f3b0286c69a0714659aac21a8f98fc168e9d",
+    "src/react_agent/state.py": "e48dbc09100308c36c83649c37c7a5a9c6680824fdea457761dea6bcbbe164b1",
+    "src/react_agent/storage.py": "f9dbb2a750662845671f80c03e0ff86ffca257aead4a23fd9760eb3e893adce5",
+    "src/react_agent/tools.py": "2877a27489b9598417c500125f59bbbe5b2101d5143e9c97858f036ab609a856",
+    "src/react_agent/utils.py": "24c2414062f7cc644ea933e935d86bd2352e3bc4a8a45c3d5b9945e9afe19070"
+  },
+  "protocol": {
+    "on": "保留跨轮 TicketContext，当前生产逻辑",
+    "off": "每个新用户请求前清空 TicketContext；当前轮仍可提取/重建事实",
+    "fixed": [
+      "模型及 temperature=0",
+      "每个场景的用户输入和确认脚本",
+      "系统提示词",
+      "最近六轮/字符上限",
+      "历史摘要算法",
+      "工具及可信回复渲染",
+      "角色、事务、确认、幂等",
+      "逐轮评分规则"
+    ],
+    "order": "按场景和重复序号交替 on/off；串行避免并发竞争影响",
+    "scope": "端到端结构化记忆组件贡献，包含模型上下文、工具过滤和应用回复；不等于模型自身记忆能力",
+    "baseline": "保留完整聊天存储、相同裁剪规则、摘要和检查点；不清除消息历史，允许模型从可见历史重建本轮事实",
+    "limitations": [
+      "六个公开合成场景，非盲测或线上流量",
+      "重复运行不是新增独立样本",
+      "FAQ 推荐项含一个售后升级项",
+      "离线调用由脚本预设，只验证执行层",
+      "Token 预算在场景边界按剩余最坏请求预算预检，非账单硬上限"
+    ]
+  },
+  "runs": [
+    {
+      "id": "M01",
+      "name": "联网建单",
+      "category": "create",
+      "split": "regression",
+      "goal": "生成与用户信息一致的提案；确认后恰好创建一张工单并记录审计。",
+      "repetition": 1,
+      "turns": [
+        {
+          "checks": {
+            "row_count": false,
+            "answer_present": true,
+            "state_consistency": true,
+            "confirmation_required": false,
+            "no_write_before_confirm": true,
+            "status": false,
+            "product_model": false,
+            "priority": false,
+            "issue_any": false,
+            "audit_delta": false,
+            "confirmed_action": false,
+            "pending_payload": false,
+            "execution_completed": false,
+            "proposal_did_not_write": true,
+            "no_repeated_failed_steps": true,
+            "history_preserved_at_boundary": true
+          },
+          "failures": [
+            {
+              "check": "row_count",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "confirmation_required",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "status",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "product_model",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "priority",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "issue_any",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "audit_delta",
+              "code": "WRONG_WRITE_COUNT",
+              "severity": "major",
+              "reason": "本轮实际写入审计次数不符合预期"
+            },
+            {
+              "check": "confirmed_action",
+              "code": "MISSING_WRITE_EVIDENCE",
+              "severity": "major",
+              "reason": "缺少成功确认和对应审计记录"
+            },
+            {
+              "check": "pending_payload",
+              "code": "WRONG_PROPOSAL",
+              "severity": "major",
+              "reason": "待确认操作或参数不符合本轮任务"
+            },
+            {
+              "check": "execution_completed",
+              "code": "EXECUTION_FAILED",
+              "severity": "major",
+              "reason": "本轮运行未正常完成"
+            }
+          ],
+          "automated_pass": false,
+          "human_review": "pending",
+          "input": "X100无法联网，请帮我创建工单",
+          "request_id": "0de9b733-45a5-4ce3-9054-62c2ee30e5df",
+          "answer": "本次执行未完成，可以重试原请求。尚未确认的操作不会写入工单。",
+          "calls": [],
+          "results": [],
+          "confirmations": [],
+          "database_before": [],
+          "before_confirmation": [],
+          "reply_snapshots": [
+            {
+              "answer": "本次执行未完成，可以重试原请求。尚未确认的操作不会写入工单。",
+              "tickets": []
+            }
+          ],
+          "database": [],
+          "output": {
+            "success": false,
+            "answer": "本次执行未完成，可以重试原请求。尚未确认的操作不会写入工单。",
+            "error_code": "OpenAIConnectionError",
+            "request_id": "0de9b733-45a5-4ce3-9054-62c2ee30e5df",
+            "elapsed_ms": 487.35,
+            "usage": {
+              "model_calls": 2,
+              "tool_calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "total_tokens": 6082,
+              "estimated_tokens": true,
+              "model_elapsed_ms": 36.036457982845604
+            },
+            "cost_estimate": null
+          },
+          "pending": [],
+          "audit_events": [],
+          "thread_memory": {
+            "device_model": "X100",
+            "issue_type": "network",
+            "issue_description": "X100无法联网，请帮我创建工单",
+            "troubleshooting_steps": [],
+            "ticket_id": null,
+            "pending_action": null,
+            "last_suggested_step": null,
+            "last_suggested_text": null,
+            "remaining_step_ids": null,
+            "diagnosis_exhausted": false
+          },
+          "memory_boundary": {
+            "mode": "on",
+            "before": {
+              "device_model": null,
+              "issue_type": null,
+              "issue_description": null,
+              "troubleshooting_steps": [],
+              "ticket_id": null,
+              "pending_action": null,
+              "last_suggested_step": null,
+              "last_suggested_text": null,
+              "remaining_step_ids": null,
+              "diagnosis_exhausted": false
+            },
+            "after": {
+              "device_model": null,
+              "issue_type": null,
+              "issue_description": null,
+              "troubleshooting_steps": [],
+              "ticket_id": null,
+              "pending_action": null,
+              "last_suggested_step": null,
+              "last_suggested_text": null,
+              "remaining_step_ids": null,
+              "diagnosis_exhausted": false
+            },
+            "transcript_unchanged": true,
+            "summary_unchanged": true
+          },
+          "recommended_steps": [],
+          "failed_steps_before_reply": [],
+          "repeated_failed_recommendation": false,
+          "failed_checks": [
+            "row_count",
+            "confirmation_required",
+            "status",
+            "product_model",
+            "priority",
+            "issue_any",
+            "audit_delta",
+            "confirmed_action",
+            "pending_payload",
+            "execution_completed"
+          ]
+        }
+      ],
+      "automated_pass": false,
+      "repeated_failed_recommendations": 0,
+      "recommendations": 0,
+      "feedback_turns": 0,
+      "condition": "on"
+    },
+    {
+      "id": "M01",
+      "name": "联网建单",
+      "category": "create",
+      "split": "regression",
+      "goal": "生成与用户信息一致的提案；确认后恰好创建一张工单并记录审计。",
+      "repetition": 1,
+      "turns": [
+        {
+          "checks": {
+            "row_count": false,
+            "answer_present": true,
+            "state_consistency": true,
+            "confirmation_required": false,
+            "no_write_before_confirm": true,
+            "status": false,
+            "product_model": false,
+            "priority": false,
+            "issue_any": false,
+            "audit_delta": false,
+            "confirmed_action": false,
+            "pending_payload": false,
+            "execution_completed": false,
+            "proposal_did_not_write": true,
+            "no_repeated_failed_steps": true,
+            "history_preserved_at_boundary": true
+          },
+          "failures": [
+            {
+              "check": "row_count",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "confirmation_required",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "status",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "product_model",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "priority",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "issue_any",
+              "code": "TASK_REQUIREMENT_FAILED",
+              "severity": "major",
+              "reason": "任务要求未满足"
+            },
+            {
+              "check": "audit_delta",
+              "code": "WRONG_WRITE_COUNT",
+              "severity": "major",
+              "reason": "本轮实际写入审计次数不符合预期"
+            },
+            {
+              "check": "confirmed_action",
+              "code": "MISSING_WRITE_EVIDENCE",
+              "severity": "major",
+              "reason": "缺少成功确认和对应审计记录"
+            },
+            {
+              "check": "pending_payload",
+              "code": "WRONG_PROPOSAL",
+              "severity": "major",
+              "reason": "待确认操作或参数不符合本轮任务"
+            },
+            {
+              "check": "execution_completed",
+              "code": "EXECUTION_FAILED",
+              "severity": "major",
+              "reason": "本轮运行未正常完成"
+            }
+          ],
+          "automated_pass": false,
+          "human_review": "pending",
+          "input": "X100无法联网，请帮我创建工单",
+          "request_id": "b435863f-04cb-4bbb-806e-eb151f262262",
+          "answer": "本次执行未完成，可以重试原请求。尚未确认的操作不会写入工单。",
+          "calls": [],
+          "results": [],
+          "confirmations": [],
+          "database_before": [],
+          "before_confirmation": [],
+          "reply_snapshots": [
+            {
+              "answer": "本次执行未完成，可以重试原请求。尚未确认的操作不会写入工单。",
+              "tickets": []
+            }
+          ],
+          "database": [],
+          "output": {
+            "success": false,
+            "answer": "本次执行未完成，可以重试原请求。尚未确认的操作不会写入工单。",
+            "error_code": "OpenAIConnectionError",
+            "request_id": "b435863f-04cb-4bbb-806e-eb151f262262",
+            "elapsed_ms": 293.7,
+            "usage": {
+              "model_calls": 2,
+              "tool_calls": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "total_tokens": 6082,
+              "estimated_tokens": true,
+              "model_elapsed_ms": 5.837333970703185
+            },
+            "cost_estimate": null
+          },
+          "pending": [],
+          "audit_events": [],
+          "thread_memory": {
+            "device_model": "X100",
+            "issue_type": "network",
+            "issue_description": "X100无法联网，请帮我创建工单",
+            "troubleshooting_steps": [],
+            "ticket_id": null,
+            "pending_action": null,
+            "last_suggested_step": null,
+            "last_suggested_text": null,
+            "remaining_step_ids": null,
+            "diagnosis_exhausted": false
+          },
+          "memory_boundary": {
+            "mode": "off",
+            "before": {
+              "device_model": null,
+              "issue_type": null,
+              "issue_description": null,
+              "troubleshooting_steps": [],
+              "ticket_id": null,
+              "pending_action": null,
+              "last_suggested_step": null,
+              "last_suggested_text": null,
+              "remaining_step_ids": null,
+              "diagnosis_exhausted": false
+            },
+            "after": {
+              "device_model": null,
+              "issue_type": null,
+              "issue_description": null,
+              "troubleshooting_steps": [],
+              "ticket_id": null,
+              "pending_action": null,
+              "last_suggested_step": null,
+              "last_suggested_text": null,
+              "remaining_step_ids": null,
+              "diagnosis_exhausted": false
+            },
+            "transcript_unchanged": true,
+            "summary_unchanged": true
+          },
+          "recommended_steps": [],
+          "failed_steps_before_reply": [],
+          "repeated_failed_recommendation": false,
+          "failed_checks": [
+            "row_count",
+            "confirmation_required",
+            "status",
+            "product_model",
+            "priority",
+            "issue_any",
+            "audit_delta",
+            "confirmed_action",
+            "pending_payload",
+            "execution_completed"
+          ]
+        }
+      ],
+      "automated_pass": false,
+      "repeated_failed_recommendations": 0,
+      "recommendations": 0,
+      "feedback_turns": 0,
+      "condition": "off"
+    }
+  ],
+  "metrics": {
+    "groups": {
+      "on": {
+        "passed": 0,
+        "planned_runs": 1,
+        "completed_runs": 1,
+        "planned_turns": 1,
+        "completed_turns": 1,
+        "passed_turns": 0,
+        "runner_errors": 0,
+        "all_repeats_passed_cases": 0,
+        "distinct_cases": 1,
+        "repeated_failed_recommendations": 0,
+        "recommendations": 0,
+        "feedback_turns": 0,
+        "estimated_usage_turns": 1,
+        "recorded_total_tokens": 6082,
+        "actual_input_tokens": null,
+        "actual_output_tokens": null,
+        "mean_turn_ms": 487.35,
+        "p95_turn_ms": 487.35
+      },
+      "off": {
+        "passed": 0,
+        "planned_runs": 1,
+        "completed_runs": 1,
+        "planned_turns": 1,
+        "completed_turns": 1,
+        "passed_turns": 0,
+        "runner_errors": 0,
+        "all_repeats_passed_cases": 0,
+        "distinct_cases": 1,
+        "repeated_failed_recommendations": 0,
+        "recommendations": 0,
+        "feedback_turns": 0,
+        "estimated_usage_turns": 1,
+        "recorded_total_tokens": 6082,
+        "actual_input_tokens": null,
+        "actual_output_tokens": null,
+        "mean_turn_ms": 293.7,
+        "p95_turn_ms": 293.7
+      }
+    },
+    "paired_outcomes": [
+      {
+        "id": "M01",
+        "repetition": 1,
+        "on": false,
+        "off": false
+      }
+    ],
+    "success_delta_percentage_points": 0.0,
+    "on_only_passed_pairs": 0,
+    "off_only_passed_pairs": 0,
+    "both_passed_pairs": 0,
+    "both_failed_pairs": 1
+  }
+}

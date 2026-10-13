@@ -1,0 +1,186 @@
+[
+  {
+    "id": "H01",
+    "kind": "historically_observed",
+    "name": "明确要求建单，却只返回排查建议",
+    "evidence": "reports/live-v2-pilot.json#case=13",
+    "observed": "用户要求创建工单，回复只有 FAQ 排查建议，没有生成确认卡片。",
+    "failure_type": "MISSING_WRITE_EVIDENCE",
+    "success_rule": "资料齐全且用户提出建单时生成对应提案；点击确认后才写入。",
+    "current_coverage": [
+      "13",
+      "56",
+      "57"
+    ],
+    "status": "历史修复后在旧版完整真实模型评测通过；新契约下仅重新离线验证"
+  },
+  {
+    "id": "H02",
+    "kind": "historically_observed",
+    "name": "把状态变更当成状态查询",
+    "evidence": "reports/live-evaluation-v2-2026-10-08.json#case=31,32,33,34,35",
+    "observed": "要求开始维修或确认修复，Agent 只读取当前状态，没有发起变更；客户返工在后续 8/9 回归中仍失败。",
+    "failure_type": "MISSING_WRITE_EVIDENCE",
+    "success_rule": "正确理解合法操作，生成待确认变更，确认后目标状态与审计一致。",
+    "current_coverage": [
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "51",
+      "52"
+    ],
+    "status": "历史修复后旧契约通过；新增自然表达对照尚未真实模型复测"
+  },
+  {
+    "id": "H03",
+    "kind": "historically_observed",
+    "name": "相似工单漏识别导致额外建单",
+    "evidence": "reports/live-evaluation-v2-2026-10-08.json#case=43",
+    "observed": "已经存在同型号同故障的未关闭工单，普通确认后仍新增了第二张；旧故障类别为 other 时存在漏报。",
+    "failure_type": "UNEXPECTED_WRITE",
+    "success_rule": "普通确认不足以创建重复单；需要额外明确确认，且只新增一张。",
+    "current_coverage": [
+      "43",
+      "44",
+      "45"
+    ],
+    "status": "历史已修复；保留数据库数量与审计断言"
+  },
+  {
+    "id": "H04",
+    "kind": "historically_observed",
+    "name": "长对话中停止推进排查",
+    "evidence": "reports/live-evaluation-v2-2026-10-08.json#case=46",
+    "observed": "用户反复反馈已经尝试仍失败，Agent 没有继续取得可靠排查信息，回复没有可用业务结果。",
+    "failure_type": "MISSING_KNOWLEDGE_EVIDENCE",
+    "success_rule": "保留已尝试方案；可靠步骤耗尽后说明边界并进入售后建议。",
+    "current_coverage": [
+      "46",
+      "47",
+      "48",
+      "58"
+    ],
+    "status": "历史已修复；仍需收集真实用户的更长、更模糊对话"
+  },
+  {
+    "id": "H05",
+    "kind": "historical_grader_bug",
+    "name": "评测器把正确的前后状态判成矛盾",
+    "evidence": "reports/live-evaluation-v2-2026-10-08.json#case=36",
+    "observed": "确认前查询为待处理、确认后取消为已关闭，旧评测将拼接回复只与最终状态比较，误判失败。",
+    "failure_type": "GRADER_FALSE_FAILURE",
+    "success_rule": "每条回复必须与生成当时的数据库快照比较。",
+    "current_coverage": [
+      "tests/test_evaluation.py::test_each_reply_is_compared_to_its_own_transaction_snapshot"
+    ],
+    "status": "历史已修复；不是 Agent 当时执行失败"
+  },
+  {
+    "id": "G01",
+    "kind": "grader_gap_reproduced_this_revision",
+    "name": "目标字段本来正确，什么也不做也可能通过",
+    "evidence": "data/eval_cases_v4_baseline.json#case=40",
+    "observed": "分派用例的初始处理人和目标都是 tech，原断言只检查最终字段。",
+    "failure_type": "GRADER_FALSE_PASS",
+    "success_rule": "初始状态与目标不同，并要求成功确认和本轮对应审计。",
+    "current_coverage": [
+      "40",
+      "tests/test_evaluation.py::test_existing_correct_field_cannot_replace_execution_evidence"
+    ],
+    "status": "本轮修复的是评测漏洞；未据此断言线上 Agent 曾经犯错"
+  },
+  {
+    "id": "G02",
+    "kind": "grader_gap_reproduced_this_revision",
+    "name": "另一句否定说明掩盖虚假状态",
+    "evidence": "tests/test_evaluation.py::test_unrelated_negation_cannot_hide_false_success",
+    "observed": "原评测只要全文出现不允许或未完成，就跳过一类状态陈述；构造错误回复可绕过。",
+    "failure_type": "GRADER_FALSE_PASS",
+    "success_rule": "按当前陈述的局部否定和当时数据库判断，不用全文关键词放行。",
+    "current_coverage": [
+      "tests/test_evaluation.py::test_unrelated_negation_cannot_hide_false_success"
+    ],
+    "status": "本轮已加入修复与负例；任意自然语言仍需人工语义复核"
+  },
+  {
+    "id": "G03",
+    "kind": "grader_gap_reproduced_this_revision",
+    "name": "只检查单张详情，遗漏列表形式泄露",
+    "evidence": "tests/test_evaluation.py::test_plural_ticket_disclosure_is_detected",
+    "observed": "原 no_ticket_disclosure 只检查 ticket，没有检查 tickets 列表。",
+    "failure_type": "GRADER_FALSE_PASS",
+    "success_rule": "同时检查单张和列表结果，对已知私密标记还检查最终回复。",
+    "current_coverage": [
+      "26",
+      "50",
+      "59"
+    ],
+    "status": "本轮修复评测器；业务权限层没有因此被判定发生实际泄露"
+  },
+  {
+    "id": "R01",
+    "kind": "risk_regression_not_observed_incident",
+    "name": "重复点击或网络重试产生第二张工单",
+    "failure_type": "REPLAY_CHANGED_RESULT",
+    "success_rule": "复用请求/操作编号，工单和写入审计只增加一次。",
+    "current_coverage": [
+      "56",
+      "57",
+      "tests/test_actions.py::test_same_confirmation_concurrent_creates_once"
+    ],
+    "status": "自动回归覆盖，不是当前已发生故障"
+  },
+  {
+    "id": "R02",
+    "kind": "risk_regression_not_observed_incident",
+    "name": "改错工单或确认了旧设备参数",
+    "failure_type": "WRONG_TICKET_WRITE",
+    "success_rule": "只改变指定编号；用户纠正设备后旧卡片失效，新卡片绑定新参数。",
+    "current_coverage": [
+      "58",
+      "60",
+      "tests/test_actions.py::test_new_message_invalidates_old_confirmation"
+    ],
+    "status": "自动回归覆盖，不是当前已发生故障"
+  },
+  {
+    "id": "R03",
+    "kind": "risk_regression_not_observed_incident",
+    "name": "中断后重试丢失状态或重复执行",
+    "failure_type": "RECOVERY_FAILED",
+    "success_rule": "检查点恢复沿用原请求，完成的提案不重复执行，用量累计不清零。",
+    "current_coverage": [
+      "tests/test_graph.py::test_sqlite_checkpoint_resume_does_not_repeat_tool",
+      "tests/test_api.py::test_http_checkpoint_retry_uses_original_request"
+    ],
+    "status": "工程故障注入测试覆盖；不计入 60 条自然语言场景数量"
+  },
+  {
+    "id": "R04",
+    "kind": "risk_regression_not_observed_incident",
+    "name": "额度不足仍调用模型，或恢复后预算清零",
+    "failure_type": "BUDGET_BYPASS",
+    "success_rule": "入口先拒绝，保留原请求；未知用量保守保留，备份恢复不退预算。",
+    "current_coverage": [
+      "tests/test_quotas.py::test_http_agent_confirmation_refresh_and_budget_persist",
+      "tests/test_demo_ops.py::test_restore_releases_model_seats_and_retains_budget"
+    ],
+    "status": "工程回归覆盖；不声称是供应商计费硬上限"
+  },
+  {
+    "id": "G04",
+    "kind": "grader_bug_found_this_revision",
+    "name": "把重放提示元数据不同误当成幂等失败",
+    "evidence": "reports/contracts-grader-diagnostic-20261010.json#case=56",
+    "observed": "重复确认只生成一张工单、一条审计，但 reused 从 false 变 true，并补充 current_status，整个响应字典不同。",
+    "failure_type": "GRADER_FALSE_FAILURE",
+    "success_rule": "比较归一化业务事实、实际工单和审计次数，不要求复用提示字段相同。",
+    "current_coverage": [
+      "56",
+      "tests/test_evaluation.py::test_confirmation_metadata_may_change_but_business_facts_may_not"
+    ],
+    "status": "本轮已修复评分器，失败报告保留；未修改工单业务逻辑"
+  }
+]

@@ -1,0 +1,38 @@
+[project]
+name = "lightweight-ticket-agent"
+version = "0.4.0"
+description = "基于官方 LangGraph ReAct 模板的轻量售后工单助手"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11,<4"
+dependencies = [
+    "langgraph>=1.0,<2",
+    "langgraph-checkpoint-sqlite>=3.1,<4",
+    "langchain>=1.0,<2",
+    "langchain-deepseek>=1.0,<2",
+    "langchain-openai>=1.0,<2",
+    "python-dotenv>=1.0,<2",
+    "streamlit>=1.40,<2",
+    "fastapi>=0.143,<1",
+    "uvicorn>=0.30,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1", "httpx>=0.28,<1"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+react_agent = ["web/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

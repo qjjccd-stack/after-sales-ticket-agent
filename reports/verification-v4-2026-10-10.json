@@ -1,0 +1,72 @@
+{
+  "created_at": "2026-10-10T05:26:55.037573+00:00",
+  "scope": "v4 deployable invited demo preparation, isolated local databases; no public deployment",
+  "checks": {
+    "pytest": {
+      "passed": 102,
+      "elapsed_seconds": 12.0
+    },
+    "ruff": "passed",
+    "pip_check": "passed",
+    "yaml_parse": "passed",
+    "function_docs": {
+      "named_python_functions": 269,
+      "undocumented": 0
+    }
+  },
+  "offline_report": "evaluation-v4-offline-20261010.json",
+  "http_load_report": "http-load-v4-20261010.json",
+  "paid_model_calls": 0,
+  "not_executed": [
+    "Docker build and Compose runtime",
+    "Caddy validate and public HTTPS certificate issuance",
+    "remote CI",
+    "target-server live-model flow"
+  ],
+  "source_sha256": {
+    ".env.demo.example": "b3be5e134db5e5a81c786bbd46c894a004e643f5a75e1df0994f1791dfb61cc2",
+    ".env.example": "c525015db5277c3ef868be8725cbf167a8818f9a95fda304eb903c38e6b0f927",
+    ".github/workflows/check.yml": "0de6a425f72f1c3e34a293700890239349c8b12f02afcc28445b866ead7f696d",
+    "Dockerfile": "c805e373dccdc6dfc8505bc4484a5cabc04f4235d9c821c36f312ccd776c6ad4",
+    "app.py": "9efab9a4af16bf9438efd50106de86ce2eb12e2f2d2c3e2455dfc4db9d39ac6e",
+    "compose.demo.yaml": "e4a2a8df9c2bb1734d093dcc794a05113f9cbe2f254b27077356b9d1ca95f37a",
+    "compose.yaml": "5e2302066e772eb39755af2884c435330722c7fb3568f9545783cc9a90ebae74",
+    "deploy/Caddyfile": "5017e0082359cdf79d1040fe78086d5736df3c93870d79560a1658f97092d8a4",
+    "pyproject.toml": "339b9b402b5bb3937b85ee1e936d578e7d9d82bf6b0b27b5987a08100f586a75",
+    "requirements.lock.txt": "ac767b84903b687f5e82c873a5d6d3893723d429f2129d6c0704895959bf3039",
+    "scripts/backup_worker.py": "8f06bee97fe1421ae946104323f83184251b1b66565ddca01ea8793698ccfbe6",
+    "scripts/db_admin.py": "ab2cc3156759bebccda9fd5bf890e0edf35a4b0a9da2a796aa877649cffeafab",
+    "scripts/evaluate.py": "cac967011cd3c0abb0c75ca1215fcbe07c3976c4eff3d01c8604ba727e5554cb",
+    "scripts/load_test.py": "6c9a4cd531b01f1550a24eb06eb50a34b538029d9e059e50c12ba80fd55a22b7",
+    "scripts/smoke_model.py": "bc4da9a43c2e237ebf389a11f3134ce72097cc8f585b1d2966df47e8faec9161",
+    "src/react_agent/__init__.py": "4b41592371030bbd4d58c76d6e923fc9b265c7c5af34dfcc01149622f5bfe78a",
+    "src/react_agent/actions.py": "9c5a36eef0e312a713b7039f2f2d08954b6d51549152bfd42f27fd53c69f91ff",
+    "src/react_agent/api.py": "65069ef16944e313e333d5277b32f0556e0798ff7077844467ac09715c8d8918",
+    "src/react_agent/auth.py": "454e4330e4e4890b591e139ac552544a01827fa2ea2d5fc9105489f8a9f71abf",
+    "src/react_agent/context.py": "41efb97baeb1eb9f80fe234983de8c3cdb639978f4c0fbf5f48b1748c3714754",
+    "src/react_agent/graph.py": "23c9f8f2d1bc04f9627e026571b2b8d1c6296b56fa7254cd9749f857f4a198b3",
+    "src/react_agent/knowledge.py": "09de1d8ee8e3f2ed5da63f98835b4dad914f6cc6e9131ebf9f3cd89899ada0c4",
+    "src/react_agent/prompts.py": "7c058a425b36edba60b6ce3ee66d7f4027e28315ad98417ee6fccf3b00df45ae",
+    "src/react_agent/quotas.py": "479dc8848f4583ab81787fb3b120a6b87de73ce4c68e87d9402ae750597387d9",
+    "src/react_agent/service.py": "8985c35efffc3a42f95647482585d19d2165b65bf114aa7d6945766bfe648fae",
+    "src/react_agent/sessions.py": "4facd59f2c777e6b51d0f75d7247f3b0286c69a0714659aac21a8f98fc168e9d",
+    "src/react_agent/state.py": "e48dbc09100308c36c83649c37c7a5a9c6680824fdea457761dea6bcbbe164b1",
+    "src/react_agent/storage.py": "f9dbb2a750662845671f80c03e0ff86ffca257aead4a23fd9760eb3e893adce5",
+    "src/react_agent/tools.py": "2877a27489b9598417c500125f59bbbe5b2101d5143e9c97858f036ab609a856",
+    "src/react_agent/utils.py": "24c2414062f7cc644ea933e935d86bd2352e3bc4a8a45c3d5b9945e9afe19070",
+    "src/react_agent/web/app.css": "fa0f3dc980016d9b887ef440a0fb32b74eb94665e7e8d862d9488f2569b50d0a",
+    "src/react_agent/web/app.js": "55e6a06407142ebd03ed14a430995840b05a87828beb229850ee0d89c9cb2c0b",
+    "src/react_agent/web/index.html": "e13f7f8297846651c083566a5cce3cd81291fd7c995c9726e89c4ab93a3dca05",
+    "tests/conftest.py": "a8991535fb466226e26bfec79ea28ecef27dfe425df8b68f593b09616ea0df5e",
+    "tests/test_actions.py": "55aad18df91330fb5cb48ac70fb8bdf16c4c228410a6bee848b023962fbf48f3",
+    "tests/test_api.py": "76b165384f6eea5b682311bf2b31a69b41facceac3eaa8249cacd8d927845759",
+    "tests/test_app.py": "6b5487095f4175212d056d6ce85ce3a16fb46116803ed28c2722c507087963f1",
+    "tests/test_backup.py": "341ae658c5a24534c809f90257c7e07428ba94a2885b5cfd044bf6faa5495829",
+    "tests/test_context.py": "1965d61deb612355ee5996fd9edc6649341fe5f34506391a65210d9b3c1b2a12",
+    "tests/test_demo_ops.py": "4117fba551da35d7a0e5c50d089772e56c0b5580500435e6d80238d63d782d3e",
+    "tests/test_evaluation.py": "63fdb2c679051816149cfd6bbc98dd56d9c44348577dfb0a791b1b6665f88d6d",
+    "tests/test_graph.py": "b58379be0f8b5f6644c0d50641f867f0caf73140745d621260cdd5c5bd14f64d",
+    "tests/test_quotas.py": "5d50495e1e419233cd3a2db94bfc67b584620001088772b64b3f1fca1f0c55a3",
+    "tests/test_tickets.py": "fcd50cc221bab815040d744921cffa34c838ddc6a08de9e58085f567dcfdd8c7"
+  }
+}

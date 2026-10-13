@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>售后工单助手</title><link rel="stylesheet" href="/static/app.css"><script src="/static/app.js" defer></script></head>
+<body>
+<header><div><span class="brand">售后工单助手</span><span class="sub">每一步处理，都有记录</span></div><div id="identity"></div></header>
+<div id="notice" role="status" aria-live="polite" hidden></div>
+<main>
+<section id="login-panel" class="login card">
+  <p class="eyebrow">欢迎回来</p><h1>从这里继续处理售后</h1><p class="muted">登录后可继续对话、核对操作，并查看工单进度。</p>
+  <form id="login-form"><label>账号<input name="user_id" autocomplete="username" required minlength="3" maxlength="40"></label><label>密码<input name="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128"></label><button type="submit">登录工作台</button></form>
+  <p class="muted small">还没有账号？请联系工作台管理员。</p>
+</section>
+<section id="workspace" hidden>
+  <div class="toolbar"><div><p class="eyebrow">售后工作台</p><h1>处理问题，跟进结果</h1></div><div class="toolbar-controls"><label>当前会话<select id="threads" aria-label="当前会话"></select></label><button id="new-thread" class="secondary">新对话</button><button id="logout" class="secondary">退出登录</button></div></div>
+  <div class="columns">
+    <section class="card conversation"><div class="section-title"><h2>售后对话</h2><span id="thread-state" class="badge">已保存</span></div><p class="muted small">描述设备与故障；所有工单修改都会先请你核对。</p><div id="transcript" class="messages"></div>
+      <div id="recovery" class="recovery" hidden><p id="recovery-text"></p><button id="retry">继续本次请求</button><button id="abandon" class="secondary">结束本次请求</button></div>
+      <form id="chat-form"><label>描述问题<textarea name="text" rows="3" maxlength="4000" placeholder="例如：我的 X100 无法联网，已经重启过了。" required></textarea></label><button type="submit">发送</button></form>
+    </section>
+    <aside><section class="card"><h2>待确认操作</h2><p class="muted small">只有确认后，系统才会修改工单。</p><div id="confirmations"></div></section>
+    <section class="card"><h2>手工创建工单</h2><p class="muted small">也可以直接填写信息，提交后仍需确认。</p><form id="create-form"><label>设备型号<input name="product_model" placeholder="例如 X100" required maxlength="60"></label><label>故障描述<textarea name="issue_description" rows="3" required maxlength="1500"></textarea></label><label>联系方式<input name="contact" maxlength="200" autocomplete="off"></label><label>影响范围<select name="impact"><option value="single">一台设备</option><option value="multiple">多台设备</option><option value="all">全部设备</option></select></label><button type="submit">核对建单信息</button></form></section></aside>
+  </div>
+  <section class="card"><div class="section-title"><h2>工单进度</h2><label>筛选状态<select id="status-filter"><option value="">全部状态</option><option>待处理</option><option>处理中</option><option>待用户确认</option><option>已解决</option><option>已关闭</option></select></label></div><div id="tickets" class="table-wrap"></div><p id="ticket-limit" class="muted small"></p></section>
+  <section id="detail-panel" class="card" hidden><h2>工单详情</h2><div id="ticket-detail"></div><form id="update-form" class="update-form"><label>处理方式<select name="action"><option value="update_ticket_status">更新状态</option><option value="supplement_ticket">补充信息</option><option value="cancel_ticket">取消工单</option><option value="handoff_ticket">转人工</option><option value="assign_ticket">分派维修人员</option><option value="set_ticket_priority">调整优先级</option></select></label><label data-action="update_ticket_status">目标状态<select name="new_status"><option>处理中</option><option>待用户确认</option><option>已解决</option><option>已关闭</option></select></label><label data-action="assign_ticket" hidden>维修账号<input name="assignee_id" maxlength="40"></label><label data-action="set_ticket_priority" hidden>优先级<select name="priority"><option>普通</option><option>高</option><option>紧急</option></select></label><label>处理说明 / 补充描述<textarea name="note" rows="2" maxlength="1500" required></textarea></label><button type="submit">提交待确认操作</button></form><h3>处理记录</h3><div id="history"></div></section>
+  <section id="admin-panel" class="card" hidden><h2>添加工作台账号</h2><form id="staff-form" class="staff-form"><label>账号<input name="user_id" required minlength="3" maxlength="40" autocomplete="off"></label><label>初始密码<input name="password" type="password" required minlength="8" maxlength="128" autocomplete="new-password"></label><label>角色<select name="role"><option value="customer">客户</option><option value="technician">维修人员</option><option value="support">客服</option><option value="admin">管理员</option></select></label><label>擅长型号（逗号分隔）<input name="models" placeholder="X100,X200" maxlength="300"></label><label>擅长故障<select name="specialty"><option value="network">联网</option><option value="bluetooth">蓝牙</option><option value="charging">充电</option><option value="safety">安全故障</option><option value="other">其他</option></select></label><button type="submit">创建账号</button></form></section>
+</section>
+</main><footer>售后工单助手 · 对话与操作记录持续保存</footer>
+</body></html>

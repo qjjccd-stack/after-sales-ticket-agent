@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "created_at": "2026-10-10T05:24:32.396635+00:00",
+  "clients": 8,
+  "iterations_per_client": 10,
+  "expected_workflows": 80,
+  "completed_workflows": 80,
+  "errors": [],
+  "database_tickets": 80,
+  "creation_audits": 80,
+  "elapsed_seconds": 2.114,
+  "workflows_per_second": 37.84,
+  "workflow_latency_ms": {
+    "mean": 115.12,
+    "p50": 85.63720900565386,
+    "p95": 279.2650411138311,
+    "p99": 527.4931669700891
+  },
+  "restore_verified": true,
+  "scope": "本机单进程，临时库；每轮 6 次 HTTP 请求：建会话、提案、重放提案、确认、重复确认、详情。包含本地网络/数据库，不含 LLM。总吞吐计时含并发登录，单轮延迟不含登录。"
+}

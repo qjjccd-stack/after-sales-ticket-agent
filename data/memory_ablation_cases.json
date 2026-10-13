@@ -1,0 +1,614 @@
+[
+  {
+    "id": "M01",
+    "name": "联网建单",
+    "category": "create",
+    "user": "alice",
+    "turns": [
+      {
+        "input": "X100无法联网，请帮我创建工单",
+        "offline_calls": [
+          {
+            "name": "create_ticket",
+            "args": {
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "impact": "single"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 1,
+          "status": "待处理",
+          "product_model": "X100",
+          "priority": "普通",
+          "pending_before_confirm": true,
+          "confirmed_action": "create_ticket",
+          "audit_delta": 1,
+          "pending_payload": {
+            "action": "create_ticket",
+            "product_model": "X100"
+          },
+          "issue_any": [
+            "联网",
+            "网络",
+            "Wi-Fi",
+            "wifi",
+            "配网"
+          ]
+        },
+        "confirm": "yes",
+        "feedback_previous_failed": false
+      }
+    ],
+    "split": "regression",
+    "source": "curated_synthetic_ablation",
+    "goal": "生成与用户信息一致的提案；确认后恰好创建一张工单并记录审计。",
+    "source_case_id": "13",
+    "require_no_repeated_failed_steps": true
+  },
+  {
+    "id": "M02",
+    "name": "多轮只补型号",
+    "category": "memory",
+    "user": "alice",
+    "turns": [
+      {
+        "input": "设备无法联网",
+        "offline_calls": [],
+        "expect": {
+          "rows": 0,
+          "answer_contains": [
+            "型号"
+          ],
+          "unchanged": true,
+          "audit_delta": 0
+        },
+        "feedback_previous_failed": false
+      },
+      {
+        "input": "我的是X100，请建单",
+        "offline_calls": [
+          {
+            "name": "create_ticket",
+            "args": {
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "impact": "single"
+            }
+          }
+        ],
+        "confirm": "yes",
+        "expect": {
+          "rows": 1,
+          "product_model": "X100",
+          "confirmed_action": "create_ticket",
+          "audit_delta": 1,
+          "pending_before_confirm": true,
+          "pending_payload": {
+            "action": "create_ticket",
+            "product_model": "X100"
+          },
+          "issue_any": [
+            "联网",
+            "网络",
+            "Wi-Fi",
+            "wifi",
+            "配网"
+          ]
+        },
+        "feedback_previous_failed": false
+      }
+    ],
+    "split": "regression",
+    "source": "curated_synthetic_ablation",
+    "goal": "保持当前设备和故障事实，用户纠正后使用新事实。",
+    "source_case_id": "47",
+    "require_no_repeated_failed_steps": true
+  },
+  {
+    "id": "M03",
+    "name": "十轮故障诊断后建单",
+    "category": "long",
+    "user": "alice",
+    "turns": [
+      {
+        "input": "我的是X100，无法联网",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "无法联网",
+              "device_model": "X100"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "faq_id": "FAQ-001",
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X100"
+        },
+        "feedback_previous_failed": false,
+        "require_recommendation": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "无法联网",
+              "device_model": "X100"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "faq_id": "FAQ-001",
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X100"
+        },
+        "feedback_previous_failed": true,
+        "require_recommendation": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "无法联网",
+              "device_model": "X100"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "faq_id": "FAQ-001",
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X100"
+        },
+        "feedback_previous_failed": true,
+        "require_recommendation": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "无法联网",
+              "device_model": "X100"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "faq_id": "FAQ-001",
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X100"
+        },
+        "feedback_previous_failed": true,
+        "require_recommendation": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "无法联网",
+              "device_model": "X100"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X100",
+          "answer_contains": [
+            "可靠排查步骤已尝试完"
+          ]
+        },
+        "feedback_previous_failed": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "无法联网",
+              "device_model": "X100"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X100",
+          "answer_contains": [
+            "可靠排查步骤已尝试完"
+          ]
+        },
+        "feedback_previous_failed": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "无法联网",
+              "device_model": "X100"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X100",
+          "answer_contains": [
+            "可靠排查步骤已尝试完"
+          ]
+        },
+        "feedback_previous_failed": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "无法联网",
+              "device_model": "X100"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X100",
+          "answer_contains": [
+            "可靠排查步骤已尝试完"
+          ]
+        },
+        "feedback_previous_failed": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "无法联网",
+              "device_model": "X100"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X100",
+          "answer_contains": [
+            "可靠排查步骤已尝试完"
+          ]
+        },
+        "feedback_previous_failed": true
+      },
+      {
+        "input": "请为之前的问题建单",
+        "offline_calls": [
+          {
+            "name": "create_ticket",
+            "args": {
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "impact": "single"
+            }
+          }
+        ],
+        "confirm": "yes",
+        "expect": {
+          "rows": 1,
+          "product_model": "X100",
+          "confirmed_action": "create_ticket",
+          "audit_delta": 1,
+          "pending_before_confirm": true,
+          "pending_payload": {
+            "action": "create_ticket",
+            "product_model": "X100"
+          },
+          "issue_any": [
+            "联网",
+            "网络",
+            "Wi-Fi",
+            "wifi",
+            "配网"
+          ]
+        },
+        "feedback_previous_failed": false
+      }
+    ],
+    "split": "regression",
+    "source": "curated_synthetic_ablation",
+    "goal": "多轮诊断保留设备与已尝试步骤，耗尽后升级售后，不重复无效建议。",
+    "source_case_id": "46",
+    "require_no_repeated_failed_steps": true
+  },
+  {
+    "id": "M04",
+    "name": "新型号覆盖旧设备",
+    "category": "memory",
+    "user": "alice",
+    "turns": [
+      {
+        "input": "X100无法联网",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "无法联网",
+              "device_model": "X100"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X100"
+        },
+        "feedback_previous_failed": false
+      },
+      {
+        "input": "换一个设备，X200蓝牙连不上，请建单",
+        "offline_calls": [
+          {
+            "name": "create_ticket",
+            "args": {
+              "product_model": "X200",
+              "issue_description": "蓝牙连不上",
+              "impact": "single"
+            }
+          }
+        ],
+        "confirm": "yes",
+        "expect": {
+          "rows": 1,
+          "product_model": "X200",
+          "confirmed_action": "create_ticket",
+          "audit_delta": 1,
+          "pending_before_confirm": true,
+          "pending_payload": {
+            "action": "create_ticket",
+            "product_model": "X200"
+          },
+          "issue_any": [
+            "蓝牙",
+            "配对"
+          ]
+        },
+        "feedback_previous_failed": false
+      }
+    ],
+    "split": "regression",
+    "source": "curated_synthetic_ablation",
+    "goal": "保持当前设备和故障事实，用户纠正后使用新事实。",
+    "source_case_id": "48",
+    "require_no_repeated_failed_steps": true
+  },
+  {
+    "id": "M05",
+    "name": "确认前纠正设备与故障",
+    "category": "memory",
+    "user": "alice",
+    "turns": [
+      {
+        "input": "X100无法联网，申请建单",
+        "offline_calls": [
+          {
+            "name": "create_ticket",
+            "args": {
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "impact": "single"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "pending": 1,
+          "answer_contains": [
+            "尚未执行"
+          ],
+          "unchanged": true,
+          "audit_delta": 0,
+          "pending_payload": {
+            "action": "create_ticket",
+            "product_model": "X100"
+          }
+        },
+        "feedback_previous_failed": false
+      },
+      {
+        "input": "刚才型号说错了，换成X200，故障是蓝牙连不上，请重新整理建单信息。",
+        "offline_calls": [
+          {
+            "name": "create_ticket",
+            "args": {
+              "product_model": "X200",
+              "issue_description": "蓝牙连不上",
+              "impact": "single"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 1,
+          "product_model": "X200",
+          "confirmed_action": "create_ticket",
+          "audit_delta": 1,
+          "pending_before_confirm": true,
+          "pending_payload": {
+            "action": "create_ticket",
+            "product_model": "X200"
+          },
+          "issue_any": [
+            "蓝牙",
+            "配对"
+          ]
+        },
+        "confirm": "yes",
+        "feedback_previous_failed": false
+      }
+    ],
+    "split": "regression",
+    "source": "curated_synthetic_ablation",
+    "goal": "保持当前设备和故障事实，用户纠正后使用新事实。",
+    "source_case_id": "58",
+    "require_no_repeated_failed_steps": true
+  },
+  {
+    "id": "M06",
+    "name": "蓝牙三步排查耗尽后建单",
+    "category": "long",
+    "split": "regression",
+    "source": "curated_synthetic_ablation",
+    "goal": "逐步排查不重复失败建议，耗尽后升级，确认后创建型号和故障正确的工单。",
+    "user": "alice",
+    "require_no_repeated_failed_steps": true,
+    "turns": [
+      {
+        "input": "X200蓝牙无法配对，请逐步帮我排查",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "蓝牙无法配对",
+              "device_model": "X200",
+              "issue_type": "bluetooth"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X200",
+          "faq_id": "FAQ-003"
+        },
+        "feedback_previous_failed": false,
+        "require_recommendation": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "蓝牙无法配对",
+              "device_model": "X200",
+              "issue_type": "bluetooth"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X200",
+          "faq_id": "FAQ-003"
+        },
+        "feedback_previous_failed": true,
+        "require_recommendation": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "蓝牙无法配对",
+              "device_model": "X200",
+              "issue_type": "bluetooth"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X200",
+          "faq_id": "FAQ-003"
+        },
+        "feedback_previous_failed": true,
+        "require_recommendation": true
+      },
+      {
+        "input": "已经试过了，还是不行",
+        "offline_calls": [
+          {
+            "name": "search_faq",
+            "args": {
+              "query": "蓝牙无法配对",
+              "device_model": "X200",
+              "issue_type": "bluetooth"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 0,
+          "unchanged": true,
+          "audit_delta": 0,
+          "faq_model": "X200",
+          "answer_contains": [
+            "可靠排查步骤已尝试完"
+          ]
+        },
+        "feedback_previous_failed": true,
+        "require_recommendation": false
+      },
+      {
+        "input": "请为之前的问题创建工单",
+        "offline_calls": [
+          {
+            "name": "create_ticket",
+            "args": {
+              "product_model": "X200",
+              "issue_description": "蓝牙无法配对",
+              "impact": "single"
+            }
+          }
+        ],
+        "expect": {
+          "rows": 1,
+          "status": "待处理",
+          "product_model": "X200",
+          "priority": "普通",
+          "pending_before_confirm": true,
+          "confirmed_action": "create_ticket",
+          "audit_delta": 1,
+          "pending_payload": {
+            "action": "create_ticket",
+            "product_model": "X200"
+          },
+          "issue_any": [
+            "蓝牙",
+            "配对"
+          ]
+        },
+        "confirm": "yes"
+      }
+    ]
+  }
+]

@@ -1,0 +1,78 @@
+# 单机、少量受邀用户；所有命令都带 --env-file .env.demo -f compose.demo.yaml。
+services:
+  ticket:
+    image: ticket-agent:demo
+    build: .
+    env_file: .env.demo
+    environment:
+      APP_ORIGIN: https://${DEMO_DOMAIN:?请在 .env.demo 填写实际域名，不含协议和路径}
+      TICKET_DB_PATH: /data/${DEMO_DB_FILE:-tickets.sqlite3}
+      LANGSMITH_TRACING: "false"
+    command: [python, -m, uvicorn, "react_agent.api:create_app", --factory, --host, "0.0.0.0", --port, "8000", --workers, "1", --timeout-graceful-shutdown, "110", --no-access-log, --proxy-headers, --forwarded-allow-ips, "172.30.60.2"]
+    volumes:
+      - ticket-data:/data
+    networks: [demo]
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 120s
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 1g
+    cpus: 1.0
+    logging: &logging
+      driver: json-file
+      options: {max-size: 10m, max-file: "3"}
+  edge:
+    image: caddy:2
+    environment:
+      DEMO_DOMAIN: ${DEMO_DOMAIN:?请填写实际域名}
+    ports: ["80:80", "443:443"]
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    networks:
+      demo:
+        ipv4_address: 172.30.60.2
+    depends_on:
+      ticket: {condition: service_healthy}
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    logging: *logging
+  backup:
+    image: ticket-agent:demo
+    build: .
+    command: [python, -m, scripts.backup_worker, --source, "/data/${DEMO_DB_FILE:-tickets.sqlite3}", --directory, /backups, --interval, "3600"]
+    volumes:
+      - ticket-data:/data
+      - ticket-backups:/backups
+    network_mode: none
+    depends_on:
+      ticket: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -m, scripts.backup_worker, --directory, /backups, --check-health, --max-age, "7500"]
+      interval: 60s
+      timeout: 10s
+      start_period: 60s
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    logging: *logging
+networks:
+  demo:
+    ipam:
+      config: [{subnet: 172.30.60.0/24}]
+volumes:
+  ticket-data:
+  ticket-backups:
+  caddy-data:
+  caddy-config:

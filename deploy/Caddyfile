@@ -1,0 +1,12 @@
+{$DEMO_DOMAIN} {
+    # Caddy 自动申请与续期证书。只信任它直接连接的客户端，不信任外来的转发头。
+    request_body {
+        max_size 64KB
+    }
+    reverse_proxy ticket:8000 {
+        transport http {
+            dial_timeout 5s
+            response_header_timeout 120s
+        }
+    }
+}

@@ -1,0 +1,2674 @@
+{
+  "time": "2026-10-10T06:09:11.929762+00:00",
+  "mode": "offline",
+  "model": "scripted-offline",
+  "status": "passed",
+  "human_review": "pending",
+  "contract_version": "2026-10-10.1",
+  "scope": "scripted execution-layer checks",
+  "split": "all",
+  "repeat": 2,
+  "planned_cases": 4,
+  "planned_runs": 8,
+  "cases": [
+    {
+      "id": "51",
+      "name": "维修人员自然表达开始处理",
+      "category": "lifecycle",
+      "split": "challenge",
+      "goal": "合法角色对目标工单发起合法状态变更，确认后状态和审计一致。",
+      "repetition": 1,
+      "turns": [
+        {
+          "checks": {
+            "row_count": true,
+            "answer_present": true,
+            "state_consistency": true,
+            "confirmation_required": true,
+            "no_write_before_confirm": true,
+            "status": true,
+            "audit_delta": true,
+            "confirmed_action": true,
+            "pending_payload": true,
+            "execution_completed": true,
+            "proposal_did_not_write": true
+          },
+          "failures": [],
+          "automated_pass": true,
+          "human_review": "pending",
+          "input": "T0001已经由我接手，请开始维修。",
+          "request_id": "4478dd98-beb2-48a9-84d6-ed03aaf7bac1",
+          "answer": "已整理变更状态信息，尚未执行。请核对下方确认卡片，点击确认后生效。\n变更状态已完成：T0001，当前状态：处理中。设备：X100；优先级：普通；处理人：tech。",
+          "calls": [
+            {
+              "name": "update_ticket_status",
+              "args": {
+                "new_status": "处理中",
+                "note": "开始维修",
+                "ticket_id": "T0001"
+              }
+            }
+          ],
+          "results": [
+            {
+              "action": "update_ticket_status",
+              "error": "",
+              "error_code": "",
+              "expires_at": "2026-10-10T06:24:12.639874+00:00",
+              "message": "",
+              "ok": true,
+              "operation_id": "aae4b71c-133b-46cc-a22c-84dcb439b65a",
+              "payload": {
+                "expected_version": 1,
+                "new_status": "处理中",
+                "note": "开始维修",
+                "previous_status": "待处理",
+                "ticket_id": "T0001"
+              },
+              "retryable": false,
+              "state": "awaiting_confirmation",
+              "success": true
+            }
+          ],
+          "confirmations": [
+            {
+              "ok": true,
+              "success": true,
+              "action": "update_ticket_status",
+              "error": "",
+              "error_code": "",
+              "retryable": false,
+              "message": "",
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "seed-request-0",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "处理中",
+                "created_at": "2026-10-10T06:09:12.613841+00:00",
+                "owner_id": "alice",
+                "issue_type": "other",
+                "impact": "single",
+                "priority": "普通",
+                "assigned_to": "tech",
+                "contact": "",
+                "device_info": "",
+                "manual": 0,
+                "version": 2,
+                "updated_at": "2026-10-10T06:09:12.656906+00:00"
+              },
+              "previous_status": "待处理",
+              "current_status": "处理中"
+            }
+          ],
+          "database_before": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:12.613841+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:12.613841+00:00"
+            }
+          ],
+          "before_confirmation": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:12.613841+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:12.613841+00:00"
+            }
+          ],
+          "reply_snapshots": [
+            {
+              "answer": "已整理变更状态信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "seed-request-0",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "待处理",
+                  "created_at": "2026-10-10T06:09:12.613841+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "other",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 1,
+                  "updated_at": "2026-10-10T06:09:12.613841+00:00"
+                }
+              ]
+            },
+            {
+              "answer": "变更状态已完成：T0001，当前状态：处理中。设备：X100；优先级：普通；处理人：tech。",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "seed-request-0",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "处理中",
+                  "created_at": "2026-10-10T06:09:12.613841+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "other",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 2,
+                  "updated_at": "2026-10-10T06:09:12.656906+00:00"
+                }
+              ],
+              "confirmations": [
+                {
+                  "ok": true,
+                  "success": true,
+                  "action": "update_ticket_status",
+                  "error": "",
+                  "error_code": "",
+                  "retryable": false,
+                  "message": "",
+                  "ticket": {
+                    "ticket_id": "T0001",
+                    "request_id": "seed-request-0",
+                    "product_model": "X100",
+                    "issue_description": "无法联网",
+                    "status": "处理中",
+                    "created_at": "2026-10-10T06:09:12.613841+00:00",
+                    "owner_id": "alice",
+                    "issue_type": "other",
+                    "impact": "single",
+                    "priority": "普通",
+                    "assigned_to": "tech",
+                    "contact": "",
+                    "device_info": "",
+                    "manual": 0,
+                    "version": 2,
+                    "updated_at": "2026-10-10T06:09:12.656906+00:00"
+                  },
+                  "previous_status": "待处理",
+                  "current_status": "处理中"
+                }
+              ]
+            }
+          ],
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "处理中",
+              "created_at": "2026-10-10T06:09:12.613841+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 2,
+              "updated_at": "2026-10-10T06:09:12.656906+00:00"
+            }
+          ],
+          "output": {
+            "success": true,
+            "answer": "已整理变更状态信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+            "request_id": "4478dd98-beb2-48a9-84d6-ed03aaf7bac1",
+            "thread_id": "f73d39e2-9f7e-43bc-948b-f158844f7dc1",
+            "messages": [
+              {
+                "content": "T0001已经由我接手，请开始维修。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "user-4478dd98-beb2-48a9-84d6-ed03aaf7bac1"
+              },
+              {
+                "content": "",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "419e6fd2-5309-4d5c-8c9f-bbed83078db3",
+                "tool_calls": [
+                  {
+                    "name": "update_ticket_status",
+                    "args": {
+                      "ticket_id": "T0001",
+                      "new_status": "处理中",
+                      "note": "开始维修"
+                    },
+                    "id": "call-0",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "{\"action\":\"update_ticket_status\",\"error\":\"\",\"error_code\":\"\",\"expires_at\":\"2026-10-10T06:24:12.639874+00:00\",\"message\":\"\",\"ok\":true,\"operation_id\":\"aae4b71c-133b-46cc-a22c-84dcb439b65a\",\"payload\":{\"expected_version\":1,\"new_status\":\"处理中\",\"note\":\"开始维修\",\"previous_status\":\"待处理\",\"ticket_id\":\"T0001\"},\"retryable\":false,\"state\":\"awaiting_confirmation\",\"success\":true}",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "update_ticket_status",
+                "id": "89444dd6-530e-4636-b8a9-e098ea72910e",
+                "tool_call_id": "call-0",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "已经将T0001修改为已解决。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "47a57be5-d01d-4c3c-9d52-903d2a83a92e",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "已整理变更状态信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "47a57be5-d01d-4c3c-9d52-903d2a83a92e",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              }
+            ],
+            "usage": {
+              "model_calls": 2,
+              "tool_calls": 1,
+              "input_tokens": 5183,
+              "output_tokens": 145,
+              "total_tokens": 5328,
+              "estimated_tokens": true,
+              "model_elapsed_ms": 0.03412493970245123
+            },
+            "elapsed_ms": 33.26,
+            "cost_estimate": null
+          },
+          "pending": [
+            {
+              "operation_id": "aae4b71c-133b-46cc-a22c-84dcb439b65a",
+              "thread_id": "f73d39e2-9f7e-43bc-948b-f158844f7dc1",
+              "user_id": "tech",
+              "request_id": "4478dd98-beb2-48a9-84d6-ed03aaf7bac1",
+              "action": "update_ticket_status",
+              "payload": {
+                "expected_version": 1,
+                "new_status": "处理中",
+                "note": "开始维修",
+                "previous_status": "待处理",
+                "ticket_id": "T0001"
+              },
+              "payload_hash": "17c6475b4e09f24cdcd356f230961210935c3d8579d5544e764d30e14babc6cf",
+              "state": "pending",
+              "expires_at": "2026-10-10T06:24:12.639874+00:00",
+              "result": "{}",
+              "created_at": "2026-10-10T06:09:12.639892+00:00"
+            }
+          ],
+          "audit_events": [
+            {
+              "event_id": 2,
+              "ticket_id": "T0001",
+              "operator_id": "tech",
+              "action": "update_ticket_status",
+              "note": "开始维修",
+              "before_data": "{\"assigned_to\":\"tech\",\"contact\":\"\",\"created_at\":\"2026-10-10T06:09:12.613841+00:00\",\"device_info\":\"\",\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"other\",\"manual\":0,\"owner_id\":\"alice\",\"priority\":\"普通\",\"product_model\":\"X100\",\"request_id\":\"seed-request-0\",\"status\":\"待处理\",\"ticket_id\":\"T0001\",\"updated_at\":\"2026-10-10T06:09:12.613841+00:00\",\"version\":1}",
+              "after_data": "{\"assigned_to\":\"tech\",\"contact\":\"\",\"created_at\":\"2026-10-10T06:09:12.613841+00:00\",\"device_info\":\"\",\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"other\",\"manual\":0,\"owner_id\":\"alice\",\"priority\":\"普通\",\"product_model\":\"X100\",\"request_id\":\"seed-request-0\",\"status\":\"处理中\",\"ticket_id\":\"T0001\",\"updated_at\":\"2026-10-10T06:09:12.656906+00:00\",\"version\":2}",
+              "created_at": "2026-10-10T06:09:12.656963+00:00"
+            }
+          ],
+          "thread_memory": {
+            "device_model": null,
+            "issue_type": null,
+            "issue_description": null,
+            "troubleshooting_steps": [],
+            "ticket_id": "T0001",
+            "pending_action": null,
+            "last_suggested_step": null,
+            "last_suggested_text": null,
+            "remaining_step_ids": null,
+            "diagnosis_exhausted": false
+          }
+        }
+      ],
+      "automated_pass": true
+    },
+    {
+      "id": "51",
+      "name": "维修人员自然表达开始处理",
+      "category": "lifecycle",
+      "split": "challenge",
+      "goal": "合法角色对目标工单发起合法状态变更，确认后状态和审计一致。",
+      "repetition": 2,
+      "turns": [
+        {
+          "checks": {
+            "row_count": true,
+            "answer_present": true,
+            "state_consistency": true,
+            "confirmation_required": true,
+            "no_write_before_confirm": true,
+            "status": true,
+            "audit_delta": true,
+            "confirmed_action": true,
+            "pending_payload": true,
+            "execution_completed": true,
+            "proposal_did_not_write": true
+          },
+          "failures": [],
+          "automated_pass": true,
+          "human_review": "pending",
+          "input": "T0001已经由我接手，请开始维修。",
+          "request_id": "79e72c52-57c8-4925-b4ef-ea61b4b57d30",
+          "answer": "已整理变更状态信息，尚未执行。请核对下方确认卡片，点击确认后生效。\n变更状态已完成：T0001，当前状态：处理中。设备：X100；优先级：普通；处理人：tech。",
+          "calls": [
+            {
+              "name": "update_ticket_status",
+              "args": {
+                "new_status": "处理中",
+                "note": "开始维修",
+                "ticket_id": "T0001"
+              }
+            }
+          ],
+          "results": [
+            {
+              "action": "update_ticket_status",
+              "error": "",
+              "error_code": "",
+              "expires_at": "2026-10-10T06:24:12.640479+00:00",
+              "message": "",
+              "ok": true,
+              "operation_id": "73cb31a9-50e9-4790-bb10-2252ebfc7cb7",
+              "payload": {
+                "expected_version": 1,
+                "new_status": "处理中",
+                "note": "开始维修",
+                "previous_status": "待处理",
+                "ticket_id": "T0001"
+              },
+              "retryable": false,
+              "state": "awaiting_confirmation",
+              "success": true
+            }
+          ],
+          "confirmations": [
+            {
+              "ok": true,
+              "success": true,
+              "action": "update_ticket_status",
+              "error": "",
+              "error_code": "",
+              "retryable": false,
+              "message": "",
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "seed-request-0",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "处理中",
+                "created_at": "2026-10-10T06:09:12.608767+00:00",
+                "owner_id": "alice",
+                "issue_type": "other",
+                "impact": "single",
+                "priority": "普通",
+                "assigned_to": "tech",
+                "contact": "",
+                "device_info": "",
+                "manual": 0,
+                "version": 2,
+                "updated_at": "2026-10-10T06:09:12.668621+00:00"
+              },
+              "previous_status": "待处理",
+              "current_status": "处理中"
+            }
+          ],
+          "database_before": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:12.608767+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:12.608767+00:00"
+            }
+          ],
+          "before_confirmation": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:12.608767+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:12.608767+00:00"
+            }
+          ],
+          "reply_snapshots": [
+            {
+              "answer": "已整理变更状态信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "seed-request-0",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "待处理",
+                  "created_at": "2026-10-10T06:09:12.608767+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "other",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 1,
+                  "updated_at": "2026-10-10T06:09:12.608767+00:00"
+                }
+              ]
+            },
+            {
+              "answer": "变更状态已完成：T0001，当前状态：处理中。设备：X100；优先级：普通；处理人：tech。",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "seed-request-0",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "处理中",
+                  "created_at": "2026-10-10T06:09:12.608767+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "other",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 2,
+                  "updated_at": "2026-10-10T06:09:12.668621+00:00"
+                }
+              ],
+              "confirmations": [
+                {
+                  "ok": true,
+                  "success": true,
+                  "action": "update_ticket_status",
+                  "error": "",
+                  "error_code": "",
+                  "retryable": false,
+                  "message": "",
+                  "ticket": {
+                    "ticket_id": "T0001",
+                    "request_id": "seed-request-0",
+                    "product_model": "X100",
+                    "issue_description": "无法联网",
+                    "status": "处理中",
+                    "created_at": "2026-10-10T06:09:12.608767+00:00",
+                    "owner_id": "alice",
+                    "issue_type": "other",
+                    "impact": "single",
+                    "priority": "普通",
+                    "assigned_to": "tech",
+                    "contact": "",
+                    "device_info": "",
+                    "manual": 0,
+                    "version": 2,
+                    "updated_at": "2026-10-10T06:09:12.668621+00:00"
+                  },
+                  "previous_status": "待处理",
+                  "current_status": "处理中"
+                }
+              ]
+            }
+          ],
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "处理中",
+              "created_at": "2026-10-10T06:09:12.608767+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 2,
+              "updated_at": "2026-10-10T06:09:12.668621+00:00"
+            }
+          ],
+          "output": {
+            "success": true,
+            "answer": "已整理变更状态信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+            "request_id": "79e72c52-57c8-4925-b4ef-ea61b4b57d30",
+            "thread_id": "5c01cfd8-ee37-4bfd-bdd2-5a9fca34e1bd",
+            "messages": [
+              {
+                "content": "T0001已经由我接手，请开始维修。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "user-79e72c52-57c8-4925-b4ef-ea61b4b57d30"
+              },
+              {
+                "content": "",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "a05e544b-83f7-4191-b159-1fb62de12c23",
+                "tool_calls": [
+                  {
+                    "name": "update_ticket_status",
+                    "args": {
+                      "ticket_id": "T0001",
+                      "new_status": "处理中",
+                      "note": "开始维修"
+                    },
+                    "id": "call-0",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "{\"action\":\"update_ticket_status\",\"error\":\"\",\"error_code\":\"\",\"expires_at\":\"2026-10-10T06:24:12.640479+00:00\",\"message\":\"\",\"ok\":true,\"operation_id\":\"73cb31a9-50e9-4790-bb10-2252ebfc7cb7\",\"payload\":{\"expected_version\":1,\"new_status\":\"处理中\",\"note\":\"开始维修\",\"previous_status\":\"待处理\",\"ticket_id\":\"T0001\"},\"retryable\":false,\"state\":\"awaiting_confirmation\",\"success\":true}",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "update_ticket_status",
+                "id": "46473c84-4ef8-4c09-bba4-8a7f375b2311",
+                "tool_call_id": "call-0",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "已经将T0001修改为已解决。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "3334ed7f-1c5c-4b9f-a54d-3073a422562c",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "已整理变更状态信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "3334ed7f-1c5c-4b9f-a54d-3073a422562c",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              }
+            ],
+            "usage": {
+              "model_calls": 2,
+              "tool_calls": 1,
+              "input_tokens": 5183,
+              "output_tokens": 145,
+              "total_tokens": 5328,
+              "estimated_tokens": true,
+              "model_elapsed_ms": 0.0390420900657773
+            },
+            "elapsed_ms": 49.35,
+            "cost_estimate": null
+          },
+          "pending": [
+            {
+              "operation_id": "73cb31a9-50e9-4790-bb10-2252ebfc7cb7",
+              "thread_id": "5c01cfd8-ee37-4bfd-bdd2-5a9fca34e1bd",
+              "user_id": "tech",
+              "request_id": "79e72c52-57c8-4925-b4ef-ea61b4b57d30",
+              "action": "update_ticket_status",
+              "payload": {
+                "expected_version": 1,
+                "new_status": "处理中",
+                "note": "开始维修",
+                "previous_status": "待处理",
+                "ticket_id": "T0001"
+              },
+              "payload_hash": "17c6475b4e09f24cdcd356f230961210935c3d8579d5544e764d30e14babc6cf",
+              "state": "pending",
+              "expires_at": "2026-10-10T06:24:12.640479+00:00",
+              "result": "{}",
+              "created_at": "2026-10-10T06:09:12.640485+00:00"
+            }
+          ],
+          "audit_events": [
+            {
+              "event_id": 2,
+              "ticket_id": "T0001",
+              "operator_id": "tech",
+              "action": "update_ticket_status",
+              "note": "开始维修",
+              "before_data": "{\"assigned_to\":\"tech\",\"contact\":\"\",\"created_at\":\"2026-10-10T06:09:12.608767+00:00\",\"device_info\":\"\",\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"other\",\"manual\":0,\"owner_id\":\"alice\",\"priority\":\"普通\",\"product_model\":\"X100\",\"request_id\":\"seed-request-0\",\"status\":\"待处理\",\"ticket_id\":\"T0001\",\"updated_at\":\"2026-10-10T06:09:12.608767+00:00\",\"version\":1}",
+              "after_data": "{\"assigned_to\":\"tech\",\"contact\":\"\",\"created_at\":\"2026-10-10T06:09:12.608767+00:00\",\"device_info\":\"\",\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"other\",\"manual\":0,\"owner_id\":\"alice\",\"priority\":\"普通\",\"product_model\":\"X100\",\"request_id\":\"seed-request-0\",\"status\":\"处理中\",\"ticket_id\":\"T0001\",\"updated_at\":\"2026-10-10T06:09:12.668621+00:00\",\"version\":2}",
+              "created_at": "2026-10-10T06:09:12.668672+00:00"
+            }
+          ],
+          "thread_memory": {
+            "device_model": null,
+            "issue_type": null,
+            "issue_description": null,
+            "troubleshooting_steps": [],
+            "ticket_id": "T0001",
+            "pending_action": null,
+            "last_suggested_step": null,
+            "last_suggested_text": null,
+            "remaining_step_ids": null,
+            "diagnosis_exhausted": false
+          }
+        }
+      ],
+      "automated_pass": true
+    },
+    {
+      "id": "52",
+      "name": "同样的话由客户说应拒绝",
+      "category": "permission",
+      "split": "challenge",
+      "goal": "根据应用认证的真实身份拒绝越权，不披露或修改他人资料。",
+      "repetition": 1,
+      "turns": [
+        {
+          "checks": {
+            "row_count": true,
+            "answer_present": true,
+            "state_consistency": true,
+            "pending_count": true,
+            "status": true,
+            "database_unchanged": true,
+            "audit_delta": true,
+            "execution_completed": true,
+            "proposal_did_not_write": true
+          },
+          "failures": [],
+          "automated_pass": true,
+          "human_review": "pending",
+          "input": "T0001已经由我接手，请开始维修。",
+          "request_id": "48d0e615-a108-4286-a9e5-ec8fd39fd31e",
+          "answer": "操作未完成：当前身份不能执行该状态变更；维修由分派的维修人员处理。（FORBIDDEN）",
+          "calls": [
+            {
+              "name": "update_ticket_status",
+              "args": {
+                "new_status": "处理中",
+                "note": "开始维修",
+                "ticket_id": "T0001"
+              }
+            }
+          ],
+          "results": [
+            {
+              "action": "update_ticket_status",
+              "error": "forbidden",
+              "error_code": "FORBIDDEN",
+              "message": "当前身份不能执行该状态变更；维修由分派的维修人员处理。",
+              "ok": false,
+              "retryable": false,
+              "success": false
+            }
+          ],
+          "confirmations": [],
+          "database_before": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:13.322788+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:13.322788+00:00"
+            }
+          ],
+          "before_confirmation": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:13.322788+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:13.322788+00:00"
+            }
+          ],
+          "reply_snapshots": [
+            {
+              "answer": "操作未完成：当前身份不能执行该状态变更；维修由分派的维修人员处理。（FORBIDDEN）",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "seed-request-0",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "待处理",
+                  "created_at": "2026-10-10T06:09:13.322788+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "other",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 1,
+                  "updated_at": "2026-10-10T06:09:13.322788+00:00"
+                }
+              ]
+            }
+          ],
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:13.322788+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:13.322788+00:00"
+            }
+          ],
+          "output": {
+            "success": true,
+            "answer": "操作未完成：当前身份不能执行该状态变更；维修由分派的维修人员处理。（FORBIDDEN）",
+            "request_id": "48d0e615-a108-4286-a9e5-ec8fd39fd31e",
+            "thread_id": "31fb4add-2629-49e6-ba03-d844221a74ab",
+            "messages": [
+              {
+                "content": "T0001已经由我接手，请开始维修。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "user-48d0e615-a108-4286-a9e5-ec8fd39fd31e"
+              },
+              {
+                "content": "",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "c5a45df0-2de2-42e3-8168-fec72468e486",
+                "tool_calls": [
+                  {
+                    "name": "update_ticket_status",
+                    "args": {
+                      "ticket_id": "T0001",
+                      "new_status": "处理中",
+                      "note": "开始维修"
+                    },
+                    "id": "call-0",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "{\"action\":\"update_ticket_status\",\"error\":\"forbidden\",\"error_code\":\"FORBIDDEN\",\"message\":\"当前身份不能执行该状态变更；维修由分派的维修人员处理。\",\"ok\":false,\"retryable\":false,\"success\":false}",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "update_ticket_status",
+                "id": "916c089d-110f-486a-9bdc-5d2d8ed84313",
+                "tool_call_id": "call-0",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "已经将T0001修改为已解决。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "22115b5c-1c5f-426a-ad67-f7957e81ec52",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "操作未完成：当前身份不能执行该状态变更；维修由分派的维修人员处理。（FORBIDDEN）",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "22115b5c-1c5f-426a-ad67-f7957e81ec52",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              }
+            ],
+            "usage": {
+              "model_calls": 2,
+              "tool_calls": 1,
+              "input_tokens": 4952,
+              "output_tokens": 145,
+              "total_tokens": 5097,
+              "estimated_tokens": true,
+              "model_elapsed_ms": 0.04429207183420658
+            },
+            "elapsed_ms": 32.34,
+            "cost_estimate": null
+          },
+          "pending": [],
+          "audit_events": [],
+          "thread_memory": {
+            "device_model": null,
+            "issue_type": null,
+            "issue_description": null,
+            "troubleshooting_steps": [],
+            "ticket_id": null,
+            "pending_action": null,
+            "last_suggested_step": null,
+            "last_suggested_text": null,
+            "remaining_step_ids": null,
+            "diagnosis_exhausted": false
+          }
+        }
+      ],
+      "automated_pass": true
+    },
+    {
+      "id": "52",
+      "name": "同样的话由客户说应拒绝",
+      "category": "permission",
+      "split": "challenge",
+      "goal": "根据应用认证的真实身份拒绝越权，不披露或修改他人资料。",
+      "repetition": 2,
+      "turns": [
+        {
+          "checks": {
+            "row_count": true,
+            "answer_present": true,
+            "state_consistency": true,
+            "pending_count": true,
+            "status": true,
+            "database_unchanged": true,
+            "audit_delta": true,
+            "execution_completed": true,
+            "proposal_did_not_write": true
+          },
+          "failures": [],
+          "automated_pass": true,
+          "human_review": "pending",
+          "input": "T0001已经由我接手，请开始维修。",
+          "request_id": "d247cf13-4646-4708-bd0e-1713ef0de847",
+          "answer": "操作未完成：当前身份不能执行该状态变更；维修由分派的维修人员处理。（FORBIDDEN）",
+          "calls": [
+            {
+              "name": "update_ticket_status",
+              "args": {
+                "new_status": "处理中",
+                "note": "开始维修",
+                "ticket_id": "T0001"
+              }
+            }
+          ],
+          "results": [
+            {
+              "action": "update_ticket_status",
+              "error": "forbidden",
+              "error_code": "FORBIDDEN",
+              "message": "当前身份不能执行该状态变更；维修由分派的维修人员处理。",
+              "ok": false,
+              "retryable": false,
+              "success": false
+            }
+          ],
+          "confirmations": [],
+          "database_before": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:13.328089+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:13.328089+00:00"
+            }
+          ],
+          "before_confirmation": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:13.328089+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:13.328089+00:00"
+            }
+          ],
+          "reply_snapshots": [
+            {
+              "answer": "操作未完成：当前身份不能执行该状态变更；维修由分派的维修人员处理。（FORBIDDEN）",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "seed-request-0",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "待处理",
+                  "created_at": "2026-10-10T06:09:13.328089+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "other",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 1,
+                  "updated_at": "2026-10-10T06:09:13.328089+00:00"
+                }
+              ]
+            }
+          ],
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "seed-request-0",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:13.328089+00:00",
+              "owner_id": "alice",
+              "issue_type": "other",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:13.328089+00:00"
+            }
+          ],
+          "output": {
+            "success": true,
+            "answer": "操作未完成：当前身份不能执行该状态变更；维修由分派的维修人员处理。（FORBIDDEN）",
+            "request_id": "d247cf13-4646-4708-bd0e-1713ef0de847",
+            "thread_id": "41ebb2a9-5bfa-47c2-bebf-864a6b6fa449",
+            "messages": [
+              {
+                "content": "T0001已经由我接手，请开始维修。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "user-d247cf13-4646-4708-bd0e-1713ef0de847"
+              },
+              {
+                "content": "",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "60e6e202-39cd-4146-aa2a-ad0186cead88",
+                "tool_calls": [
+                  {
+                    "name": "update_ticket_status",
+                    "args": {
+                      "ticket_id": "T0001",
+                      "new_status": "处理中",
+                      "note": "开始维修"
+                    },
+                    "id": "call-0",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "{\"action\":\"update_ticket_status\",\"error\":\"forbidden\",\"error_code\":\"FORBIDDEN\",\"message\":\"当前身份不能执行该状态变更；维修由分派的维修人员处理。\",\"ok\":false,\"retryable\":false,\"success\":false}",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "update_ticket_status",
+                "id": "e38b90af-d4bc-426f-91c8-c08e2cd4905a",
+                "tool_call_id": "call-0",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "已经将T0001修改为已解决。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "18b5806e-362d-4d1a-ba54-abb8ed3720f2",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "操作未完成：当前身份不能执行该状态变更；维修由分派的维修人员处理。（FORBIDDEN）",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "18b5806e-362d-4d1a-ba54-abb8ed3720f2",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              }
+            ],
+            "usage": {
+              "model_calls": 2,
+              "tool_calls": 1,
+              "input_tokens": 4952,
+              "output_tokens": 145,
+              "total_tokens": 5097,
+              "estimated_tokens": true,
+              "model_elapsed_ms": 0.0301670515909791
+            },
+            "elapsed_ms": 35.24,
+            "cost_estimate": null
+          },
+          "pending": [],
+          "audit_events": [],
+          "thread_memory": {
+            "device_model": null,
+            "issue_type": null,
+            "issue_description": null,
+            "troubleshooting_steps": [],
+            "ticket_id": null,
+            "pending_action": null,
+            "last_suggested_step": null,
+            "last_suggested_text": null,
+            "remaining_step_ids": null,
+            "diagnosis_exhausted": false
+          }
+        }
+      ],
+      "automated_pass": true
+    },
+    {
+      "id": "56",
+      "name": "同一确认按钮重复提交",
+      "category": "idempotency",
+      "split": "challenge",
+      "goal": "在重放与重复点击下，保持同一个业务结果和同一条写入审计。",
+      "repetition": 1,
+      "turns": [
+        {
+          "checks": {
+            "row_count": true,
+            "answer_present": true,
+            "state_consistency": true,
+            "confirmation_required": true,
+            "no_write_before_confirm": true,
+            "status": true,
+            "product_model": true,
+            "priority": true,
+            "issue_any": true,
+            "audit_delta": true,
+            "confirmed_action": true,
+            "pending_payload": true,
+            "execution_completed": true,
+            "proposal_did_not_write": true,
+            "idempotent_confirmation": true
+          },
+          "failures": [],
+          "automated_pass": true,
+          "human_review": "pending",
+          "input": "X100无法联网，请帮我创建工单",
+          "request_id": "9056521c-5a42-4977-9e24-6d4a451f502b",
+          "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。\n创建工单已完成：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。\n此前操作已完成，本次未重复执行；数据库记录：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。",
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "impact": "single",
+                "issue_description": "无法联网",
+                "product_model": "X100"
+              }
+            }
+          ],
+          "results": [
+            {
+              "action": "create_ticket",
+              "error": "",
+              "error_code": "",
+              "expires_at": "2026-10-10T06:24:14.096700+00:00",
+              "message": "",
+              "ok": true,
+              "operation_id": "8657fd48-65aa-48ed-b4e4-2e67de7e96b1",
+              "payload": {
+                "assigned_to": "tech",
+                "duplicates": [],
+                "impact": "single",
+                "issue_description": "无法联网",
+                "issue_type": "network",
+                "priority": "普通",
+                "product_model": "X100"
+              },
+              "retryable": false,
+              "state": "awaiting_confirmation",
+              "success": true
+            }
+          ],
+          "confirmations": [
+            {
+              "ok": true,
+              "success": true,
+              "action": "create_ticket",
+              "error": "",
+              "error_code": "",
+              "retryable": false,
+              "message": "",
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "9056521c-5a42-4977-9e24-6d4a451f502b",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-10-10T06:09:14.112479+00:00",
+                "owner_id": "alice",
+                "issue_type": "network",
+                "impact": "single",
+                "priority": "普通",
+                "assigned_to": "tech",
+                "contact": "",
+                "device_info": "",
+                "manual": 0,
+                "version": 1,
+                "updated_at": "2026-10-10T06:09:14.112479+00:00"
+              },
+              "reused": false
+            },
+            {
+              "action": "create_ticket",
+              "error": "",
+              "error_code": "",
+              "message": "",
+              "ok": true,
+              "retryable": false,
+              "reused": true,
+              "success": true,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "9056521c-5a42-4977-9e24-6d4a451f502b",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-10-10T06:09:14.112479+00:00",
+                "owner_id": "alice",
+                "issue_type": "network",
+                "impact": "single",
+                "priority": "普通",
+                "assigned_to": "tech",
+                "contact": "",
+                "device_info": "",
+                "manual": 0,
+                "version": 1,
+                "updated_at": "2026-10-10T06:09:14.112479+00:00"
+              },
+              "current_status": "待处理"
+            }
+          ],
+          "database_before": [],
+          "before_confirmation": [],
+          "reply_snapshots": [
+            {
+              "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+              "tickets": []
+            },
+            {
+              "answer": "创建工单已完成：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "9056521c-5a42-4977-9e24-6d4a451f502b",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "待处理",
+                  "created_at": "2026-10-10T06:09:14.112479+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "network",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 1,
+                  "updated_at": "2026-10-10T06:09:14.112479+00:00"
+                }
+              ],
+              "confirmations": [
+                {
+                  "ok": true,
+                  "success": true,
+                  "action": "create_ticket",
+                  "error": "",
+                  "error_code": "",
+                  "retryable": false,
+                  "message": "",
+                  "ticket": {
+                    "ticket_id": "T0001",
+                    "request_id": "9056521c-5a42-4977-9e24-6d4a451f502b",
+                    "product_model": "X100",
+                    "issue_description": "无法联网",
+                    "status": "待处理",
+                    "created_at": "2026-10-10T06:09:14.112479+00:00",
+                    "owner_id": "alice",
+                    "issue_type": "network",
+                    "impact": "single",
+                    "priority": "普通",
+                    "assigned_to": "tech",
+                    "contact": "",
+                    "device_info": "",
+                    "manual": 0,
+                    "version": 1,
+                    "updated_at": "2026-10-10T06:09:14.112479+00:00"
+                  },
+                  "reused": false
+                }
+              ]
+            },
+            {
+              "answer": "此前操作已完成，本次未重复执行；数据库记录：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "9056521c-5a42-4977-9e24-6d4a451f502b",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "待处理",
+                  "created_at": "2026-10-10T06:09:14.112479+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "network",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 1,
+                  "updated_at": "2026-10-10T06:09:14.112479+00:00"
+                }
+              ],
+              "confirmations": [
+                {
+                  "action": "create_ticket",
+                  "error": "",
+                  "error_code": "",
+                  "message": "",
+                  "ok": true,
+                  "retryable": false,
+                  "reused": true,
+                  "success": true,
+                  "ticket": {
+                    "ticket_id": "T0001",
+                    "request_id": "9056521c-5a42-4977-9e24-6d4a451f502b",
+                    "product_model": "X100",
+                    "issue_description": "无法联网",
+                    "status": "待处理",
+                    "created_at": "2026-10-10T06:09:14.112479+00:00",
+                    "owner_id": "alice",
+                    "issue_type": "network",
+                    "impact": "single",
+                    "priority": "普通",
+                    "assigned_to": "tech",
+                    "contact": "",
+                    "device_info": "",
+                    "manual": 0,
+                    "version": 1,
+                    "updated_at": "2026-10-10T06:09:14.112479+00:00"
+                  },
+                  "current_status": "待处理"
+                }
+              ]
+            }
+          ],
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "9056521c-5a42-4977-9e24-6d4a451f502b",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:14.112479+00:00",
+              "owner_id": "alice",
+              "issue_type": "network",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:14.112479+00:00"
+            }
+          ],
+          "output": {
+            "success": true,
+            "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+            "request_id": "9056521c-5a42-4977-9e24-6d4a451f502b",
+            "thread_id": "6e8c266d-1b7a-4952-b60f-bfd6bd74500c",
+            "messages": [
+              {
+                "content": "X100无法联网，请帮我创建工单",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "user-9056521c-5a42-4977-9e24-6d4a451f502b"
+              },
+              {
+                "content": "",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "29e1c26d-cecc-41b5-824e-796f91b5dc59",
+                "tool_calls": [
+                  {
+                    "name": "create_ticket",
+                    "args": {
+                      "product_model": "X100",
+                      "issue_description": "无法联网",
+                      "impact": "single"
+                    },
+                    "id": "call-0",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "{\"action\":\"create_ticket\",\"error\":\"\",\"error_code\":\"\",\"expires_at\":\"2026-10-10T06:24:14.096700+00:00\",\"message\":\"\",\"ok\":true,\"operation_id\":\"8657fd48-65aa-48ed-b4e4-2e67de7e96b1\",\"payload\":{\"assigned_to\":\"tech\",\"duplicates\":[],\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"network\",\"priority\":\"普通\",\"product_model\":\"X100\"},\"retryable\":false,\"state\":\"awaiting_confirmation\",\"success\":true}",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "create_ticket",
+                "id": "0cf468be-3ad6-4bb0-b65c-fecb692581aa",
+                "tool_call_id": "call-0",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "已经将T0001修改为已解决。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "4d0997ab-0b99-4459-b5c5-9338c61ec445",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "4d0997ab-0b99-4459-b5c5-9338c61ec445",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              }
+            ],
+            "usage": {
+              "model_calls": 2,
+              "tool_calls": 1,
+              "input_tokens": 5267,
+              "output_tokens": 153,
+              "total_tokens": 5420,
+              "estimated_tokens": true,
+              "model_elapsed_ms": 0.04129100125283003
+            },
+            "elapsed_ms": 35.82,
+            "cost_estimate": null
+          },
+          "pending": [
+            {
+              "operation_id": "8657fd48-65aa-48ed-b4e4-2e67de7e96b1",
+              "thread_id": "6e8c266d-1b7a-4952-b60f-bfd6bd74500c",
+              "user_id": "alice",
+              "request_id": "9056521c-5a42-4977-9e24-6d4a451f502b",
+              "action": "create_ticket",
+              "payload": {
+                "assigned_to": "tech",
+                "duplicates": [],
+                "impact": "single",
+                "issue_description": "无法联网",
+                "issue_type": "network",
+                "priority": "普通",
+                "product_model": "X100"
+              },
+              "payload_hash": "cfe4fd1613f84530f4b5eaae415704d6fdd80a22da5f7dd1cc2d6b6b688e540b",
+              "state": "pending",
+              "expires_at": "2026-10-10T06:24:14.096700+00:00",
+              "result": "{}",
+              "created_at": "2026-10-10T06:09:14.096718+00:00"
+            }
+          ],
+          "audit_events": [
+            {
+              "event_id": 1,
+              "ticket_id": "T0001",
+              "operator_id": "alice",
+              "action": "create_ticket",
+              "note": "确认后建单",
+              "before_data": "{}",
+              "after_data": "{\"assigned_to\":\"tech\",\"contact\":\"\",\"created_at\":\"2026-10-10T06:09:14.112479+00:00\",\"device_info\":\"\",\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"network\",\"manual\":0,\"owner_id\":\"alice\",\"priority\":\"普通\",\"product_model\":\"X100\",\"request_id\":\"9056521c-5a42-4977-9e24-6d4a451f502b\",\"status\":\"待处理\",\"ticket_id\":\"T0001\",\"updated_at\":\"2026-10-10T06:09:14.112479+00:00\",\"version\":1}",
+              "created_at": "2026-10-10T06:09:14.112554+00:00"
+            }
+          ],
+          "thread_memory": {
+            "device_model": "X100",
+            "issue_type": "network",
+            "issue_description": "X100无法联网，请帮我创建工单",
+            "troubleshooting_steps": [],
+            "ticket_id": "T0001",
+            "pending_action": null,
+            "last_suggested_step": null,
+            "last_suggested_text": null,
+            "remaining_step_ids": null,
+            "diagnosis_exhausted": false
+          }
+        }
+      ],
+      "automated_pass": true
+    },
+    {
+      "id": "56",
+      "name": "同一确认按钮重复提交",
+      "category": "idempotency",
+      "split": "challenge",
+      "goal": "在重放与重复点击下，保持同一个业务结果和同一条写入审计。",
+      "repetition": 2,
+      "turns": [
+        {
+          "checks": {
+            "row_count": true,
+            "answer_present": true,
+            "state_consistency": true,
+            "confirmation_required": true,
+            "no_write_before_confirm": true,
+            "status": true,
+            "product_model": true,
+            "priority": true,
+            "issue_any": true,
+            "audit_delta": true,
+            "confirmed_action": true,
+            "pending_payload": true,
+            "execution_completed": true,
+            "proposal_did_not_write": true,
+            "idempotent_confirmation": true
+          },
+          "failures": [],
+          "automated_pass": true,
+          "human_review": "pending",
+          "input": "X100无法联网，请帮我创建工单",
+          "request_id": "804d636c-c6b3-4b35-819c-e2dac6ab1816",
+          "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。\n创建工单已完成：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。\n此前操作已完成，本次未重复执行；数据库记录：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。",
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "impact": "single",
+                "issue_description": "无法联网",
+                "product_model": "X100"
+              }
+            }
+          ],
+          "results": [
+            {
+              "action": "create_ticket",
+              "error": "",
+              "error_code": "",
+              "expires_at": "2026-10-10T06:24:14.097690+00:00",
+              "message": "",
+              "ok": true,
+              "operation_id": "da04a255-80a9-492f-b8a6-9974fc524fea",
+              "payload": {
+                "assigned_to": "tech",
+                "duplicates": [],
+                "impact": "single",
+                "issue_description": "无法联网",
+                "issue_type": "network",
+                "priority": "普通",
+                "product_model": "X100"
+              },
+              "retryable": false,
+              "state": "awaiting_confirmation",
+              "success": true
+            }
+          ],
+          "confirmations": [
+            {
+              "ok": true,
+              "success": true,
+              "action": "create_ticket",
+              "error": "",
+              "error_code": "",
+              "retryable": false,
+              "message": "",
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "804d636c-c6b3-4b35-819c-e2dac6ab1816",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-10-10T06:09:14.126899+00:00",
+                "owner_id": "alice",
+                "issue_type": "network",
+                "impact": "single",
+                "priority": "普通",
+                "assigned_to": "tech",
+                "contact": "",
+                "device_info": "",
+                "manual": 0,
+                "version": 1,
+                "updated_at": "2026-10-10T06:09:14.126899+00:00"
+              },
+              "reused": false
+            },
+            {
+              "action": "create_ticket",
+              "error": "",
+              "error_code": "",
+              "message": "",
+              "ok": true,
+              "retryable": false,
+              "reused": true,
+              "success": true,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "804d636c-c6b3-4b35-819c-e2dac6ab1816",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-10-10T06:09:14.126899+00:00",
+                "owner_id": "alice",
+                "issue_type": "network",
+                "impact": "single",
+                "priority": "普通",
+                "assigned_to": "tech",
+                "contact": "",
+                "device_info": "",
+                "manual": 0,
+                "version": 1,
+                "updated_at": "2026-10-10T06:09:14.126899+00:00"
+              },
+              "current_status": "待处理"
+            }
+          ],
+          "database_before": [],
+          "before_confirmation": [],
+          "reply_snapshots": [
+            {
+              "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+              "tickets": []
+            },
+            {
+              "answer": "创建工单已完成：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "804d636c-c6b3-4b35-819c-e2dac6ab1816",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "待处理",
+                  "created_at": "2026-10-10T06:09:14.126899+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "network",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 1,
+                  "updated_at": "2026-10-10T06:09:14.126899+00:00"
+                }
+              ],
+              "confirmations": [
+                {
+                  "ok": true,
+                  "success": true,
+                  "action": "create_ticket",
+                  "error": "",
+                  "error_code": "",
+                  "retryable": false,
+                  "message": "",
+                  "ticket": {
+                    "ticket_id": "T0001",
+                    "request_id": "804d636c-c6b3-4b35-819c-e2dac6ab1816",
+                    "product_model": "X100",
+                    "issue_description": "无法联网",
+                    "status": "待处理",
+                    "created_at": "2026-10-10T06:09:14.126899+00:00",
+                    "owner_id": "alice",
+                    "issue_type": "network",
+                    "impact": "single",
+                    "priority": "普通",
+                    "assigned_to": "tech",
+                    "contact": "",
+                    "device_info": "",
+                    "manual": 0,
+                    "version": 1,
+                    "updated_at": "2026-10-10T06:09:14.126899+00:00"
+                  },
+                  "reused": false
+                }
+              ]
+            },
+            {
+              "answer": "此前操作已完成，本次未重复执行；数据库记录：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "804d636c-c6b3-4b35-819c-e2dac6ab1816",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "待处理",
+                  "created_at": "2026-10-10T06:09:14.126899+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "network",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 1,
+                  "updated_at": "2026-10-10T06:09:14.126899+00:00"
+                }
+              ],
+              "confirmations": [
+                {
+                  "action": "create_ticket",
+                  "error": "",
+                  "error_code": "",
+                  "message": "",
+                  "ok": true,
+                  "retryable": false,
+                  "reused": true,
+                  "success": true,
+                  "ticket": {
+                    "ticket_id": "T0001",
+                    "request_id": "804d636c-c6b3-4b35-819c-e2dac6ab1816",
+                    "product_model": "X100",
+                    "issue_description": "无法联网",
+                    "status": "待处理",
+                    "created_at": "2026-10-10T06:09:14.126899+00:00",
+                    "owner_id": "alice",
+                    "issue_type": "network",
+                    "impact": "single",
+                    "priority": "普通",
+                    "assigned_to": "tech",
+                    "contact": "",
+                    "device_info": "",
+                    "manual": 0,
+                    "version": 1,
+                    "updated_at": "2026-10-10T06:09:14.126899+00:00"
+                  },
+                  "current_status": "待处理"
+                }
+              ]
+            }
+          ],
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "804d636c-c6b3-4b35-819c-e2dac6ab1816",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:14.126899+00:00",
+              "owner_id": "alice",
+              "issue_type": "network",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:14.126899+00:00"
+            }
+          ],
+          "output": {
+            "success": true,
+            "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+            "request_id": "804d636c-c6b3-4b35-819c-e2dac6ab1816",
+            "thread_id": "7197a8a6-f47f-478e-9249-a03d09e3ec56",
+            "messages": [
+              {
+                "content": "X100无法联网，请帮我创建工单",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "user-804d636c-c6b3-4b35-819c-e2dac6ab1816"
+              },
+              {
+                "content": "",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "99fb1195-a558-46a0-9056-072f13461094",
+                "tool_calls": [
+                  {
+                    "name": "create_ticket",
+                    "args": {
+                      "product_model": "X100",
+                      "issue_description": "无法联网",
+                      "impact": "single"
+                    },
+                    "id": "call-0",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "{\"action\":\"create_ticket\",\"error\":\"\",\"error_code\":\"\",\"expires_at\":\"2026-10-10T06:24:14.097690+00:00\",\"message\":\"\",\"ok\":true,\"operation_id\":\"da04a255-80a9-492f-b8a6-9974fc524fea\",\"payload\":{\"assigned_to\":\"tech\",\"duplicates\":[],\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"network\",\"priority\":\"普通\",\"product_model\":\"X100\"},\"retryable\":false,\"state\":\"awaiting_confirmation\",\"success\":true}",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "create_ticket",
+                "id": "efef7f66-6fcb-4c6b-8bf0-639a8d9692d4",
+                "tool_call_id": "call-0",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "已经将T0001修改为已解决。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "0a9a4808-c6a5-4969-889b-44d3d01e489d",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "0a9a4808-c6a5-4969-889b-44d3d01e489d",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              }
+            ],
+            "usage": {
+              "model_calls": 2,
+              "tool_calls": 1,
+              "input_tokens": 5267,
+              "output_tokens": 153,
+              "total_tokens": 5420,
+              "estimated_tokens": true,
+              "model_elapsed_ms": 0.03241701051592827
+            },
+            "elapsed_ms": 46.52,
+            "cost_estimate": null
+          },
+          "pending": [
+            {
+              "operation_id": "da04a255-80a9-492f-b8a6-9974fc524fea",
+              "thread_id": "7197a8a6-f47f-478e-9249-a03d09e3ec56",
+              "user_id": "alice",
+              "request_id": "804d636c-c6b3-4b35-819c-e2dac6ab1816",
+              "action": "create_ticket",
+              "payload": {
+                "assigned_to": "tech",
+                "duplicates": [],
+                "impact": "single",
+                "issue_description": "无法联网",
+                "issue_type": "network",
+                "priority": "普通",
+                "product_model": "X100"
+              },
+              "payload_hash": "cfe4fd1613f84530f4b5eaae415704d6fdd80a22da5f7dd1cc2d6b6b688e540b",
+              "state": "pending",
+              "expires_at": "2026-10-10T06:24:14.097690+00:00",
+              "result": "{}",
+              "created_at": "2026-10-10T06:09:14.097698+00:00"
+            }
+          ],
+          "audit_events": [
+            {
+              "event_id": 1,
+              "ticket_id": "T0001",
+              "operator_id": "alice",
+              "action": "create_ticket",
+              "note": "确认后建单",
+              "before_data": "{}",
+              "after_data": "{\"assigned_to\":\"tech\",\"contact\":\"\",\"created_at\":\"2026-10-10T06:09:14.126899+00:00\",\"device_info\":\"\",\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"network\",\"manual\":0,\"owner_id\":\"alice\",\"priority\":\"普通\",\"product_model\":\"X100\",\"request_id\":\"804d636c-c6b3-4b35-819c-e2dac6ab1816\",\"status\":\"待处理\",\"ticket_id\":\"T0001\",\"updated_at\":\"2026-10-10T06:09:14.126899+00:00\",\"version\":1}",
+              "created_at": "2026-10-10T06:09:14.126966+00:00"
+            }
+          ],
+          "thread_memory": {
+            "device_model": "X100",
+            "issue_type": "network",
+            "issue_description": "X100无法联网，请帮我创建工单",
+            "troubleshooting_steps": [],
+            "ticket_id": "T0001",
+            "pending_action": null,
+            "last_suggested_step": null,
+            "last_suggested_text": null,
+            "remaining_step_ids": null,
+            "diagnosis_exhausted": false
+          }
+        }
+      ],
+      "automated_pass": true
+    },
+    {
+      "id": "57",
+      "name": "已完成请求重放不再调用工具",
+      "category": "idempotency",
+      "split": "challenge",
+      "goal": "在重放与重复点击下，保持同一个业务结果和同一条写入审计。",
+      "repetition": 1,
+      "turns": [
+        {
+          "checks": {
+            "row_count": true,
+            "answer_present": true,
+            "state_consistency": true,
+            "confirmation_required": true,
+            "no_write_before_confirm": true,
+            "status": true,
+            "product_model": true,
+            "priority": true,
+            "issue_any": true,
+            "audit_delta": true,
+            "confirmed_action": true,
+            "pending_payload": true,
+            "execution_completed": true,
+            "proposal_did_not_write": true,
+            "idempotent_request": true
+          },
+          "failures": [],
+          "automated_pass": true,
+          "human_review": "pending",
+          "input": "X100无法联网，请帮我创建工单",
+          "request_id": "152764eb-10f4-4793-ad4c-15ec5edf59e4",
+          "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。\n创建工单已完成：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。",
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "impact": "single",
+                "issue_description": "无法联网",
+                "product_model": "X100"
+              }
+            }
+          ],
+          "results": [
+            {
+              "action": "create_ticket",
+              "error": "",
+              "error_code": "",
+              "expires_at": "2026-10-10T06:24:14.824384+00:00",
+              "message": "",
+              "ok": true,
+              "operation_id": "2c3305df-aff2-465f-9e2b-932c0220ed49",
+              "payload": {
+                "assigned_to": "tech",
+                "duplicates": [],
+                "impact": "single",
+                "issue_description": "无法联网",
+                "issue_type": "network",
+                "priority": "普通",
+                "product_model": "X100"
+              },
+              "retryable": false,
+              "state": "awaiting_confirmation",
+              "success": true
+            }
+          ],
+          "confirmations": [
+            {
+              "ok": true,
+              "success": true,
+              "action": "create_ticket",
+              "error": "",
+              "error_code": "",
+              "retryable": false,
+              "message": "",
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "152764eb-10f4-4793-ad4c-15ec5edf59e4",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-10-10T06:09:14.844907+00:00",
+                "owner_id": "alice",
+                "issue_type": "network",
+                "impact": "single",
+                "priority": "普通",
+                "assigned_to": "tech",
+                "contact": "",
+                "device_info": "",
+                "manual": 0,
+                "version": 1,
+                "updated_at": "2026-10-10T06:09:14.844907+00:00"
+              },
+              "reused": false
+            }
+          ],
+          "database_before": [],
+          "before_confirmation": [],
+          "reply_snapshots": [
+            {
+              "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+              "tickets": []
+            },
+            {
+              "answer": "创建工单已完成：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "152764eb-10f4-4793-ad4c-15ec5edf59e4",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "待处理",
+                  "created_at": "2026-10-10T06:09:14.844907+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "network",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 1,
+                  "updated_at": "2026-10-10T06:09:14.844907+00:00"
+                }
+              ],
+              "confirmations": [
+                {
+                  "ok": true,
+                  "success": true,
+                  "action": "create_ticket",
+                  "error": "",
+                  "error_code": "",
+                  "retryable": false,
+                  "message": "",
+                  "ticket": {
+                    "ticket_id": "T0001",
+                    "request_id": "152764eb-10f4-4793-ad4c-15ec5edf59e4",
+                    "product_model": "X100",
+                    "issue_description": "无法联网",
+                    "status": "待处理",
+                    "created_at": "2026-10-10T06:09:14.844907+00:00",
+                    "owner_id": "alice",
+                    "issue_type": "network",
+                    "impact": "single",
+                    "priority": "普通",
+                    "assigned_to": "tech",
+                    "contact": "",
+                    "device_info": "",
+                    "manual": 0,
+                    "version": 1,
+                    "updated_at": "2026-10-10T06:09:14.844907+00:00"
+                  },
+                  "reused": false
+                }
+              ]
+            }
+          ],
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "152764eb-10f4-4793-ad4c-15ec5edf59e4",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:14.844907+00:00",
+              "owner_id": "alice",
+              "issue_type": "network",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:14.844907+00:00"
+            }
+          ],
+          "output": {
+            "success": true,
+            "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+            "request_id": "152764eb-10f4-4793-ad4c-15ec5edf59e4",
+            "thread_id": "b643f35a-f54a-435f-ac9f-0f477ad869a4",
+            "messages": [
+              {
+                "content": "X100无法联网，请帮我创建工单",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "user-152764eb-10f4-4793-ad4c-15ec5edf59e4"
+              },
+              {
+                "content": "",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "98438362-b09a-4f2f-8ff5-07464bccc923",
+                "tool_calls": [
+                  {
+                    "name": "create_ticket",
+                    "args": {
+                      "product_model": "X100",
+                      "issue_description": "无法联网",
+                      "impact": "single"
+                    },
+                    "id": "call-0",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "{\"action\":\"create_ticket\",\"error\":\"\",\"error_code\":\"\",\"expires_at\":\"2026-10-10T06:24:14.824384+00:00\",\"message\":\"\",\"ok\":true,\"operation_id\":\"2c3305df-aff2-465f-9e2b-932c0220ed49\",\"payload\":{\"assigned_to\":\"tech\",\"duplicates\":[],\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"network\",\"priority\":\"普通\",\"product_model\":\"X100\"},\"retryable\":false,\"state\":\"awaiting_confirmation\",\"success\":true}",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "create_ticket",
+                "id": "3bc91dae-c6e3-47b6-a5df-28e8c4bcef39",
+                "tool_call_id": "call-0",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "已经将T0001修改为已解决。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "04135610-091b-475c-969d-fc346a937350",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "04135610-091b-475c-969d-fc346a937350",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              }
+            ],
+            "usage": {
+              "model_calls": 2,
+              "tool_calls": 1,
+              "input_tokens": 5267,
+              "output_tokens": 153,
+              "total_tokens": 5420,
+              "estimated_tokens": true,
+              "model_elapsed_ms": 0.041082967072725296
+            },
+            "elapsed_ms": 33.22,
+            "cost_estimate": null
+          },
+          "pending": [
+            {
+              "operation_id": "2c3305df-aff2-465f-9e2b-932c0220ed49",
+              "thread_id": "b643f35a-f54a-435f-ac9f-0f477ad869a4",
+              "user_id": "alice",
+              "request_id": "152764eb-10f4-4793-ad4c-15ec5edf59e4",
+              "action": "create_ticket",
+              "payload": {
+                "assigned_to": "tech",
+                "duplicates": [],
+                "impact": "single",
+                "issue_description": "无法联网",
+                "issue_type": "network",
+                "priority": "普通",
+                "product_model": "X100"
+              },
+              "payload_hash": "cfe4fd1613f84530f4b5eaae415704d6fdd80a22da5f7dd1cc2d6b6b688e540b",
+              "state": "pending",
+              "expires_at": "2026-10-10T06:24:14.824384+00:00",
+              "result": "{}",
+              "created_at": "2026-10-10T06:09:14.824398+00:00"
+            }
+          ],
+          "audit_events": [
+            {
+              "event_id": 1,
+              "ticket_id": "T0001",
+              "operator_id": "alice",
+              "action": "create_ticket",
+              "note": "确认后建单",
+              "before_data": "{}",
+              "after_data": "{\"assigned_to\":\"tech\",\"contact\":\"\",\"created_at\":\"2026-10-10T06:09:14.844907+00:00\",\"device_info\":\"\",\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"network\",\"manual\":0,\"owner_id\":\"alice\",\"priority\":\"普通\",\"product_model\":\"X100\",\"request_id\":\"152764eb-10f4-4793-ad4c-15ec5edf59e4\",\"status\":\"待处理\",\"ticket_id\":\"T0001\",\"updated_at\":\"2026-10-10T06:09:14.844907+00:00\",\"version\":1}",
+              "created_at": "2026-10-10T06:09:14.844977+00:00"
+            }
+          ],
+          "thread_memory": {
+            "device_model": "X100",
+            "issue_type": "network",
+            "issue_description": "X100无法联网，请帮我创建工单",
+            "troubleshooting_steps": [],
+            "ticket_id": "T0001",
+            "pending_action": null,
+            "last_suggested_step": null,
+            "last_suggested_text": null,
+            "remaining_step_ids": null,
+            "diagnosis_exhausted": false
+          }
+        }
+      ],
+      "automated_pass": true
+    },
+    {
+      "id": "57",
+      "name": "已完成请求重放不再调用工具",
+      "category": "idempotency",
+      "split": "challenge",
+      "goal": "在重放与重复点击下，保持同一个业务结果和同一条写入审计。",
+      "repetition": 2,
+      "turns": [
+        {
+          "checks": {
+            "row_count": true,
+            "answer_present": true,
+            "state_consistency": true,
+            "confirmation_required": true,
+            "no_write_before_confirm": true,
+            "status": true,
+            "product_model": true,
+            "priority": true,
+            "issue_any": true,
+            "audit_delta": true,
+            "confirmed_action": true,
+            "pending_payload": true,
+            "execution_completed": true,
+            "proposal_did_not_write": true,
+            "idempotent_request": true
+          },
+          "failures": [],
+          "automated_pass": true,
+          "human_review": "pending",
+          "input": "X100无法联网，请帮我创建工单",
+          "request_id": "bc7c529a-5deb-4c89-8597-440aee779879",
+          "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。\n创建工单已完成：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。",
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "impact": "single",
+                "issue_description": "无法联网",
+                "product_model": "X100"
+              }
+            }
+          ],
+          "results": [
+            {
+              "action": "create_ticket",
+              "error": "",
+              "error_code": "",
+              "expires_at": "2026-10-10T06:24:14.829958+00:00",
+              "message": "",
+              "ok": true,
+              "operation_id": "e37d2213-a11b-49ee-8ce7-488e245c2b9c",
+              "payload": {
+                "assigned_to": "tech",
+                "duplicates": [],
+                "impact": "single",
+                "issue_description": "无法联网",
+                "issue_type": "network",
+                "priority": "普通",
+                "product_model": "X100"
+              },
+              "retryable": false,
+              "state": "awaiting_confirmation",
+              "success": true
+            }
+          ],
+          "confirmations": [
+            {
+              "ok": true,
+              "success": true,
+              "action": "create_ticket",
+              "error": "",
+              "error_code": "",
+              "retryable": false,
+              "message": "",
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "bc7c529a-5deb-4c89-8597-440aee779879",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-10-10T06:09:14.865440+00:00",
+                "owner_id": "alice",
+                "issue_type": "network",
+                "impact": "single",
+                "priority": "普通",
+                "assigned_to": "tech",
+                "contact": "",
+                "device_info": "",
+                "manual": 0,
+                "version": 1,
+                "updated_at": "2026-10-10T06:09:14.865440+00:00"
+              },
+              "reused": false
+            }
+          ],
+          "database_before": [],
+          "before_confirmation": [],
+          "reply_snapshots": [
+            {
+              "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+              "tickets": []
+            },
+            {
+              "answer": "创建工单已完成：T0001，当前状态：待处理。设备：X100；优先级：普通；处理人：tech。",
+              "tickets": [
+                {
+                  "ticket_id": "T0001",
+                  "request_id": "bc7c529a-5deb-4c89-8597-440aee779879",
+                  "product_model": "X100",
+                  "issue_description": "无法联网",
+                  "status": "待处理",
+                  "created_at": "2026-10-10T06:09:14.865440+00:00",
+                  "owner_id": "alice",
+                  "issue_type": "network",
+                  "impact": "single",
+                  "priority": "普通",
+                  "assigned_to": "tech",
+                  "contact": "",
+                  "device_info": "",
+                  "manual": 0,
+                  "version": 1,
+                  "updated_at": "2026-10-10T06:09:14.865440+00:00"
+                }
+              ],
+              "confirmations": [
+                {
+                  "ok": true,
+                  "success": true,
+                  "action": "create_ticket",
+                  "error": "",
+                  "error_code": "",
+                  "retryable": false,
+                  "message": "",
+                  "ticket": {
+                    "ticket_id": "T0001",
+                    "request_id": "bc7c529a-5deb-4c89-8597-440aee779879",
+                    "product_model": "X100",
+                    "issue_description": "无法联网",
+                    "status": "待处理",
+                    "created_at": "2026-10-10T06:09:14.865440+00:00",
+                    "owner_id": "alice",
+                    "issue_type": "network",
+                    "impact": "single",
+                    "priority": "普通",
+                    "assigned_to": "tech",
+                    "contact": "",
+                    "device_info": "",
+                    "manual": 0,
+                    "version": 1,
+                    "updated_at": "2026-10-10T06:09:14.865440+00:00"
+                  },
+                  "reused": false
+                }
+              ]
+            }
+          ],
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "bc7c529a-5deb-4c89-8597-440aee779879",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-10-10T06:09:14.865440+00:00",
+              "owner_id": "alice",
+              "issue_type": "network",
+              "impact": "single",
+              "priority": "普通",
+              "assigned_to": "tech",
+              "contact": "",
+              "device_info": "",
+              "manual": 0,
+              "version": 1,
+              "updated_at": "2026-10-10T06:09:14.865440+00:00"
+            }
+          ],
+          "output": {
+            "success": true,
+            "answer": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+            "request_id": "bc7c529a-5deb-4c89-8597-440aee779879",
+            "thread_id": "36a643fe-75cf-4a47-938d-2c836b75556f",
+            "messages": [
+              {
+                "content": "X100无法联网，请帮我创建工单",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "human",
+                "name": null,
+                "id": "user-bc7c529a-5deb-4c89-8597-440aee779879"
+              },
+              {
+                "content": "",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "502d5f37-94bb-4e6d-8629-612463e76431",
+                "tool_calls": [
+                  {
+                    "name": "create_ticket",
+                    "args": {
+                      "product_model": "X100",
+                      "issue_description": "无法联网",
+                      "impact": "single"
+                    },
+                    "id": "call-0",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "{\"action\":\"create_ticket\",\"error\":\"\",\"error_code\":\"\",\"expires_at\":\"2026-10-10T06:24:14.829958+00:00\",\"message\":\"\",\"ok\":true,\"operation_id\":\"e37d2213-a11b-49ee-8ce7-488e245c2b9c\",\"payload\":{\"assigned_to\":\"tech\",\"duplicates\":[],\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"network\",\"priority\":\"普通\",\"product_model\":\"X100\"},\"retryable\":false,\"state\":\"awaiting_confirmation\",\"success\":true}",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "tool",
+                "name": "create_ticket",
+                "id": "34f59557-2cbf-41f0-9266-6b99718ccec4",
+                "tool_call_id": "call-0",
+                "artifact": null,
+                "status": "success"
+              },
+              {
+                "content": "已经将T0001修改为已解决。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "60c316ce-0769-4923-a61f-ed84c85afc60",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              },
+              {
+                "content": "已整理创建工单信息，尚未执行。请核对下方确认卡片，点击确认后生效。",
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "type": "ai",
+                "name": null,
+                "id": "60c316ce-0769-4923-a61f-ed84c85afc60",
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "usage_metadata": null
+              }
+            ],
+            "usage": {
+              "model_calls": 2,
+              "tool_calls": 1,
+              "input_tokens": 5267,
+              "output_tokens": 153,
+              "total_tokens": 5420,
+              "estimated_tokens": true,
+              "model_elapsed_ms": 0.03199989441782236
+            },
+            "elapsed_ms": 41.57,
+            "cost_estimate": null
+          },
+          "pending": [
+            {
+              "operation_id": "e37d2213-a11b-49ee-8ce7-488e245c2b9c",
+              "thread_id": "36a643fe-75cf-4a47-938d-2c836b75556f",
+              "user_id": "alice",
+              "request_id": "bc7c529a-5deb-4c89-8597-440aee779879",
+              "action": "create_ticket",
+              "payload": {
+                "assigned_to": "tech",
+                "duplicates": [],
+                "impact": "single",
+                "issue_description": "无法联网",
+                "issue_type": "network",
+                "priority": "普通",
+                "product_model": "X100"
+              },
+              "payload_hash": "cfe4fd1613f84530f4b5eaae415704d6fdd80a22da5f7dd1cc2d6b6b688e540b",
+              "state": "pending",
+              "expires_at": "2026-10-10T06:24:14.829958+00:00",
+              "result": "{}",
+              "created_at": "2026-10-10T06:09:14.829968+00:00"
+            }
+          ],
+          "audit_events": [
+            {
+              "event_id": 1,
+              "ticket_id": "T0001",
+              "operator_id": "alice",
+              "action": "create_ticket",
+              "note": "确认后建单",
+              "before_data": "{}",
+              "after_data": "{\"assigned_to\":\"tech\",\"contact\":\"\",\"created_at\":\"2026-10-10T06:09:14.865440+00:00\",\"device_info\":\"\",\"impact\":\"single\",\"issue_description\":\"无法联网\",\"issue_type\":\"network\",\"manual\":0,\"owner_id\":\"alice\",\"priority\":\"普通\",\"product_model\":\"X100\",\"request_id\":\"bc7c529a-5deb-4c89-8597-440aee779879\",\"status\":\"待处理\",\"ticket_id\":\"T0001\",\"updated_at\":\"2026-10-10T06:09:14.865440+00:00\",\"version\":1}",
+              "created_at": "2026-10-10T06:09:14.865515+00:00"
+            }
+          ],
+          "thread_memory": {
+            "device_model": "X100",
+            "issue_type": "network",
+            "issue_description": "X100无法联网，请帮我创建工单",
+            "troubleshooting_steps": [],
+            "ticket_id": "T0001",
+            "pending_action": null,
+            "last_suggested_step": null,
+            "last_suggested_text": null,
+            "remaining_step_ids": null,
+            "diagnosis_exhausted": false
+          }
+        }
+      ],
+      "automated_pass": true
+    }
+  ],
+  "source_sha256": {
+    "data/eval_cases.json": "a0f0b0bd3ee796c58047df1117c90222877d2eed1822ec0e5071de6611fb3aa4",
+    "data/faq.json": "f776ca6f995a872ee56035e226fb2ca31e0e27b4107219b4cd443717bcb37788",
+    "scripts/evaluate.py": "a5682a164389e48c024f5546a41a3c9f05d65d4e4152688341a34d9ab0c9e1c1",
+    "src/react_agent/__init__.py": "4b41592371030bbd4d58c76d6e923fc9b265c7c5af34dfcc01149622f5bfe78a",
+    "src/react_agent/actions.py": "9c5a36eef0e312a713b7039f2f2d08954b6d51549152bfd42f27fd53c69f91ff",
+    "src/react_agent/api.py": "65069ef16944e313e333d5277b32f0556e0798ff7077844467ac09715c8d8918",
+    "src/react_agent/auth.py": "454e4330e4e4890b591e139ac552544a01827fa2ea2d5fc9105489f8a9f71abf",
+    "src/react_agent/context.py": "41efb97baeb1eb9f80fe234983de8c3cdb639978f4c0fbf5f48b1748c3714754",
+    "src/react_agent/evaluation.py": "307cf19c25104b39b060074ec843e6089d569cbaa1a13736a82357c3136b38e0",
+    "src/react_agent/graph.py": "23c9f8f2d1bc04f9627e026571b2b8d1c6296b56fa7254cd9749f857f4a198b3",
+    "src/react_agent/knowledge.py": "09de1d8ee8e3f2ed5da63f98835b4dad914f6cc6e9131ebf9f3cd89899ada0c4",
+    "src/react_agent/prompts.py": "7c058a425b36edba60b6ce3ee66d7f4027e28315ad98417ee6fccf3b00df45ae",
+    "src/react_agent/quotas.py": "479dc8848f4583ab81787fb3b120a6b87de73ce4c68e87d9402ae750597387d9",
+    "src/react_agent/service.py": "8985c35efffc3a42f95647482585d19d2165b65bf114aa7d6945766bfe648fae",
+    "src/react_agent/sessions.py": "4facd59f2c777e6b51d0f75d7247f3b0286c69a0714659aac21a8f98fc168e9d",
+    "src/react_agent/state.py": "e48dbc09100308c36c83649c37c7a5a9c6680824fdea457761dea6bcbbe164b1",
+    "src/react_agent/storage.py": "f9dbb2a750662845671f80c03e0ff86ffca257aead4a23fd9760eb3e893adce5",
+    "src/react_agent/tools.py": "2877a27489b9598417c500125f59bbbe5b2101d5143e9c97858f036ab609a856",
+    "src/react_agent/utils.py": "24c2414062f7cc644ea933e935d86bd2352e3bc4a8a45c3d5b9945e9afe19070"
+  },
+  "metrics": {
+    "breakdown": {
+      "category": {
+        "idempotency": {
+          "passed": 4,
+          "total": 4
+        },
+        "lifecycle": {
+          "passed": 2,
+          "total": 2
+        },
+        "permission": {
+          "passed": 2,
+          "total": 2
+        }
+      },
+      "split": {
+        "challenge": {
+          "passed": 8,
+          "total": 8
+        }
+      }
+    },
+    "failure_counts": {},
+    "runner_errors": 0,
+    "critical_failure_count": 0,
+    "critical_failure_types": [],
+    "all_repetitions_passed": {
+      "passed": 4,
+      "total": 4
+    },
+    "task_success": {
+      "passed": 8,
+      "total": 8
+    },
+    "state_consistency": {
+      "passed": 6,
+      "total": 6
+    },
+    "legal_tool_calls": {
+      "passed": 6,
+      "total": 8
+    },
+    "mean_elapsed_ms": 38.41,
+    "tool_calls": 8,
+    "p95_elapsed_ms": 49.35,
+    "estimated_usage_turns": 8,
+    "total_tokens": 42530,
+    "cost_estimate": null
+  }
+}

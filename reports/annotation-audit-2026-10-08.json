@@ -1,0 +1,197 @@
+{
+  "date": "2026-10-08",
+  "named_functions": 169,
+  "business_functions": 99,
+  "test_functions": 70,
+  "includes_docstrings_in_ast": true,
+  "all_ast_identical": true,
+  "files": [
+    {
+      "file": "app.py",
+      "before_sha256": "67a040df75ba252e63460902a7d207d28e8ee1fcf18cc7e63f642916852bcbc8",
+      "after_sha256": "0ae18a24cc9cec6e406b0cb8cad3b3a7d58ec0652acd0da3839c06a4c9155bc4",
+      "ast_sha256": "1c6ab8dc91d61b3444a0810b013a2cdd8db2545cf1abf1414e2fe641221413a5",
+      "ast_identical": true,
+      "functions": 10
+    },
+    {
+      "file": "src/react_agent/__init__.py",
+      "before_sha256": "4b41592371030bbd4d58c76d6e923fc9b265c7c5af34dfcc01149622f5bfe78a",
+      "after_sha256": "4b41592371030bbd4d58c76d6e923fc9b265c7c5af34dfcc01149622f5bfe78a",
+      "ast_sha256": "14456ca3a9d3131622893cfb931d9e06eecd7e3c690ed008514568d9f10ff06d",
+      "ast_identical": true,
+      "functions": 0
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "before_sha256": "5b185c613b6e908d3d41e3087768fb553d96518f0b958993ff5a444b35161705",
+      "after_sha256": "9c5a36eef0e312a713b7039f2f2d08954b6d51549152bfd42f27fd53c69f91ff",
+      "ast_sha256": "6522d986cfa6eb3072c47ab9becdc71db5a9bf79ca4584c69c1357b50eb28fb1",
+      "ast_identical": true,
+      "functions": 13
+    },
+    {
+      "file": "src/react_agent/auth.py",
+      "before_sha256": "296100bcc47c1c026e7525393848da14007e057495dcf026a3fe7bc3651f049a",
+      "after_sha256": "8cbd5bc1c18f6e2c64d5a36f27c487cead60b25181666226fc31b05bcac7059c",
+      "ast_sha256": "6f009aefa2843517bb93c2a8835c47f71f4a3bfca965050901499330215304aa",
+      "ast_identical": true,
+      "functions": 8
+    },
+    {
+      "file": "src/react_agent/context.py",
+      "before_sha256": "309d006b67460b515a08aac9ab055d0565bbdc708778bb9c6560ac873efa355b",
+      "after_sha256": "41efb97baeb1eb9f80fe234983de8c3cdb639978f4c0fbf5f48b1748c3714754",
+      "ast_sha256": "3fa93e0b53b6ac214e48810f1e8859a40fdb0b0aa825588ce15b004f1d91bf90",
+      "ast_identical": true,
+      "functions": 0
+    },
+    {
+      "file": "src/react_agent/graph.py",
+      "before_sha256": "d07ac901c88d34fccdfc6c17d6800b0c1e701c92b0db47370d52b6fddc5e9499",
+      "after_sha256": "23c9f8f2d1bc04f9627e026571b2b8d1c6296b56fa7254cd9749f857f4a198b3",
+      "ast_sha256": "ba1f42f3880561b9c30db5ef1a81907adb98b490d783b616184a918d1075b126",
+      "ast_identical": true,
+      "functions": 9
+    },
+    {
+      "file": "src/react_agent/knowledge.py",
+      "before_sha256": "d0f3cd78fb5a234fa97d6ab69e7fe3412436a261a1a6fffeada3f771368b3f6f",
+      "after_sha256": "09de1d8ee8e3f2ed5da63f98835b4dad914f6cc6e9131ebf9f3cd89899ada0c4",
+      "ast_sha256": "5f7edd4576ad5e6d8269973ed813c9a080dfadd9ad6138878dad54ee5d2636e9",
+      "ast_identical": true,
+      "functions": 5
+    },
+    {
+      "file": "src/react_agent/prompts.py",
+      "before_sha256": "c66e65e4af8c905a0edbf0bf4df9df82dbfc2f42df8b815ef2924c889fa8af4e",
+      "after_sha256": "7c058a425b36edba60b6ce3ee66d7f4027e28315ad98417ee6fccf3b00df45ae",
+      "ast_sha256": "c45b9abedf56ff606bca9c3dfb2e32b1a032cbfffc0519d72eef573097e80fa6",
+      "ast_identical": true,
+      "functions": 0
+    },
+    {
+      "file": "src/react_agent/service.py",
+      "before_sha256": "d9d162c5fc49793155d52f4015b89076f350d1831d4b66afacc254c168b5feb5",
+      "after_sha256": "8985c35efffc3a42f95647482585d19d2165b65bf114aa7d6945766bfe648fae",
+      "ast_sha256": "b5893f1f3c71cb321b4f4738c580b288e16c0fa84d228165c775b596f094d164",
+      "ast_identical": true,
+      "functions": 3
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "before_sha256": "72fe32456630cee15e1473a3118b77443dae46ae78fcd10239a4a1163da7ffb2",
+      "after_sha256": "a58e9150c4cd77a0991637cfbd9084215fa7529a8eaf2cecc4b11cfde0a5fc7f",
+      "ast_sha256": "b23f61c2108481ef4b0c002a050e3e9e871cadb1bdea0a19cc468297f573dcf1",
+      "ast_identical": true,
+      "functions": 12
+    },
+    {
+      "file": "src/react_agent/state.py",
+      "before_sha256": "f261de24de2dedfc70944637088b231876956413968ea04a13288d8e0f5dddb4",
+      "after_sha256": "e48dbc09100308c36c83649c37c7a5a9c6680824fdea457761dea6bcbbe164b1",
+      "ast_sha256": "d6f84ff96b65af3c1064ad00d40cb25df24b8fba143f4d28dc0823db0d4e5a15",
+      "ast_identical": true,
+      "functions": 0
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "before_sha256": "0873eadb79c717539a92654407e7499bd7aa97d5d6db81374755ab8cc22765e7",
+      "after_sha256": "4fec75cb1d82b8bb2ed2bded36cbd6e55d3ade1fefdb4ddb5cb26423e9524151",
+      "ast_sha256": "d36884bc64291ca04fc5b2de7896782d1d263accd6dbf7bf2c9008b1b3a9c397",
+      "ast_identical": true,
+      "functions": 14
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "before_sha256": "f324f62a1d2e351c38df18bc5ed706de0a2663a0d8fd5914b11da3943e9fbb47",
+      "after_sha256": "2877a27489b9598417c500125f59bbbe5b2101d5143e9c97858f036ab609a856",
+      "ast_sha256": "c603bef3efca428c475bb4b4538717705db04ab0d15d91a422d5a87a768841c2",
+      "ast_identical": true,
+      "functions": 11
+    },
+    {
+      "file": "src/react_agent/utils.py",
+      "before_sha256": "a8d9081fc3af0279c4cd5a9810459e95da9fc2679996f1ae57e662e89a8ae532",
+      "after_sha256": "24c2414062f7cc644ea933e935d86bd2352e3bc4a8a45c3d5b9945e9afe19070",
+      "ast_sha256": "662872783867303a84853bd23c976d3b0464cd9c5fe2fb12e332e902d254a9ce",
+      "ast_identical": true,
+      "functions": 3
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "before_sha256": "8e713d626f5e82d55a0ebf66d4eacfa2bf67acac0b2327077f8eb772928559c2",
+      "after_sha256": "cac967011cd3c0abb0c75ca1215fcbe07c3976c4eff3d01c8604ba727e5554cb",
+      "ast_sha256": "7c96e9259418f739a06996da4b2a57c59184fb6e1a1d97864e5e180bf1f2d067",
+      "ast_identical": true,
+      "functions": 10
+    },
+    {
+      "file": "scripts/smoke_model.py",
+      "before_sha256": "55a190178b82d77f93e9d333754d60dc7b4d6812b6abe1812e63743129069bbc",
+      "after_sha256": "bc4da9a43c2e237ebf389a11f3134ce72097cc8f585b1d2966df47e8faec9161",
+      "ast_sha256": "dad8797bd2e1c9a02dc6f0748ff73539447c87f75412163fb1699c97d44b82c5",
+      "ast_identical": true,
+      "functions": 1
+    },
+    {
+      "file": "tests/conftest.py",
+      "before_sha256": "eeda0e8a898bde270e3f7c551f8334ab7a30047ca1da272ddfbb05174de2cf47",
+      "after_sha256": "a8991535fb466226e26bfec79ea28ecef27dfe425df8b68f593b09616ea0df5e",
+      "ast_sha256": "831914c3a1d7b86b981f9fec36326fb71893b40d33c903a4b1eda931bc35436a",
+      "ast_identical": true,
+      "functions": 4
+    },
+    {
+      "file": "tests/test_actions.py",
+      "before_sha256": "13f770b47b4a252849a1b66eeee4cb24085a1b069a4abfee828c40ccd143b0db",
+      "after_sha256": "55aad18df91330fb5cb48ac70fb8bdf16c4c228410a6bee848b023962fbf48f3",
+      "ast_sha256": "6cd5a2d2654cb1261a2ea5ec74912be23a2620b4037eebef8944cc9f91b43b26",
+      "ast_identical": true,
+      "functions": 19
+    },
+    {
+      "file": "tests/test_app.py",
+      "before_sha256": "d1ca7ca8efa1979e301fe89da169e2dc907c55f33f4d2cc53680de390aa1bdcd",
+      "after_sha256": "1723157037a6df3c2705d234e85eba27710006698d180fdf30871f7d2c611d72",
+      "ast_sha256": "83e45ccda9c29460eb577bdce067df9ce04142a9efc7a021df1e1734104cef25",
+      "ast_identical": true,
+      "functions": 6
+    },
+    {
+      "file": "tests/test_context.py",
+      "before_sha256": "80784d33b4a23b6691af045560f2030864db7ac6acd3a169d7f93625ca08619f",
+      "after_sha256": "1965d61deb612355ee5996fd9edc6649341fe5f34506391a65210d9b3c1b2a12",
+      "ast_sha256": "4f34ebff8fedd6f6dbc4b6da11642a68e8bf86e099dfbba006ab2a904a5caa0a",
+      "ast_identical": true,
+      "functions": 10
+    },
+    {
+      "file": "tests/test_evaluation.py",
+      "before_sha256": "2f4e5aa63ab09ca773441b78351049fa1a048c4c6dd4839c0b4898e84a5567d9",
+      "after_sha256": "63fdb2c679051816149cfd6bbc98dd56d9c44348577dfb0a791b1b6665f88d6d",
+      "ast_sha256": "89f4be8c9c9037c2698ac20c04d51cf19200e18d35e679b1130e42b9376f1eaf",
+      "ast_identical": true,
+      "functions": 5
+    },
+    {
+      "file": "tests/test_graph.py",
+      "before_sha256": "de806b2489992a34e49a33c87bd8ce705d59705134ea47b1f231ac440953e98a",
+      "after_sha256": "b58379be0f8b5f6644c0d50641f867f0caf73140745d621260cdd5c5bd14f64d",
+      "ast_sha256": "614cd20b8cf6bd4fd7342b3426f496964337120d16ff2176d1aa3dcb5be5b521",
+      "ast_identical": true,
+      "functions": 15
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "before_sha256": "8837ab2cd4137ddc787843373c618782d59b983dd2a4c7b3105121143f18c445",
+      "after_sha256": "fcd50cc221bab815040d744921cffa34c838ddc6a08de9e58085f567dcfdd8c7",
+      "ast_sha256": "729a183ac48d8779bf4b35532b351a315dbcd1b6b6916b868b5e6de35039a22c",
+      "ast_identical": true,
+      "functions": 11
+    }
+  ],
+  "verification": "AST 与注释前比较；未为注释修改重新调用付费模型。",
+  "covered_functions": 169,
+  "all_functions_have_explanations": true
+}

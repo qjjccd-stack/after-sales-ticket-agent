@@ -1,0 +1,22 @@
+[
+  {"id": "01", "name": "Wi-Fi 排查", "turns": [{"message": "X100 连不上网怎么办？", "tools": ["search_faq"], "rows": 0, "answer_contains": ["2.4"]}]},
+  {"id": "02", "name": "无法开机", "turns": [{"message": "X100 无法开机，怎么排查？", "tools": ["search_faq"], "rows": 0, "answer_contains": ["电源"]}]},
+  {"id": "03", "name": "蓝牙配对", "turns": [{"message": "X200 蓝牙无法配对怎么办？", "tools": ["search_faq"], "rows": 0, "answer_contains": ["蓝牙"]}]},
+  {"id": "04", "name": "设备离线", "turns": [{"message": "X100 在应用里显示离线", "tools": ["search_faq"], "rows": 0, "answer_contains": ["配网"]}]},
+  {"id": "05", "name": "FAQ 无匹配", "turns": [{"message": "X100 屏幕出现紫色竖线，有本地 FAQ 吗？", "tools": ["search_faq"], "rows": 0, "faq_empty": true}]},
+  {"id": "06", "name": "咨询不擅自建单", "turns": [{"message": "X100 无法联网，只要排查步骤，不要建工单。", "tools": ["search_faq"], "rows": 0}]},
+  {"id": "07", "name": "直接创建联网工单", "turns": [{"message": "请提交工单，型号 X100，问题描述：无法联网。", "tools": ["create_ticket"], "rows": 1, "product_model": "X100", "issue_contains": "无法联网", "answer_contains": ["T0001", "待处理"]}]},
+  {"id": "08", "name": "直接创建开机工单", "turns": [{"message": "请提交工单，型号 X200，问题描述：无法开机。", "tools": ["create_ticket"], "rows": 1, "product_model": "X200", "issue_contains": "无法开机", "answer_contains": ["T0001", "待处理"]}]},
+  {"id": "09", "name": "FAQ 外故障也能建单", "turns": [{"message": "型号 X100，屏幕出现紫色竖线，请提交售后工单。", "tools": ["create_ticket"], "rows": 1, "product_model": "X100", "issue_contains": "紫色竖线", "answer_contains": ["T0001"]}]},
+  {"id": "10", "name": "保留用户的问题描述", "turns": [{"message": "帮我提交工单。型号 X200，问题描述：蓝牙配对失败，已重启两次。", "tools": ["create_ticket"], "rows": 1, "product_model": "X200", "issue_contains": "已重启两次", "answer_contains": ["T0001"]}]},
+  {"id": "11", "name": "缺型号先追问", "turns": [{"message": "设备无法联网，帮我提交工单。", "tools": [], "allowed_tools": ["search_faq"], "rows": 0, "answer_contains": ["型号"]}]},
+  {"id": "12", "name": "缺问题先追问", "turns": [{"message": "我的产品型号 X100，帮我提交工单。", "tools": [], "rows": 0, "answer_contains": ["问题"]}]},
+  {"id": "13", "name": "缺全部字段", "turns": [{"message": "帮我提交一个售后工单。", "tools": [], "rows": 0, "answer_contains": ["型号", "问题"]}]},
+  {"id": "14", "name": "排查后补型号建单", "turns": [{"message": "设备无法联网，有什么办法？", "tools": ["search_faq"], "rows": 0}, {"message": "步骤都试过了，型号 X100，请提交工单。", "tools": ["create_ticket"], "rows": 1, "product_model": "X100", "issue_contains": "联网", "answer_contains": ["T0001"]}]},
+  {"id": "15", "name": "查询已有工单", "seed": true, "turns": [{"message": "查询 T0001 的状态", "tools": ["get_ticket_status"], "ticket_id": "T0001", "rows": 1, "answer_contains": ["T0001", "待处理"]}]},
+  {"id": "16", "name": "查询不存在的工单", "turns": [{"message": "查询 T9999 的状态", "tools": ["get_ticket_status"], "ticket_id": "T9999", "result_error": "not_found", "rows": 0}]},
+  {"id": "17", "name": "查询缺编号", "turns": [{"message": "查一下我的工单状态。", "tools": [], "rows": 0, "answer_contains": ["编号"]}]},
+  {"id": "18", "name": "创建后查询刚才的工单", "turns": [{"message": "请提交工单，型号 X100，问题描述：无法联网。", "tools": ["create_ticket"], "rows": 1}, {"message": "刚才那个工单现在是什么状态？", "tools": ["get_ticket_status"], "ticket_id": "T0001", "rows": 1, "answer_contains": ["T0001", "待处理"]}]},
+  {"id": "19", "name": "相同应用请求重放", "turns": [{"message": "请提交工单，型号 X100，问题描述：无法联网。", "tools": ["create_ticket"], "rows": 1}, {"message": "请提交工单，型号 X100，问题描述：无法联网。", "repeat_request": true, "tools": ["create_ticket"], "rows": 1, "reused": true, "answer_contains": ["T0001"]}]},
+  {"id": "20", "name": "不承诺修改工单状态", "seed": true, "turns": [{"message": "把 T0001 改成已解决。", "tools": [], "allowed_tools": ["get_ticket_status"], "rows": 1}]}
+]

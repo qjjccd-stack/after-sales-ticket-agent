@@ -1,0 +1,293 @@
+{
+  "time": "2026-10-10T07:37:31.496274+00:00",
+  "scope": "Memory component ablation; fixed synthetic cases, unchanged scorer for both arms; not a full 60-case live acceptance",
+  "live_report": "reports/memory-ablation-live-20261010.json",
+  "live_report_sha256": "045cc3daefa93ce3dd59de62838d2dc1fed67d81d7d55df68e7fa1fe222b5823",
+  "source_fingerprints_match": true,
+  "identical_user_inputs_across_conditions": true,
+  "transcript_and_summary_preserved_at_each_boundary": true,
+  "model_configured": "deepseek/deepseek-chat",
+  "model_reported": [
+    "deepseek-flash"
+  ],
+  "temperature": 0,
+  "python": "3.12.7",
+  "platform": "Darwin",
+  "transport": "direct for evaluation subprocess; system proxy and .env unchanged",
+  "pytest": {
+    "passed": 117,
+    "elapsed_seconds": 14.86
+  },
+  "ruff": "passed",
+  "original_offline_contracts": {
+    "passed": 60,
+    "total": 60,
+    "report": "reports/contracts-after-memory-ablation-20261010.json"
+  },
+  "ablation_offline": {
+    "on_passed": 6,
+    "off_passed": 4,
+    "per_arm_cases": 6,
+    "report": "reports/memory-ablation-offline-20261010.json"
+  },
+  "live_metrics": {
+    "groups": {
+      "on": {
+        "passed": 18,
+        "planned_runs": 18,
+        "completed_runs": 18,
+        "planned_turns": 66,
+        "completed_turns": 66,
+        "passed_turns": 66,
+        "runner_errors": 0,
+        "all_repeats_passed_cases": 6,
+        "distinct_cases": 6,
+        "repeated_failed_recommendations": 0,
+        "recommendations": 24,
+        "feedback_turns": 33,
+        "estimated_usage_turns": 0,
+        "recorded_total_tokens": 314373,
+        "actual_input_tokens": 307997,
+        "actual_output_tokens": 6376,
+        "mean_turn_ms": 1420.25,
+        "p95_turn_ms": 2019.05
+      },
+      "off": {
+        "passed": 9,
+        "planned_runs": 18,
+        "completed_runs": 18,
+        "planned_turns": 66,
+        "completed_turns": 66,
+        "passed_turns": 28,
+        "runner_errors": 0,
+        "all_repeats_passed_cases": 3,
+        "distinct_cases": 6,
+        "repeated_failed_recommendations": 22,
+        "recommendations": 31,
+        "feedback_turns": 33,
+        "estimated_usage_turns": 0,
+        "recorded_total_tokens": 305515,
+        "actual_input_tokens": 299332,
+        "actual_output_tokens": 6183,
+        "mean_turn_ms": 1373.2,
+        "p95_turn_ms": 2241.91
+      }
+    },
+    "paired_outcomes": [
+      {
+        "id": "M01",
+        "repetition": 1,
+        "on": true,
+        "off": true
+      },
+      {
+        "id": "M01",
+        "repetition": 2,
+        "on": true,
+        "off": true
+      },
+      {
+        "id": "M01",
+        "repetition": 3,
+        "on": true,
+        "off": true
+      },
+      {
+        "id": "M02",
+        "repetition": 1,
+        "on": true,
+        "off": false
+      },
+      {
+        "id": "M02",
+        "repetition": 2,
+        "on": true,
+        "off": false
+      },
+      {
+        "id": "M02",
+        "repetition": 3,
+        "on": true,
+        "off": false
+      },
+      {
+        "id": "M03",
+        "repetition": 1,
+        "on": true,
+        "off": false
+      },
+      {
+        "id": "M03",
+        "repetition": 2,
+        "on": true,
+        "off": false
+      },
+      {
+        "id": "M03",
+        "repetition": 3,
+        "on": true,
+        "off": false
+      },
+      {
+        "id": "M04",
+        "repetition": 1,
+        "on": true,
+        "off": true
+      },
+      {
+        "id": "M04",
+        "repetition": 2,
+        "on": true,
+        "off": true
+      },
+      {
+        "id": "M04",
+        "repetition": 3,
+        "on": true,
+        "off": true
+      },
+      {
+        "id": "M05",
+        "repetition": 1,
+        "on": true,
+        "off": true
+      },
+      {
+        "id": "M05",
+        "repetition": 2,
+        "on": true,
+        "off": true
+      },
+      {
+        "id": "M05",
+        "repetition": 3,
+        "on": true,
+        "off": true
+      },
+      {
+        "id": "M06",
+        "repetition": 1,
+        "on": true,
+        "off": false
+      },
+      {
+        "id": "M06",
+        "repetition": 2,
+        "on": true,
+        "off": false
+      },
+      {
+        "id": "M06",
+        "repetition": 3,
+        "on": true,
+        "off": false
+      }
+    ],
+    "success_delta_percentage_points": 50.0,
+    "on_only_passed_pairs": 9,
+    "off_only_passed_pairs": 0,
+    "both_passed_pairs": 9,
+    "both_failed_pairs": 0
+  },
+  "by_case": [
+    {
+      "id": "M01",
+      "name": "联网建单",
+      "on": {
+        "passed": 3,
+        "total": 3,
+        "repeated_failed_recommendations": 0
+      },
+      "off": {
+        "passed": 3,
+        "total": 3,
+        "repeated_failed_recommendations": 0
+      }
+    },
+    {
+      "id": "M02",
+      "name": "多轮只补型号",
+      "on": {
+        "passed": 3,
+        "total": 3,
+        "repeated_failed_recommendations": 0
+      },
+      "off": {
+        "passed": 0,
+        "total": 3,
+        "repeated_failed_recommendations": 0
+      }
+    },
+    {
+      "id": "M03",
+      "name": "十轮故障诊断后建单",
+      "on": {
+        "passed": 3,
+        "total": 3,
+        "repeated_failed_recommendations": 0
+      },
+      "off": {
+        "passed": 0,
+        "total": 3,
+        "repeated_failed_recommendations": 13
+      }
+    },
+    {
+      "id": "M04",
+      "name": "新型号覆盖旧设备",
+      "on": {
+        "passed": 3,
+        "total": 3,
+        "repeated_failed_recommendations": 0
+      },
+      "off": {
+        "passed": 3,
+        "total": 3,
+        "repeated_failed_recommendations": 0
+      }
+    },
+    {
+      "id": "M05",
+      "name": "确认前纠正设备与故障",
+      "on": {
+        "passed": 3,
+        "total": 3,
+        "repeated_failed_recommendations": 0
+      },
+      "off": {
+        "passed": 3,
+        "total": 3,
+        "repeated_failed_recommendations": 0
+      }
+    },
+    {
+      "id": "M06",
+      "name": "蓝牙三步排查耗尽后建单",
+      "on": {
+        "passed": 3,
+        "total": 3,
+        "repeated_failed_recommendations": 0
+      },
+      "off": {
+        "passed": 0,
+        "total": 3,
+        "repeated_failed_recommendations": 9
+      }
+    }
+  ],
+  "total_tokens_increase_percent": 2.9,
+  "live_experiment_actual_tokens": 619888,
+  "connection_probe_actual_tokens": 12,
+  "monetary_cost": null,
+  "excluded_diagnostic_reports": [
+    "reports/memory-ablation-live-connectivity-20261010.json",
+    "reports/memory-ablation-live-proxy-20261010.json"
+  ],
+  "human_review": "pending",
+  "limitations": [
+    "6公开合成场景，重复3次不是18个独立样本",
+    "关闭组清空跨轮TicketContext，不增加替代重建模块",
+    "两组共享工具、提示词、渲染逻辑与摘要算法；量化的是组件在当前系统中的贡献",
+    "没有证明Token或账单费用降低，也没有宣称生产成功率100%"
+  ]
+}

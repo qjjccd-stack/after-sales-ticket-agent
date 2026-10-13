@@ -1,0 +1,1661 @@
+{
+  "created_at": "2026-10-09T13:23:35.632029+00:00",
+  "total_named_python_functions": 236,
+  "documented_functions": 236,
+  "functions_with_docstrings": 177,
+  "scope": "AST 检查说明存在及函数索引覆盖；不等同于逐条语义正确性验证。JavaScript 函数另见网页源文件中文注释。",
+  "functions": [
+    {
+      "file": "app.py",
+      "function": "show_login",
+      "line": 51,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "app.py",
+      "function": "app_context",
+      "line": 97,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "app.py",
+      "function": "submit_form_action",
+      "line": 118,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "app.py",
+      "function": "show_confirmations",
+      "line": 183,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "app.py",
+      "function": "show_timeline",
+      "line": 258,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "app.py",
+      "function": "show_chat",
+      "line": 324,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "app.py",
+      "function": "show_ticket_detail",
+      "line": 421,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "app.py",
+      "function": "show_workbench",
+      "line": 566,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "app.py",
+      "function": "show_admin",
+      "line": 658,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "app.py",
+      "function": "main",
+      "line": 722,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/auth.py",
+      "function": "public_user",
+      "line": 19,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/auth.py",
+      "function": "get_user",
+      "line": 39,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/auth.py",
+      "function": "users",
+      "line": 55,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/auth.py",
+      "function": "password_digest",
+      "line": 72,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/auth.py",
+      "function": "create_user",
+      "line": 95,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/auth.py",
+      "function": "consume_login_budget",
+      "line": 171,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/auth.py",
+      "function": "login",
+      "line": 198,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/auth.py",
+      "function": "authenticate",
+      "line": 244,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/auth.py",
+      "function": "logout",
+      "line": 265,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/service.py",
+      "function": "usage_for",
+      "line": 26,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/service.py",
+      "function": "monetary_cost",
+      "line": 62,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/service.py",
+      "function": "run_request",
+      "line": 105,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "create_thread",
+      "line": 41,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "get_thread",
+      "line": 65,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "list_threads",
+      "line": 87,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "save_memory",
+      "line": 108,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "extract_facts",
+      "line": 130,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "begin_request",
+      "line": 189,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "get_request",
+      "line": 262,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "active_request",
+      "line": 283,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "claim_request",
+      "line": 304,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "finish_request",
+      "line": 338,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "abandon_request",
+      "line": 393,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/sessions.py",
+      "function": "timeline",
+      "line": 421,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "search_faq",
+      "line": 18,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "create_ticket",
+      "line": 58,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "get_ticket_status",
+      "line": 79,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "search_tickets",
+      "line": 89,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "update_ticket_status",
+      "line": 114,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "supplement_ticket",
+      "line": 128,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "cancel_ticket",
+      "line": 149,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "assign_ticket",
+      "line": 163,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "set_ticket_priority",
+      "line": 177,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "handoff_ticket",
+      "line": 193,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/tools.py",
+      "function": "record_ticket_context",
+      "line": 217,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/graph.py",
+      "function": "trim_conversation",
+      "line": 42,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/graph.py",
+      "function": "prepare",
+      "line": 65,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/graph.py",
+      "function": "call_model",
+      "line": 113,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/graph.py",
+      "function": "execute_tools",
+      "line": 255,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/graph.py",
+      "function": "render_faq",
+      "line": 330,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/graph.py",
+      "function": "finalize",
+      "line": 379,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/graph.py",
+      "function": "route_model_output",
+      "line": 464,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/graph.py",
+      "function": "route_tools",
+      "line": 478,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/graph.py",
+      "function": "build_graph",
+      "line": 498,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "actor_in",
+      "line": 47,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "visible",
+      "line": 65,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "read_ticket",
+      "line": 81,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "search_tickets",
+      "line": 133,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "priority_for",
+      "line": 212,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "choose_assignee",
+      "line": 231,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "similar_tickets",
+      "line": 258,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "validate_update",
+      "line": 297,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "validate_update.fail",
+      "line": 304,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "propose",
+      "line": 406,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "pending_actions",
+      "line": 560,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "confirm_action",
+      "line": 603,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/actions.py",
+      "function": "render_result",
+      "line": 819,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "Proposal.validate_payload",
+      "line": 82,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "csrf_for",
+      "line": 102,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "proposal_display",
+      "line": 107,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "public_request",
+      "line": 141,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "business_response",
+      "line": 155,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app",
+      "line": 172,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.lifespan",
+      "line": 195,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.lifespan.initialize",
+      "line": 198,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.request_log",
+      "line": 217,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.http_error",
+      "line": 262,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.validation_error",
+      "line": 275,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.denied",
+      "line": 288,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.conflict",
+      "line": 300,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.database_busy",
+      "line": 308,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.same_origin",
+      "line": 320,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.current_user",
+      "line": 328,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.write_user",
+      "line": 335,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.context_for",
+      "line": 349,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.live",
+      "line": 366,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.ready",
+      "line": 371,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.login",
+      "line": 378,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.session",
+      "line": 405,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.logout",
+      "line": 410,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.threads",
+      "line": 419,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.new_thread",
+      "line": 424,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.thread",
+      "line": 429,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.submit_message",
+      "line": 443,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.request_status",
+      "line": 453,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.run",
+      "line": 460,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.abandon",
+      "line": 481,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.proposal",
+      "line": 489,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.confirm",
+      "line": 520,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.tickets",
+      "line": 532,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.ticket",
+      "line": 550,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.users",
+      "line": 557,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.create_user",
+      "line": 564,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.metrics",
+      "line": 581,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/api.py",
+      "function": "create_app.index",
+      "line": 596,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/utils.py",
+      "function": "get_message_text",
+      "line": 16,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/utils.py",
+      "function": "get_tool_result",
+      "line": 28,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/utils.py",
+      "function": "load_chat_model",
+      "line": 45,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "now",
+      "line": 21,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "encode",
+      "line": 30,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "result",
+      "line": 39,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "database_path",
+      "line": 62,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "migrate",
+      "line": 76,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "connect",
+      "line": 163,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "normalize_id",
+      "line": 186,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "validate_create",
+      "line": 206,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "record_change",
+      "line": 239,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "insert_ticket",
+      "line": 271,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "create_ticket",
+      "line": 336,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "get_ticket_status",
+      "line": 367,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "list_tickets",
+      "line": 398,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/storage.py",
+      "function": "log_execution",
+      "line": 414,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/knowledge.py",
+      "function": "classify_issue",
+      "line": 33,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/knowledge.py",
+      "function": "model_in",
+      "line": 54,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/knowledge.py",
+      "function": "tokenize",
+      "line": 77,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/knowledge.py",
+      "function": "bm25",
+      "line": 97,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "src/react_agent/knowledge.py",
+      "function": "search",
+      "line": 142,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/smoke_model.py",
+      "function": "main",
+      "line": 39,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/load_test.py",
+      "function": "percentile",
+      "line": 25,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/load_test.py",
+      "function": "exercise",
+      "line": 34,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/load_test.py",
+      "function": "run_load",
+      "line": 103,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/load_test.py",
+      "function": "main",
+      "line": 229,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "function": "OfflineModel.__init__",
+      "line": 33,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "function": "OfflineModel.bind_tools",
+      "line": 53,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "function": "OfflineModel.ainvoke",
+      "line": 61,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "function": "answer_consistent",
+      "line": 75,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "function": "check_turn",
+      "line": 115,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "function": "seed_database",
+      "line": 224,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "function": "run_case",
+      "line": 278,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "function": "summarize",
+      "line": 408,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "function": "main",
+      "line": 493,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/evaluate.py",
+      "function": "main.evaluate",
+      "line": 561,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/db_admin.py",
+      "function": "inspect_database",
+      "line": 15,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/db_admin.py",
+      "function": "copy_database",
+      "line": 41,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "scripts/db_admin.py",
+      "function": "main",
+      "line": 83,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/conftest.py",
+      "function": "account_database",
+      "line": 20,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/conftest.py",
+      "function": "app_db",
+      "line": 47,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/conftest.py",
+      "function": "ctx",
+      "line": 62,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/conftest.py",
+      "function": "new_request",
+      "line": 77,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "db",
+      "line": 20,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "test_create_and_query_real_record",
+      "line": 34,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "test_missing_fields_do_not_write",
+      "line": 64,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "test_invalid_input_does_not_write",
+      "line": 87,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "test_repeated_request_returns_original",
+      "line": 99,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "test_changed_retry_payload_is_a_conflict",
+      "line": 113,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "test_concurrent_requests_are_atomic",
+      "line": 138,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "test_concurrent_requests_are_atomic.submit",
+      "line": 143,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "test_query_missing_and_invalid_ids",
+      "line": 163,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "test_survives_new_process_and_retry",
+      "line": 182,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_tickets.py",
+      "function": "test_faq_keyword_search",
+      "line": 200,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "proposal",
+      "line": 19,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "created",
+      "line": 34,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "other_context",
+      "line": 45,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_atomic_migration_preserves_legacy_rows",
+      "line": 63,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_same_confirmation_concurrent_creates_once",
+      "line": 98,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_confirmation_expiry_tampering_and_cancel",
+      "line": 133,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_cross_user_and_cross_thread_confirmation",
+      "line": 158,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_new_message_invalidates_old_confirmation",
+      "line": 177,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_changed_retry_conflicts",
+      "line": 193,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_customer_cannot_see_other_customer_data",
+      "line": 215,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_assignment_priority_and_duplicate_detection",
+      "line": 231,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_new_duplicate_during_confirmation_requires_new_proposal",
+      "line": 257,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_full_lifecycle_and_audit",
+      "line": 279,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_customer_cannot_start_or_skip_repair",
+      "line": 319,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_stale_version_and_role_recheck",
+      "line": 345,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_supplement_handoff_priority_assignment_cancel",
+      "line": 387,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_search_filters",
+      "line": 430,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_registration_cannot_self_promote",
+      "line": 459,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_actions.py",
+      "function": "test_legacy_other_issue_is_detected_as_duplicate",
+      "line": 486,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_evaluation.py",
+      "function": "test_reject_fabricated_creation",
+      "line": 11,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_evaluation.py",
+      "function": "test_reject_wrong_status_even_if_database_did_not_change",
+      "line": 20,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_evaluation.py",
+      "function": "test_unconfirmed_write_fails_evaluation",
+      "line": 32,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_evaluation.py",
+      "function": "test_missing_required_tool_evidence_fails",
+      "line": 55,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_evaluation.py",
+      "function": "test_each_reply_is_compared_to_its_own_transaction_snapshot",
+      "line": 65,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_backup.py",
+      "function": "test_snapshot_restores_checkpoints_and_revokes_sessions",
+      "line": 18,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_backup.py",
+      "function": "test_snapshot_refuses_overwrite_and_invalid_source",
+      "line": 60,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_context.py",
+      "function": "test_explicit_facts",
+      "line": 34,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_context.py",
+      "function": "test_model_filter_and_synonyms",
+      "line": 44,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_context.py",
+      "function": "test_bm25_and_step_exclusion",
+      "line": 60,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_context.py",
+      "function": "test_structure_memory_survives_process",
+      "line": 75,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_context.py",
+      "function": "test_lease_blocks_concurrent_run",
+      "line": 96,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_context.py",
+      "function": "test_trim_keeps_complete_tool_pairs",
+      "line": 118,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_context.py",
+      "function": "test_ten_turn_conversation_memory_summary_and_no_repeated_steps",
+      "line": 163,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_context.py",
+      "function": "test_model_cannot_fabricate_memory",
+      "line": 200,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_context.py",
+      "function": "test_exhaustion_is_remembered_after_actual_step_feedback",
+      "line": 238,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_context.py",
+      "function": "test_checkpoint_keeps_only_trusted_final_text",
+      "line": 276,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "client",
+      "line": 17,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "login",
+      "line": 26,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "new_thread",
+      "line": 36,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "propose",
+      "line": 43,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_cookie_refresh_csrf_and_logout",
+      "line": 55,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_secure_cookie_and_origin_configuration",
+      "line": 81,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_login_rotation_url_rejected_and_password_not_echoed",
+      "line": 95,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_request_submission_replays_or_conflicts",
+      "line": 118,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_concurrent_submission_has_one_request",
+      "line": 136,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_concurrent_submission_has_one_request.submit",
+      "line": 139,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_http_confirmation_is_required_and_idempotent",
+      "line": 158,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_cross_user_forged_identity_and_permission_change",
+      "line": 180,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_staff_creation_and_proposal_field_whitelist",
+      "line": 216,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_http_checkpoint_retry_uses_original_request",
+      "line": 246,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_login_rate_limit_persists_between_app_instances",
+      "line": 280,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_static_page_and_health_do_not_expose_secrets",
+      "line": 299,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_unexpected_error_does_not_expose_payload",
+      "line": 310,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_api.py",
+      "function": "test_unexpected_error_does_not_expose_payload.broken",
+      "line": 314,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "ScriptedModel.__init__",
+      "line": 24,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "ScriptedModel.bind_tools",
+      "line": 33,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "ScriptedModel.ainvoke",
+      "line": 43,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "tool_call",
+      "line": 56,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "run_script",
+      "line": 73,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "test_identity_and_confirmation_are_not_model_parameters",
+      "line": 93,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "test_proposal_never_writes_until_click_and_model_receives_result",
+      "line": 123,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "test_prohibited_operation_denied_even_if_model_calls_tool",
+      "line": 154,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "test_model_cannot_supply_confirmed_or_call_confirmation",
+      "line": 182,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "test_no_tool_fabricated_status_is_not_displayed",
+      "line": 218,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "test_faq_wrong_model_cannot_bypass_filter",
+      "line": 236,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "test_tool_budget_stops_before_extra_execution",
+      "line": 261,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "test_token_budget_prevents_model_call",
+      "line": 285,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "test_sqlite_checkpoint_resume_does_not_repeat_tool",
+      "line": 309,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_graph.py",
+      "function": "test_transient_model_timeout_retried_with_accounted_budget",
+      "line": 345,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_app.py",
+      "function": "page",
+      "line": 24,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_app.py",
+      "function": "test_page_without_credentials",
+      "line": 47,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_app.py",
+      "function": "test_page_requires_login",
+      "line": 62,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_app.py",
+      "function": "test_old_url_session_is_not_accepted",
+      "line": 70,
+      "has_docstring": true,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_app.py",
+      "function": "test_confirmation_card_restores_after_refresh",
+      "line": 101,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_app.py",
+      "function": "test_ui_no_applicable_faq",
+      "line": 145,
+      "has_docstring": false,
+      "has_documentation": true
+    },
+    {
+      "file": "tests/test_app.py",
+      "function": "test_staff_workbench_includes_customer_tickets",
+      "line": 171,
+      "has_docstring": false,
+      "has_documentation": true
+    }
+  ]
+}

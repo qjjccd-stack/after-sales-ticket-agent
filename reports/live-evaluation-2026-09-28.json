@@ -1,0 +1,3472 @@
+{
+  "time": "2026-09-28T12:12:39.747191+00:00",
+  "model": "deepseek/deepseek-chat",
+  "planned_cases": 20,
+  "status": "failed",
+  "human_review": "pending",
+  "cases": [
+    {
+      "id": "01",
+      "name": "Wi-Fi 排查",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "search_faq",
+              "args": {
+                "query": "X100 连不上网"
+              },
+              "id": "call_00_evfHsEHVZEClR6FojXNl8451",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            [
+              {
+                "id": "FAQ-001",
+                "product_models": [
+                  "X100",
+                  "X200"
+                ],
+                "question": "设备无法连接 Wi-Fi",
+                "keywords": [
+                  "联网",
+                  "连不上网",
+                  "网络",
+                  "wifi",
+                  "wi-fi",
+                  "断网"
+                ],
+                "steps": [
+                  "确认路由器可以正常上网，设备位于信号覆盖范围内。",
+                  "确认使用 2.4 GHz Wi-Fi，并重新核对密码。",
+                  "重启设备和路由器，再在配套应用内尝试配网。",
+                  "若仍失败，记录产品型号和错误提示，提交售后工单。"
+                ]
+              }
+            ]
+          ],
+          "answer": "X100 连不上网，可按以下步骤排查：\n\n1. 确认路由器可以正常上网，设备位于信号覆盖范围内。\n2. 确认使用 2.4 GHz Wi-Fi，并重新核对密码。\n3. 重启设备和路由器，再在配套应用内尝试配网。\n4. 若仍失败，记录产品型号和错误提示，提交售后工单。\n\n如果以上步骤都试过仍无法联网，可以告诉我，我帮你提交工单（需要型号 X100 和具体错误提示）。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "X100 连不上网怎么办？",
+            "tools": [
+              "search_faq"
+            ],
+            "rows": 0,
+            "answer_contains": [
+              "2.4"
+            ]
+          },
+          "request_id": "e8f6879f-e807-46a4-b9c0-9de2ef7e70c2",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 43,
+                  "prompt_tokens": 771,
+                  "total_tokens": 814,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 0,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 0,
+                  "prompt_cache_miss_tokens": 771
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "ad382cef-400a-4078-a7dc-c00a4908cec7",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-7716-7890-bda9-098ab8f8e7e9-0",
+              "tool_calls": [
+                {
+                  "name": "search_faq",
+                  "args": {
+                    "query": "X100 连不上网"
+                  },
+                  "id": "call_00_evfHsEHVZEClR6FojXNl8451",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 771,
+                "output_tokens": 43,
+                "total_tokens": 814,
+                "input_token_details": {
+                  "cache_read": 0
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "[{\"id\": \"FAQ-001\", \"product_models\": [\"X100\", \"X200\"], \"question\": \"设备无法连接 Wi-Fi\", \"keywords\": [\"联网\", \"连不上网\", \"网络\", \"wifi\", \"wi-fi\", \"断网\"], \"steps\": [\"确认路由器可以正常上网，设备位于信号覆盖范围内。\", \"确认使用 2.4 GHz Wi-Fi，并重新核对密码。\", \"重启设备和路由器，再在配套应用内尝试配网。\", \"若仍失败，记录产品型号和错误提示，提交售后工单。\"]}]",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "search_faq",
+              "id": "cbc85df6-cd95-41b2-aaa5-7dbd1933458a",
+              "tool_call_id": "call_00_evfHsEHVZEClR6FojXNl8451",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "X100 连不上网，可按以下步骤排查：\n\n1. 确认路由器可以正常上网，设备位于信号覆盖范围内。\n2. 确认使用 2.4 GHz Wi-Fi，并重新核对密码。\n3. 重启设备和路由器，再在配套应用内尝试配网。\n4. 若仍失败，记录产品型号和错误提示，提交售后工单。\n\n如果以上步骤都试过仍无法联网，可以告诉我，我帮你提交工单（需要型号 X100 和具体错误提示）。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 109,
+                  "prompt_tokens": 951,
+                  "total_tokens": 1060,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 823
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "a0ce0310-e61e-43bc-8b0e-c3213c4f0221",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-79c1-70b2-91d4-318754a6f42b-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 951,
+                "output_tokens": 109,
+                "total_tokens": 1060,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "name": "无法开机",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "search_faq",
+              "args": {
+                "query": "X100 无法开机"
+              },
+              "id": "call_00_W6F59BLN160HhgwatNiD9292",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            [
+              {
+                "id": "FAQ-002",
+                "product_models": [
+                  "X100",
+                  "X200"
+                ],
+                "question": "设备无法开机",
+                "keywords": [
+                  "开不了机",
+                  "无法开机",
+                  "不开机",
+                  "不亮",
+                  "没反应",
+                  "电源"
+                ],
+                "steps": [
+                  "检查原装电源适配器是否插紧，并确认插座有电。",
+                  "断开电源 30 秒后重新接入，再按电源键。",
+                  "如仍无指示灯，请记录型号并提交工单，不要自行拆机。"
+                ]
+              }
+            ]
+          ],
+          "answer": "X100 无法开机，可按以下步骤排查（适用于 X100、X200）：\n\n1. 检查原装电源适配器是否插紧，并确认插座有电。\n2. 断开电源 30 秒后重新接入，再按电源键。\n3. 如仍无指示灯，请记录型号并提交工单，不要自行拆机。\n\n如需提交工单，请确认型号为 X100 并说明问题，我可以帮你创建。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "X100 无法开机，怎么排查？",
+            "tools": [
+              "search_faq"
+            ],
+            "rows": 0,
+            "answer_contains": [
+              "电源"
+            ]
+          },
+          "request_id": "36920437-852e-4cd9-9772-f7519937a793",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 42,
+                  "prompt_tokens": 772,
+                  "total_tokens": 814,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 644
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "67fe3c70-5cf1-47b0-a326-e2fef853a598",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-7e63-7f12-ae6f-6951f3ad033e-0",
+              "tool_calls": [
+                {
+                  "name": "search_faq",
+                  "args": {
+                    "query": "X100 无法开机"
+                  },
+                  "id": "call_00_W6F59BLN160HhgwatNiD9292",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 772,
+                "output_tokens": 42,
+                "total_tokens": 814,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "[{\"id\": \"FAQ-002\", \"product_models\": [\"X100\", \"X200\"], \"question\": \"设备无法开机\", \"keywords\": [\"开不了机\", \"无法开机\", \"不开机\", \"不亮\", \"没反应\", \"电源\"], \"steps\": [\"检查原装电源适配器是否插紧，并确认插座有电。\", \"断开电源 30 秒后重新接入，再按电源键。\", \"如仍无指示灯，请记录型号并提交工单，不要自行拆机。\"]}]",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "search_faq",
+              "id": "90b564fc-bc73-4b0e-9e38-b68a1276c38d",
+              "tool_call_id": "call_00_W6F59BLN160HhgwatNiD9292",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "X100 无法开机，可按以下步骤排查（适用于 X100、X200）：\n\n1. 检查原装电源适配器是否插紧，并确认插座有电。\n2. 断开电源 30 秒后重新接入，再按电源键。\n3. 如仍无指示灯，请记录型号并提交工单，不要自行拆机。\n\n如需提交工单，请确认型号为 X100 并说明问题，我可以帮你创建。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 96,
+                  "prompt_tokens": 941,
+                  "total_tokens": 1037,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 813
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "07ff657d-5a99-4f27-8581-11483c2bf67f",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-812a-75a3-bed9-985845373ef6-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 941,
+                "output_tokens": 96,
+                "total_tokens": 1037,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "name": "蓝牙配对",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "search_faq",
+              "args": {
+                "query": "X200 蓝牙无法配对"
+              },
+              "id": "call_00_d2ATycL2Sqs23OF4cnCG2269",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            [
+              {
+                "id": "FAQ-003",
+                "product_models": [
+                  "X200"
+                ],
+                "question": "设备与手机蓝牙无法配对",
+                "keywords": [
+                  "蓝牙",
+                  "配对",
+                  "bluetooth"
+                ],
+                "steps": [
+                  "确认手机蓝牙和配套应用的蓝牙权限已开启。",
+                  "让设备与手机保持在一米范围内，断开其他手机的连接。",
+                  "在手机中取消旧配对，重启设备后重新配对。"
+                ]
+              }
+            ]
+          ],
+          "answer": "X200 蓝牙无法配对，可参考本地 FAQ（FAQ-003）的排查步骤：\n\n1. 确认手机蓝牙和配套应用的蓝牙权限已开启。\n2. 让设备与手机保持在一米范围内，断开其他手机的连接。\n3. 在手机中取消旧配对，重启设备后重新配对。\n\n如果以上步骤仍无法解决，可以告诉我，我帮你提交工单（需要提供产品型号和问题描述）。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "X200 蓝牙无法配对怎么办？",
+            "tools": [
+              "search_faq"
+            ],
+            "rows": 0,
+            "answer_contains": [
+              "蓝牙"
+            ]
+          },
+          "request_id": "634f78a7-9efa-4b21-90e4-dc3db4e588c7",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 43,
+                  "prompt_tokens": 771,
+                  "total_tokens": 814,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 643
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "00852681-262f-4a81-90ac-5bfc1b40cea2",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-84cd-7510-8c50-fa5e2dddbb45-0",
+              "tool_calls": [
+                {
+                  "name": "search_faq",
+                  "args": {
+                    "query": "X200 蓝牙无法配对"
+                  },
+                  "id": "call_00_d2ATycL2Sqs23OF4cnCG2269",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 771,
+                "output_tokens": 43,
+                "total_tokens": 814,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "[{\"id\": \"FAQ-003\", \"product_models\": [\"X200\"], \"question\": \"设备与手机蓝牙无法配对\", \"keywords\": [\"蓝牙\", \"配对\", \"bluetooth\"], \"steps\": [\"确认手机蓝牙和配套应用的蓝牙权限已开启。\", \"让设备与手机保持在一米范围内，断开其他手机的连接。\", \"在手机中取消旧配对，重启设备后重新配对。\"]}]",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "search_faq",
+              "id": "07ff2316-7f5a-478c-a356-159ec36d0b38",
+              "tool_call_id": "call_00_d2ATycL2Sqs23OF4cnCG2269",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "X200 蓝牙无法配对，可参考本地 FAQ（FAQ-003）的排查步骤：\n\n1. 确认手机蓝牙和配套应用的蓝牙权限已开启。\n2. 让设备与手机保持在一米范围内，断开其他手机的连接。\n3. 在手机中取消旧配对，重启设备后重新配对。\n\n如果以上步骤仍无法解决，可以告诉我，我帮你提交工单（需要提供产品型号和问题描述）。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 91,
+                  "prompt_tokens": 915,
+                  "total_tokens": 1006,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 787
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "f3bae665-e25b-4a50-8381-a3ea5d3c4f09",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-87db-7e03-8182-0132495ffe07-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 915,
+                "output_tokens": 91,
+                "total_tokens": 1006,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "name": "设备离线",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "search_faq",
+              "args": {
+                "query": "X100 离线"
+              },
+              "id": "call_00_tIiaWw5GQziQVInGiERm8011",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            [
+              {
+                "id": "FAQ-004",
+                "product_models": [
+                  "X100",
+                  "X200"
+                ],
+                "question": "应用中设备显示离线",
+                "keywords": [
+                  "离线",
+                  "掉线",
+                  "offline"
+                ],
+                "steps": [
+                  "确认设备已通电，并检查所在 Wi-Fi 是否可用。",
+                  "关闭并重新打开配套应用，刷新设备列表。",
+                  "若刚更换路由器或密码，请重新配网。"
+                ]
+              }
+            ]
+          ],
+          "answer": "X100 显示离线，可参考本地 FAQ（适用 X100、X200）：\n\n1. 确认设备已通电，并检查所在 Wi-Fi 是否可用。\n2. 关闭并重新打开配套应用，刷新设备列表。\n3. 若刚更换路由器或密码，请重新配网。\n\n如果以上步骤无效，可以告诉我，我帮你提交工单（需要型号 X100 和具体问题描述）。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "X100 在应用里显示离线",
+            "tools": [
+              "search_faq"
+            ],
+            "rows": 0,
+            "answer_contains": [
+              "配网"
+            ]
+          },
+          "request_id": "26c38c1d-51fc-4952-9aea-57118f53627b",
+          "messages": [
+            {
+              "content": "我先查一下本地 FAQ 是否有相关排查步骤。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 51,
+                  "prompt_tokens": 771,
+                  "total_tokens": 822,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 643
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "3c00731b-534d-4f03-9e8b-7bff5f8ef837",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-8c41-7a21-b5c3-17c03088d817-0",
+              "tool_calls": [
+                {
+                  "name": "search_faq",
+                  "args": {
+                    "query": "X100 离线"
+                  },
+                  "id": "call_00_tIiaWw5GQziQVInGiERm8011",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 771,
+                "output_tokens": 51,
+                "total_tokens": 822,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "[{\"id\": \"FAQ-004\", \"product_models\": [\"X100\", \"X200\"], \"question\": \"应用中设备显示离线\", \"keywords\": [\"离线\", \"掉线\", \"offline\"], \"steps\": [\"确认设备已通电，并检查所在 Wi-Fi 是否可用。\", \"关闭并重新打开配套应用，刷新设备列表。\", \"若刚更换路由器或密码，请重新配网。\"]}]",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "search_faq",
+              "id": "7082cfb7-7869-4d0c-bd5a-bd38ead0e263",
+              "tool_call_id": "call_00_tIiaWw5GQziQVInGiERm8011",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "X100 显示离线，可参考本地 FAQ（适用 X100、X200）：\n\n1. 确认设备已通电，并检查所在 Wi-Fi 是否可用。\n2. 关闭并重新打开配套应用，刷新设备列表。\n3. 若刚更换路由器或密码，请重新配网。\n\n如果以上步骤无效，可以告诉我，我帮你提交工单（需要型号 X100 和具体问题描述）。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 88,
+                  "prompt_tokens": 925,
+                  "total_tokens": 1013,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 797
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "d34116d6-524b-47f9-9ecf-037c1db8091d",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-8ed4-7dc2-b6ee-eac282d0a535-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 925,
+                "output_tokens": 88,
+                "total_tokens": 1013,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "name": "FAQ 无匹配",
+      "automated_pass": false,
+      "turns": [
+        {
+          "automated_pass": false,
+          "error": "JSONDecodeError",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "X100 屏幕出现紫色竖线，有本地 FAQ 吗？",
+            "tools": [
+              "search_faq"
+            ],
+            "rows": 0,
+            "faq_empty": true
+          },
+          "request_id": "3eb644a4-fd9b-47c9-ba0c-117e836d38bd",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 44,
+                  "prompt_tokens": 778,
+                  "total_tokens": 822,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 650
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "8a685f8a-d08e-4a1a-bf50-8fba9efd3126",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-9207-7f53-bf51-2888eebbda6c-0",
+              "tool_calls": [
+                {
+                  "name": "search_faq",
+                  "args": {
+                    "query": "X100 屏幕紫色竖线"
+                  },
+                  "id": "call_00_xR4BU57EHZ9gw1qkRJuE6113",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 778,
+                "output_tokens": 44,
+                "total_tokens": 822,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": [],
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "search_faq",
+              "id": "06602930-80c3-45fc-8871-8add6d00b3e5",
+              "tool_call_id": "call_00_xR4BU57EHZ9gw1qkRJuE6113",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "本地 FAQ 暂无与「X100 屏幕紫色竖线」相关的内容，我无法提供排查步骤。\n\n如需提交工单，请确认：产品型号 X100、问题描述（屏幕出现紫色竖线），我可以帮你建单。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 50,
+                  "prompt_tokens": 835,
+                  "total_tokens": 885,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 707
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "30feb35a-7c55-46cd-a5c4-4c41c1034787",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-952c-7a21-8d07-2690cfb9b790-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 835,
+                "output_tokens": 50,
+                "total_tokens": 885,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "name": "咨询不擅自建单",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "search_faq",
+              "args": {
+                "query": "X100 无法联网"
+              },
+              "id": "call_00_ZcKIURT3qqFXZdY3dFKT9114",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            [
+              {
+                "id": "FAQ-001",
+                "product_models": [
+                  "X100",
+                  "X200"
+                ],
+                "question": "设备无法连接 Wi-Fi",
+                "keywords": [
+                  "联网",
+                  "连不上网",
+                  "网络",
+                  "wifi",
+                  "wi-fi",
+                  "断网"
+                ],
+                "steps": [
+                  "确认路由器可以正常上网，设备位于信号覆盖范围内。",
+                  "确认使用 2.4 GHz Wi-Fi，并重新核对密码。",
+                  "重启设备和路由器，再在配套应用内尝试配网。",
+                  "若仍失败，记录产品型号和错误提示，提交售后工单。"
+                ]
+              }
+            ]
+          ],
+          "answer": "X100 无法联网，本地 FAQ 匹配到以下排查步骤（适用型号 X100、X200）：\n\n1. 确认路由器可以正常上网，设备位于信号覆盖范围内。\n2. 确认使用 2.4 GHz Wi-Fi，并重新核对密码。\n3. 重启设备和路由器，再在配套应用内尝试配网。\n4. 若仍失败，记录产品型号和错误提示，提交售后工单。\n\n按你的要求，未创建工单。如后续需要建单，请告诉我。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "X100 无法联网，只要排查步骤，不要建工单。",
+            "tools": [
+              "search_faq"
+            ],
+            "rows": 0
+          },
+          "request_id": "b2f1402c-030d-4bbb-afc4-e70144e2af3d",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 42,
+                  "prompt_tokens": 778,
+                  "total_tokens": 820,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 650
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "4b1aec42-bf22-4616-b4ac-6bde37052447",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-9822-7713-be49-82b192841846-0",
+              "tool_calls": [
+                {
+                  "name": "search_faq",
+                  "args": {
+                    "query": "X100 无法联网"
+                  },
+                  "id": "call_00_ZcKIURT3qqFXZdY3dFKT9114",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 778,
+                "output_tokens": 42,
+                "total_tokens": 820,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "[{\"id\": \"FAQ-001\", \"product_models\": [\"X100\", \"X200\"], \"question\": \"设备无法连接 Wi-Fi\", \"keywords\": [\"联网\", \"连不上网\", \"网络\", \"wifi\", \"wi-fi\", \"断网\"], \"steps\": [\"确认路由器可以正常上网，设备位于信号覆盖范围内。\", \"确认使用 2.4 GHz Wi-Fi，并重新核对密码。\", \"重启设备和路由器，再在配套应用内尝试配网。\", \"若仍失败，记录产品型号和错误提示，提交售后工单。\"]}]",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "search_faq",
+              "id": "8d59b177-a3f9-4ddc-9837-3aba4f97aa1a",
+              "tool_call_id": "call_00_ZcKIURT3qqFXZdY3dFKT9114",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "X100 无法联网，本地 FAQ 匹配到以下排查步骤（适用型号 X100、X200）：\n\n1. 确认路由器可以正常上网，设备位于信号覆盖范围内。\n2. 确认使用 2.4 GHz Wi-Fi，并重新核对密码。\n3. 重启设备和路由器，再在配套应用内尝试配网。\n4. 若仍失败，记录产品型号和错误提示，提交售后工单。\n\n按你的要求，未创建工单。如后续需要建单，请告诉我。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 109,
+                  "prompt_tokens": 957,
+                  "total_tokens": 1066,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 829
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "ae592f05-6745-4792-9b45-16b301359393",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-9c10-7e40-95cd-46dfcfa3b7c0-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 957,
+                "output_tokens": 109,
+                "total_tokens": 1066,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "name": "直接创建联网工单",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "product_model": true,
+            "issue_contains": true,
+            "tool_matches_database": true,
+            "creation_succeeded": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "product_model": "X100",
+                "issue_description": "无法联网"
+              },
+              "id": "call_00_8xIgy5p5hI0JjLyDjmSp7522",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": true,
+              "reused": false,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "9f1e12e5-049b-4cb6-b4f2-6d44776a307f",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-09-28T12:12:51.494518+00:00"
+              }
+            }
+          ],
+          "answer": "工单已创建成功：\n\n- 编号：T0001\n- 型号：X100\n- 问题：无法联网\n- 状态：待处理\n\n如需查询进度，可随时告诉我工单编号。",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "9f1e12e5-049b-4cb6-b4f2-6d44776a307f",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:12:51.494518+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "请提交工单，型号 X100，问题描述：无法联网。",
+            "tools": [
+              "create_ticket"
+            ],
+            "rows": 1,
+            "product_model": "X100",
+            "issue_contains": "无法联网",
+            "answer_contains": [
+              "T0001",
+              "待处理"
+            ]
+          },
+          "request_id": "9f1e12e5-049b-4cb6-b4f2-6d44776a307f",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 58,
+                  "prompt_tokens": 778,
+                  "total_tokens": 836,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 650
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "ebbb38f6-4545-4069-bbd8-ed3bf34ed401",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-9f9e-7603-80d4-c9ffe2fbdf31-0",
+              "tool_calls": [
+                {
+                  "name": "create_ticket",
+                  "args": {
+                    "product_model": "X100",
+                    "issue_description": "无法联网"
+                  },
+                  "id": "call_00_8xIgy5p5hI0JjLyDjmSp7522",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 778,
+                "output_tokens": 58,
+                "total_tokens": 836,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": true, \"reused\": false, \"ticket\": {\"ticket_id\": \"T0001\", \"request_id\": \"9f1e12e5-049b-4cb6-b4f2-6d44776a307f\", \"product_model\": \"X100\", \"issue_description\": \"无法联网\", \"status\": \"待处理\", \"created_at\": \"2026-09-28T12:12:51.494518+00:00\"}}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "create_ticket",
+              "id": "3084d3b0-cfec-4b30-8a0d-9d50026bfbfe",
+              "tool_call_id": "call_00_8xIgy5p5hI0JjLyDjmSp7522",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单已创建成功：\n\n- 编号：T0001\n- 型号：X100\n- 问题：无法联网\n- 状态：待处理\n\n如需查询进度，可随时告诉我工单编号。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 46,
+                  "prompt_tokens": 953,
+                  "total_tokens": 999,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 825
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "6f9a8758-53c5-45cd-8bce-d89b4afaf223",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-a3b2-71c2-bc58-2d49e67cc3e5-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 953,
+                "output_tokens": 46,
+                "total_tokens": 999,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "name": "直接创建开机工单",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "product_model": true,
+            "issue_contains": true,
+            "tool_matches_database": true,
+            "creation_succeeded": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "product_model": "X200",
+                "issue_description": "无法开机"
+              },
+              "id": "call_00_oKjBgxYN3mtdmeJPvTMc8708",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": true,
+              "reused": false,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "d526dd8b-4eba-40db-ac70-10b83aac721f",
+                "product_model": "X200",
+                "issue_description": "无法开机",
+                "status": "待处理",
+                "created_at": "2026-09-28T12:12:53.165732+00:00"
+              }
+            }
+          ],
+          "answer": "工单已创建成功：\n\n- 工单编号：T0001\n- 型号：X200\n- 问题描述：无法开机\n- 状态：待处理\n\n如需查询进度，可随时告诉我工单编号。",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "d526dd8b-4eba-40db-ac70-10b83aac721f",
+              "product_model": "X200",
+              "issue_description": "无法开机",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:12:53.165732+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "请提交工单，型号 X200，问题描述：无法开机。",
+            "tools": [
+              "create_ticket"
+            ],
+            "rows": 1,
+            "product_model": "X200",
+            "issue_contains": "无法开机",
+            "answer_contains": [
+              "T0001",
+              "待处理"
+            ]
+          },
+          "request_id": "d526dd8b-4eba-40db-ac70-10b83aac721f",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 58,
+                  "prompt_tokens": 778,
+                  "total_tokens": 836,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 650
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "9d0e7b72-16db-457e-81a3-e862fa1d66a7",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-a6fb-70d1-8ce5-8e298644d7c8-0",
+              "tool_calls": [
+                {
+                  "name": "create_ticket",
+                  "args": {
+                    "product_model": "X200",
+                    "issue_description": "无法开机"
+                  },
+                  "id": "call_00_oKjBgxYN3mtdmeJPvTMc8708",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 778,
+                "output_tokens": 58,
+                "total_tokens": 836,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": true, \"reused\": false, \"ticket\": {\"ticket_id\": \"T0001\", \"request_id\": \"d526dd8b-4eba-40db-ac70-10b83aac721f\", \"product_model\": \"X200\", \"issue_description\": \"无法开机\", \"status\": \"待处理\", \"created_at\": \"2026-09-28T12:12:53.165732+00:00\"}}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "create_ticket",
+              "id": "d1f42ade-337f-4abf-a800-f3efc5641ce4",
+              "tool_call_id": "call_00_oKjBgxYN3mtdmeJPvTMc8708",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单已创建成功：\n\n- 工单编号：T0001\n- 型号：X200\n- 问题描述：无法开机\n- 状态：待处理\n\n如需查询进度，可随时告诉我工单编号。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 49,
+                  "prompt_tokens": 948,
+                  "total_tokens": 997,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 820
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "d003ddd5-b281-4ad7-87be-634ee37adf41",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-aa3b-7f73-8369-3fa157d8a0c0-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 948,
+                "output_tokens": 49,
+                "total_tokens": 997,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "name": "FAQ 外故障也能建单",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "product_model": true,
+            "issue_contains": true,
+            "tool_matches_database": true,
+            "creation_succeeded": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "product_model": "X100",
+                "issue_description": "屏幕出现紫色竖线"
+              },
+              "id": "call_00_dvDTikfXuxdfUM9PbUsS6010",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": true,
+              "reused": false,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "ca25c44c-7168-4744-8dcc-35011e2978b5",
+                "product_model": "X100",
+                "issue_description": "屏幕出现紫色竖线",
+                "status": "待处理",
+                "created_at": "2026-09-28T12:12:54.748484+00:00"
+              }
+            }
+          ],
+          "answer": "工单已提交成功：\n\n- 工单编号：T0001\n- 型号：X100\n- 问题：屏幕出现紫色竖线\n- 状态：待处理\n\n如需查询进度，可随时告诉我工单编号。",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "ca25c44c-7168-4744-8dcc-35011e2978b5",
+              "product_model": "X100",
+              "issue_description": "屏幕出现紫色竖线",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:12:54.748484+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "型号 X100，屏幕出现紫色竖线，请提交售后工单。",
+            "tools": [
+              "create_ticket"
+            ],
+            "rows": 1,
+            "product_model": "X100",
+            "issue_contains": "紫色竖线",
+            "answer_contains": [
+              "T0001"
+            ]
+          },
+          "request_id": "ca25c44c-7168-4744-8dcc-35011e2978b5",
+          "messages": [
+            {
+              "content": "I'll create the ticket for you.",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 68,
+                  "prompt_tokens": 779,
+                  "total_tokens": 847,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 651
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "f41e6455-1b9c-405f-b2d3-8e14e0b5ffee",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-adc0-7b70-adc2-3cad4b4921c4-0",
+              "tool_calls": [
+                {
+                  "name": "create_ticket",
+                  "args": {
+                    "product_model": "X100",
+                    "issue_description": "屏幕出现紫色竖线"
+                  },
+                  "id": "call_00_dvDTikfXuxdfUM9PbUsS6010",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 779,
+                "output_tokens": 68,
+                "total_tokens": 847,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": true, \"reused\": false, \"ticket\": {\"ticket_id\": \"T0001\", \"request_id\": \"ca25c44c-7168-4744-8dcc-35011e2978b5\", \"product_model\": \"X100\", \"issue_description\": \"屏幕出现紫色竖线\", \"status\": \"待处理\", \"created_at\": \"2026-09-28T12:12:54.748484+00:00\"}}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "create_ticket",
+              "id": "af62b7f3-eedd-4631-985b-6f5508850b27",
+              "tool_call_id": "call_00_dvDTikfXuxdfUM9PbUsS6010",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单已提交成功：\n\n- 工单编号：T0001\n- 型号：X100\n- 问题：屏幕出现紫色竖线\n- 状态：待处理\n\n如需查询进度，可随时告诉我工单编号。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 51,
+                  "prompt_tokens": 964,
+                  "total_tokens": 1015,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 836
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "bdb6fdb8-576d-4e21-a0d0-7ecdc3aa53a4",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-b069-7dc0-89b8-426f8f22fada-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 964,
+                "output_tokens": 51,
+                "total_tokens": 1015,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "保留用户的问题描述",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "product_model": true,
+            "issue_contains": true,
+            "tool_matches_database": true,
+            "creation_succeeded": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "product_model": "X200",
+                "issue_description": "蓝牙配对失败，已重启两次。"
+              },
+              "id": "call_00_w2XqwjmgHHq5EidU2rC92910",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": true,
+              "reused": false,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "faf247e0-9d8a-4da2-90aa-4902ae14e8a1",
+                "product_model": "X200",
+                "issue_description": "蓝牙配对失败，已重启两次。",
+                "status": "待处理",
+                "created_at": "2026-09-28T12:12:56.624993+00:00"
+              }
+            }
+          ],
+          "answer": "工单已创建成功：\n\n- 工单编号：T0001\n- 型号：X200\n- 问题描述：蓝牙配对失败，已重启两次。\n- 状态：待处理\n\n如需查询进度，随时告诉我编号即可。",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "faf247e0-9d8a-4da2-90aa-4902ae14e8a1",
+              "product_model": "X200",
+              "issue_description": "蓝牙配对失败，已重启两次。",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:12:56.624993+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "帮我提交工单。型号 X200，问题描述：蓝牙配对失败，已重启两次。",
+            "tools": [
+              "create_ticket"
+            ],
+            "rows": 1,
+            "product_model": "X200",
+            "issue_contains": "已重启两次",
+            "answer_contains": [
+              "T0001"
+            ]
+          },
+          "request_id": "faf247e0-9d8a-4da2-90aa-4902ae14e8a1",
+          "messages": [
+            {
+              "content": "I'll create that ticket for you.",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 70,
+                  "prompt_tokens": 783,
+                  "total_tokens": 853,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 655
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "145249c1-a31c-4dbb-9e8e-9e8b2e0a761f",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-b33d-77e3-b65e-c9e2f87f1d93-0",
+              "tool_calls": [
+                {
+                  "name": "create_ticket",
+                  "args": {
+                    "product_model": "X200",
+                    "issue_description": "蓝牙配对失败，已重启两次。"
+                  },
+                  "id": "call_00_w2XqwjmgHHq5EidU2rC92910",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 783,
+                "output_tokens": 70,
+                "total_tokens": 853,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": true, \"reused\": false, \"ticket\": {\"ticket_id\": \"T0001\", \"request_id\": \"faf247e0-9d8a-4da2-90aa-4902ae14e8a1\", \"product_model\": \"X200\", \"issue_description\": \"蓝牙配对失败，已重启两次。\", \"status\": \"待处理\", \"created_at\": \"2026-09-28T12:12:56.624993+00:00\"}}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "create_ticket",
+              "id": "8c1b83b5-900e-41a6-a649-266f07619e51",
+              "tool_call_id": "call_00_w2XqwjmgHHq5EidU2rC92910",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单已创建成功：\n\n- 工单编号：T0001\n- 型号：X200\n- 问题描述：蓝牙配对失败，已重启两次。\n- 状态：待处理\n\n如需查询进度，随时告诉我编号即可。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 52,
+                  "prompt_tokens": 976,
+                  "total_tokens": 1028,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 848
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "9885f55c-c087-4d6b-ba8b-2dc6f322b3f8",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-b7bf-7353-8731-592d6410b946-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 976,
+                "output_tokens": 52,
+                "total_tokens": 1028,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "缺型号先追问",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [],
+          "results": [],
+          "answer": "请提供以下信息，我才能提交工单：\n\n1. 产品型号\n2. 具体问题描述（例如：无法联网的表现、发生时间等）\n\n请补充后我再为您创建。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "设备无法联网，帮我提交工单。",
+            "tools": [],
+            "allowed_tools": [
+              "search_faq"
+            ],
+            "rows": 0,
+            "answer_contains": [
+              "型号"
+            ]
+          },
+          "request_id": "d598596e-6d4a-4df5-abd7-c8abe92fd6f7",
+          "messages": [
+            {
+              "content": "请提供以下信息，我才能提交工单：\n\n1. 产品型号\n2. 具体问题描述（例如：无法联网的表现、发生时间等）\n\n请补充后我再为您创建。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 41,
+                  "prompt_tokens": 772,
+                  "total_tokens": 813,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 644
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "5032d70d-90d5-4af2-b4b5-7ddc5d0e4cd8",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-bb5b-7a62-aa96-d812af11df05-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 772,
+                "output_tokens": 41,
+                "total_tokens": 813,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "缺问题先追问",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [],
+          "results": [],
+          "answer": "请补充一下具体的问题描述，我好帮你提交工单。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "我的产品型号 X100，帮我提交工单。",
+            "tools": [],
+            "rows": 0,
+            "answer_contains": [
+              "问题"
+            ]
+          },
+          "request_id": "5de2f11d-59b0-4c0a-9b12-f4f2cc33c485",
+          "messages": [
+            {
+              "content": "请补充一下具体的问题描述，我好帮你提交工单。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 13,
+                  "prompt_tokens": 774,
+                  "total_tokens": 787,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 646
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "9195bfa5-55a0-425f-9664-ed7f22ef55c4",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-bde3-7210-ba95-190a1b81133b-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 774,
+                "output_tokens": 13,
+                "total_tokens": 787,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "缺全部字段",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [],
+          "results": [],
+          "answer": "请提供以下两项信息，我才能为您创建工单：\n\n1. 产品型号\n2. 问题描述\n\n请补充后我再为您提交。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "帮我提交一个售后工单。",
+            "tools": [],
+            "rows": 0,
+            "answer_contains": [
+              "型号",
+              "问题"
+            ]
+          },
+          "request_id": "cc260807-e097-4049-9709-de05d051f310",
+          "messages": [
+            {
+              "content": "请提供以下两项信息，我才能为您创建工单：\n\n1. 产品型号\n2. 问题描述\n\n请补充后我再为您提交。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 32,
+                  "prompt_tokens": 770,
+                  "total_tokens": 802,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 642
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "3408af48-96bd-423e-8bc2-2ab0a1f9f9f1",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-c019-7aa0-a88a-53786c5df5ca-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 770,
+                "output_tokens": 32,
+                "total_tokens": 802,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "排查后补型号建单",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "search_faq",
+              "args": {
+                "query": "设备无法联网"
+              },
+              "id": "call_00_1s1b0FT8Xcut6WoKJ4zV3111",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            [
+              {
+                "id": "FAQ-001",
+                "product_models": [
+                  "X100",
+                  "X200"
+                ],
+                "question": "设备无法连接 Wi-Fi",
+                "keywords": [
+                  "联网",
+                  "连不上网",
+                  "网络",
+                  "wifi",
+                  "wi-fi",
+                  "断网"
+                ],
+                "steps": [
+                  "确认路由器可以正常上网，设备位于信号覆盖范围内。",
+                  "确认使用 2.4 GHz Wi-Fi，并重新核对密码。",
+                  "重启设备和路由器，再在配套应用内尝试配网。",
+                  "若仍失败，记录产品型号和错误提示，提交售后工单。"
+                ]
+              }
+            ]
+          ],
+          "answer": "本地 FAQ 找到一条相关条目（适用型号 X100、X200）：\n\n**设备无法连接 Wi-Fi 排查步骤**\n1. 确认路由器可以正常上网，设备位于信号覆盖范围内。\n2. 确认使用 2.4 GHz Wi-Fi，并重新核对密码。\n3. 重启设备和路由器，再在配套应用内尝试配网。\n4. 若仍失败，记录产品型号和错误提示，提交售后工单。\n\n如果以上步骤都试过仍无法联网，可以告诉我你的**产品型号**和**具体错误提示**，我帮你提交工单。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "设备无法联网，有什么办法？",
+            "tools": [
+              "search_faq"
+            ],
+            "rows": 0
+          },
+          "request_id": "f29227ec-953b-40a0-bd88-22770885cda8",
+          "messages": [
+            {
+              "content": "I'll search the local FAQ for you.",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 48,
+                  "prompt_tokens": 770,
+                  "total_tokens": 818,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 642
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "26d5f007-9035-48bd-86e9-77e63bdd1d9b",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-c2de-7bc0-b26d-af62869761d8-0",
+              "tool_calls": [
+                {
+                  "name": "search_faq",
+                  "args": {
+                    "query": "设备无法联网"
+                  },
+                  "id": "call_00_1s1b0FT8Xcut6WoKJ4zV3111",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 770,
+                "output_tokens": 48,
+                "total_tokens": 818,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "[{\"id\": \"FAQ-001\", \"product_models\": [\"X100\", \"X200\"], \"question\": \"设备无法连接 Wi-Fi\", \"keywords\": [\"联网\", \"连不上网\", \"网络\", \"wifi\", \"wi-fi\", \"断网\"], \"steps\": [\"确认路由器可以正常上网，设备位于信号覆盖范围内。\", \"确认使用 2.4 GHz Wi-Fi，并重新核对密码。\", \"重启设备和路由器，再在配套应用内尝试配网。\", \"若仍失败，记录产品型号和错误提示，提交售后工单。\"]}]",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "search_faq",
+              "id": "a4642cd8-5721-4ee6-bfcf-ce05fcec6658",
+              "tool_call_id": "call_00_1s1b0FT8Xcut6WoKJ4zV3111",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "本地 FAQ 找到一条相关条目（适用型号 X100、X200）：\n\n**设备无法连接 Wi-Fi 排查步骤**\n1. 确认路由器可以正常上网，设备位于信号覆盖范围内。\n2. 确认使用 2.4 GHz Wi-Fi，并重新核对密码。\n3. 重启设备和路由器，再在配套应用内尝试配网。\n4. 若仍失败，记录产品型号和错误提示，提交售后工单。\n\n如果以上步骤都试过仍无法联网，可以告诉我你的**产品型号**和**具体错误提示**，我帮你提交工单。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 124,
+                  "prompt_tokens": 955,
+                  "total_tokens": 1079,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 827
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "bdd91481-bf10-46e7-bb7b-ad6d7e7d5682",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-c552-7a71-8f2a-b8f06a40686f-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 955,
+                "output_tokens": 124,
+                "total_tokens": 1079,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        },
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "product_model": true,
+            "issue_contains": true,
+            "tool_matches_database": true,
+            "creation_succeeded": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "product_model": "X100",
+                "issue_description": "设备无法联网，已按 FAQ 步骤排查（确认路由器正常、使用 2.4GHz Wi-Fi 并核对密码、重启设备和路由器后重新配网）仍无法联网。"
+              },
+              "id": "call_00_oq2MHNQiwJtbuFwveo3Q0367",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": true,
+              "reused": false,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "84522adb-179f-4914-9563-c8e026974b13",
+                "product_model": "X100",
+                "issue_description": "设备无法联网，已按 FAQ 步骤排查（确认路由器正常、使用 2.4GHz Wi-Fi 并核对密码、重启设备和路由器后重新配网）仍无法联网。",
+                "status": "待处理",
+                "created_at": "2026-09-28T12:13:02.084072+00:00"
+              }
+            }
+          ],
+          "answer": "工单已提交成功：\n\n- **工单编号**：T0001\n- **产品型号**：X100\n- **问题描述**：设备无法联网，已按 FAQ 步骤排查（确认路由器正常、使用 2.4GHz Wi-Fi 并核对密码、重启设备和路由器后重新配网）仍无法联网\n- **状态**：待处理\n\n如需查询进度，随时告诉我编号 T0001 即可。",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "84522adb-179f-4914-9563-c8e026974b13",
+              "product_model": "X100",
+              "issue_description": "设备无法联网，已按 FAQ 步骤排查（确认路由器正常、使用 2.4GHz Wi-Fi 并核对密码、重启设备和路由器后重新配网）仍无法联网。",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:13:02.084072+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "步骤都试过了，型号 X100，请提交工单。",
+            "tools": [
+              "create_ticket"
+            ],
+            "rows": 1,
+            "product_model": "X100",
+            "issue_contains": "联网",
+            "answer_contains": [
+              "T0001"
+            ]
+          },
+          "request_id": "84522adb-179f-4914-9563-c8e026974b13",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 95,
+                  "prompt_tokens": 1097,
+                  "total_tokens": 1192,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 969
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "66527eb8-17d1-4764-9b50-3d0f99086e7b",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-c8d3-7372-aba5-7f0d331cfc06-0",
+              "tool_calls": [
+                {
+                  "name": "create_ticket",
+                  "args": {
+                    "product_model": "X100",
+                    "issue_description": "设备无法联网，已按 FAQ 步骤排查（确认路由器正常、使用 2.4GHz Wi-Fi 并核对密码、重启设备和路由器后重新配网）仍无法联网。"
+                  },
+                  "id": "call_00_oq2MHNQiwJtbuFwveo3Q0367",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 1097,
+                "output_tokens": 95,
+                "total_tokens": 1192,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": true, \"reused\": false, \"ticket\": {\"ticket_id\": \"T0001\", \"request_id\": \"84522adb-179f-4914-9563-c8e026974b13\", \"product_model\": \"X100\", \"issue_description\": \"设备无法联网，已按 FAQ 步骤排查（确认路由器正常、使用 2.4GHz Wi-Fi 并核对密码、重启设备和路由器后重新配网）仍无法联网。\", \"status\": \"待处理\", \"created_at\": \"2026-09-28T12:13:02.084072+00:00\"}}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "create_ticket",
+              "id": "a6243b52-f0ab-45ff-9871-3374be0c9630",
+              "tool_call_id": "call_00_oq2MHNQiwJtbuFwveo3Q0367",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单已提交成功：\n\n- **工单编号**：T0001\n- **产品型号**：X100\n- **问题描述**：设备无法联网，已按 FAQ 步骤排查（确认路由器正常、使用 2.4GHz Wi-Fi 并核对密码、重启设备和路由器后重新配网）仍无法联网\n- **状态**：待处理\n\n如需查询进度，随时告诉我编号 T0001 即可。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 93,
+                  "prompt_tokens": 1340,
+                  "total_tokens": 1433,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 1212
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "93c89346-a6b6-4618-9aea-8969b6d616dd",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-cd10-7a50-87fe-5f917db33d64-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 1340,
+                "output_tokens": 93,
+                "total_tokens": 1433,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "查询已有工单",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "query_argument": true,
+            "tool_matches_database": true,
+            "query_succeeded": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "get_ticket_status",
+              "args": {
+                "ticket_id": "T0001"
+              },
+              "id": "call_00_xSws4CtMv8h5VObEWqrP0364",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": true,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "df850476-926d-4371-8dde-b2a9a6bea885",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-09-28T12:13:03.577559+00:00"
+              }
+            }
+          ],
+          "answer": "工单 T0001 状态如下：\n\n- 产品型号：X100\n- 问题描述：无法联网\n- 当前状态：待处理\n- 创建时间：2026-09-28 12:13:03 (UTC)",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "df850476-926d-4371-8dde-b2a9a6bea885",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:13:03.577559+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "查询 T0001 的状态",
+            "tools": [
+              "get_ticket_status"
+            ],
+            "ticket_id": "T0001",
+            "rows": 1,
+            "answer_contains": [
+              "T0001",
+              "待处理"
+            ]
+          },
+          "request_id": "65960cf7-b8f3-4d7f-ac87-085d78774b2c",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 43,
+                  "prompt_tokens": 769,
+                  "total_tokens": 812,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 641
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "dade1688-1a00-4f5b-9c08-442f15d7186d",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-d2e6-7a51-830b-785095d8f4d9-0",
+              "tool_calls": [
+                {
+                  "name": "get_ticket_status",
+                  "args": {
+                    "ticket_id": "T0001"
+                  },
+                  "id": "call_00_xSws4CtMv8h5VObEWqrP0364",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 769,
+                "output_tokens": 43,
+                "total_tokens": 812,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": true, \"ticket\": {\"ticket_id\": \"T0001\", \"request_id\": \"df850476-926d-4371-8dde-b2a9a6bea885\", \"product_model\": \"X100\", \"issue_description\": \"无法联网\", \"status\": \"待处理\", \"created_at\": \"2026-09-28T12:13:03.577559+00:00\"}}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "get_ticket_status",
+              "id": "623ab518-c241-4ba5-ad91-8549f7ec8c03",
+              "tool_call_id": "call_00_xSws4CtMv8h5VObEWqrP0364",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单 T0001 状态如下：\n\n- 产品型号：X100\n- 问题描述：无法联网\n- 当前状态：待处理\n- 创建时间：2026-09-28 12:13:03 (UTC)",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 53,
+                  "prompt_tokens": 919,
+                  "total_tokens": 972,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 791
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "de804180-7abf-4ef8-baa5-8a26cd3420ba",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-d5ff-7821-9d2b-a05e43b17739-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 919,
+                "output_tokens": 53,
+                "total_tokens": 972,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "查询不存在的工单",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "query_argument": true,
+            "result_error": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "get_ticket_status",
+              "args": {
+                "ticket_id": "T9999"
+              },
+              "id": "call_00_6AFxAYUxPVRYmaApyVoJ7571",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": false,
+              "error": "not_found",
+              "ticket_id": "T9999",
+              "message": "工单不存在。"
+            }
+          ],
+          "answer": "工单 T9999 不存在。请确认编号是否正确。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "查询 T9999 的状态",
+            "tools": [
+              "get_ticket_status"
+            ],
+            "ticket_id": "T9999",
+            "result_error": "not_found",
+            "rows": 0
+          },
+          "request_id": "37262a87-d2e2-441e-8420-c097373dfc47",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 43,
+                  "prompt_tokens": 769,
+                  "total_tokens": 812,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 641
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "458e3762-3914-46df-9b21-e61be27b33d2",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-d9b2-7a60-b14d-9df0192ed3a1-0",
+              "tool_calls": [
+                {
+                  "name": "get_ticket_status",
+                  "args": {
+                    "ticket_id": "T9999"
+                  },
+                  "id": "call_00_6AFxAYUxPVRYmaApyVoJ7571",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 769,
+                "output_tokens": 43,
+                "total_tokens": 812,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": false, \"error\": \"not_found\", \"ticket_id\": \"T9999\", \"message\": \"工单不存在。\"}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "get_ticket_status",
+              "id": "ad433e6d-fdf8-4a82-bdef-478528609ce7",
+              "tool_call_id": "call_00_6AFxAYUxPVRYmaApyVoJ7571",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单 T9999 不存在。请确认编号是否正确。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 13,
+                  "prompt_tokens": 855,
+                  "total_tokens": 868,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 727
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "8f6110c7-f510-4641-9953-8b2b7a64737a",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-dc78-73a3-bce2-687448eb089f-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 855,
+                "output_tokens": 13,
+                "total_tokens": 868,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "查询缺编号",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [],
+          "results": [],
+          "answer": "请提供您的工单编号，我来帮您查询。",
+          "database": [],
+          "human_review": "pending",
+          "input": {
+            "message": "查一下我的工单状态。",
+            "tools": [],
+            "rows": 0,
+            "answer_contains": [
+              "编号"
+            ]
+          },
+          "request_id": "7916f18c-505a-4b07-bc1c-54a1f3104c3a",
+          "messages": [
+            {
+              "content": "请提供您的工单编号，我来帮您查询。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 12,
+                  "prompt_tokens": 770,
+                  "total_tokens": 782,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 642
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "ff01cd8d-6365-4806-9e78-c600315681a9",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-df5c-73a3-a8a1-55c084b86738-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 770,
+                "output_tokens": 12,
+                "total_tokens": 782,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "name": "创建后查询刚才的工单",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true,
+            "creation_succeeded": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "product_model": "X100",
+                "issue_description": "无法联网"
+              },
+              "id": "call_00_4inl0gy5AJ58BNevLvNt6606",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": true,
+              "reused": false,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "e2383e0b-9f84-484b-a156-683076ee3f84",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-09-28T12:13:08.102871+00:00"
+              }
+            }
+          ],
+          "answer": "工单已创建成功：\n\n- 编号：T0001\n- 型号：X100\n- 问题：无法联网\n- 状态：待处理\n\n如需查询进度，可随时告诉我工单编号。",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "e2383e0b-9f84-484b-a156-683076ee3f84",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:13:08.102871+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "请提交工单，型号 X100，问题描述：无法联网。",
+            "tools": [
+              "create_ticket"
+            ],
+            "rows": 1
+          },
+          "request_id": "e2383e0b-9f84-484b-a156-683076ee3f84",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 58,
+                  "prompt_tokens": 778,
+                  "total_tokens": 836,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 650
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "f37a901a-e7e5-4314-ac6b-f83c62444c45",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-e2b7-7b33-a7bc-4c505dd0ea34-0",
+              "tool_calls": [
+                {
+                  "name": "create_ticket",
+                  "args": {
+                    "product_model": "X100",
+                    "issue_description": "无法联网"
+                  },
+                  "id": "call_00_4inl0gy5AJ58BNevLvNt6606",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 778,
+                "output_tokens": 58,
+                "total_tokens": 836,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": true, \"reused\": false, \"ticket\": {\"ticket_id\": \"T0001\", \"request_id\": \"e2383e0b-9f84-484b-a156-683076ee3f84\", \"product_model\": \"X100\", \"issue_description\": \"无法联网\", \"status\": \"待处理\", \"created_at\": \"2026-09-28T12:13:08.102871+00:00\"}}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "create_ticket",
+              "id": "18808bb9-ed53-481e-8912-9e6ce391c839",
+              "tool_call_id": "call_00_4inl0gy5AJ58BNevLvNt6606",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单已创建成功：\n\n- 编号：T0001\n- 型号：X100\n- 问题：无法联网\n- 状态：待处理\n\n如需查询进度，可随时告诉我工单编号。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 46,
+                  "prompt_tokens": 949,
+                  "total_tokens": 995,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 821
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "a023e9c1-84af-4f66-ae2d-b090098eed06",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-e494-7910-be85-36ef62f7eae0-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 949,
+                "output_tokens": 46,
+                "total_tokens": 995,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        },
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "query_argument": true,
+            "tool_matches_database": true,
+            "query_succeeded": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "get_ticket_status",
+              "args": {
+                "ticket_id": "T0001"
+              },
+              "id": "call_00_xNJevRaa6IaIBZPiFDYK6310",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": true,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "e2383e0b-9f84-484b-a156-683076ee3f84",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-09-28T12:13:08.102871+00:00"
+              }
+            }
+          ],
+          "answer": "工单 T0001 当前状态：待处理（型号 X100，问题：无法联网）。",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "e2383e0b-9f84-484b-a156-683076ee3f84",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:13:08.102871+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "刚才那个工单现在是什么状态？",
+            "tools": [
+              "get_ticket_status"
+            ],
+            "ticket_id": "T0001",
+            "rows": 1,
+            "answer_contains": [
+              "T0001",
+              "待处理"
+            ]
+          },
+          "request_id": "5b9bde60-5b3f-4b67-abd4-dc2328ffd403",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 43,
+                  "prompt_tokens": 1007,
+                  "total_tokens": 1050,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 879
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "9f88d9fc-bc00-4154-95d7-5d123ba071bd",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-e7c3-72b0-80c7-92a2ebb70e90-0",
+              "tool_calls": [
+                {
+                  "name": "get_ticket_status",
+                  "args": {
+                    "ticket_id": "T0001"
+                  },
+                  "id": "call_00_xNJevRaa6IaIBZPiFDYK6310",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 1007,
+                "output_tokens": 43,
+                "total_tokens": 1050,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": true, \"ticket\": {\"ticket_id\": \"T0001\", \"request_id\": \"e2383e0b-9f84-484b-a156-683076ee3f84\", \"product_model\": \"X100\", \"issue_description\": \"无法联网\", \"status\": \"待处理\", \"created_at\": \"2026-09-28T12:13:08.102871+00:00\"}}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "get_ticket_status",
+              "id": "47dd6939-895b-4118-9692-19ce35788edd",
+              "tool_call_id": "call_00_xNJevRaa6IaIBZPiFDYK6310",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单 T0001 当前状态：待处理（型号 X100，问题：无法联网）。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 21,
+                  "prompt_tokens": 1157,
+                  "total_tokens": 1178,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 1029
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "73dcf32a-855b-4b2e-a65b-665f22e55475",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-ea92-7251-856c-e117abd18d2f-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 1157,
+                "output_tokens": 21,
+                "total_tokens": 1178,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "name": "相同应用请求重放",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true,
+            "creation_succeeded": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "product_model": "X100",
+                "issue_description": "无法联网"
+              },
+              "id": "call_00_9m7uJHoy4s0zqDLjjFHH1327",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": true,
+              "reused": false,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "7c6b1fda-faf9-4a56-90d1-2d46decd86c1",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-09-28T12:13:11.272484+00:00"
+              }
+            }
+          ],
+          "answer": "工单已创建成功：\n\n- 编号：T0001\n- 型号：X100\n- 问题：无法联网\n- 状态：待处理\n\n如需查询进度，可随时告诉我工单编号。",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "7c6b1fda-faf9-4a56-90d1-2d46decd86c1",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:13:11.272484+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "请提交工单，型号 X100，问题描述：无法联网。",
+            "tools": [
+              "create_ticket"
+            ],
+            "rows": 1
+          },
+          "request_id": "7c6b1fda-faf9-4a56-90d1-2d46decd86c1",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 58,
+                  "prompt_tokens": 778,
+                  "total_tokens": 836,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 650
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "f2142183-7d72-46e6-9a67-701162221fa0",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-ed75-7321-bc5c-a64fd97ac7aa-0",
+              "tool_calls": [
+                {
+                  "name": "create_ticket",
+                  "args": {
+                    "product_model": "X100",
+                    "issue_description": "无法联网"
+                  },
+                  "id": "call_00_9m7uJHoy4s0zqDLjjFHH1327",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 778,
+                "output_tokens": 58,
+                "total_tokens": 836,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": true, \"reused\": false, \"ticket\": {\"ticket_id\": \"T0001\", \"request_id\": \"7c6b1fda-faf9-4a56-90d1-2d46decd86c1\", \"product_model\": \"X100\", \"issue_description\": \"无法联网\", \"status\": \"待处理\", \"created_at\": \"2026-09-28T12:13:11.272484+00:00\"}}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "create_ticket",
+              "id": "c01f6fc9-f4b5-45e3-a5b5-a29dfeee6b48",
+              "tool_call_id": "call_00_9m7uJHoy4s0zqDLjjFHH1327",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单已创建成功：\n\n- 编号：T0001\n- 型号：X100\n- 问题：无法联网\n- 状态：待处理\n\n如需查询进度，可随时告诉我工单编号。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 46,
+                  "prompt_tokens": 954,
+                  "total_tokens": 1000,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 826
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "f171c73e-cada-41ae-bd95-7097191883b2",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-f0f2-7db3-bf63-df30586083b2-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 954,
+                "output_tokens": 46,
+                "total_tokens": 1000,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        },
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "reused": true,
+            "tool_matches_database": true,
+            "creation_succeeded": true
+          },
+          "automated_pass": true,
+          "calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "product_model": "X100",
+                "issue_description": "无法联网"
+              },
+              "id": "call_00_2moWUcyU4dc2pxE2auNj9928",
+              "type": "tool_call"
+            }
+          ],
+          "results": [
+            {
+              "ok": true,
+              "reused": true,
+              "ticket": {
+                "ticket_id": "T0001",
+                "request_id": "7c6b1fda-faf9-4a56-90d1-2d46decd86c1",
+                "product_model": "X100",
+                "issue_description": "无法联网",
+                "status": "待处理",
+                "created_at": "2026-09-28T12:13:11.272484+00:00"
+              }
+            }
+          ],
+          "answer": "工单已提交（复用已有工单）：\n\n- 编号：T0001\n- 型号：X100\n- 问题：无法联网\n- 状态：待处理\n\n如需查询进度，可随时告诉我编号。",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "7c6b1fda-faf9-4a56-90d1-2d46decd86c1",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:13:11.272484+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "请提交工单，型号 X100，问题描述：无法联网。",
+            "repeat_request": true,
+            "tools": [
+              "create_ticket"
+            ],
+            "rows": 1,
+            "reused": true,
+            "answer_contains": [
+              "T0001"
+            ]
+          },
+          "request_id": "7c6b1fda-faf9-4a56-90d1-2d46decd86c1",
+          "messages": [
+            {
+              "content": "",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 58,
+                  "prompt_tokens": 778,
+                  "total_tokens": 836,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 650
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "8ad1dd43-7d8c-44d4-9bed-69e20d54e318",
+                "finish_reason": "tool_calls",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-f3f3-70c2-a56f-03418aced41c-0",
+              "tool_calls": [
+                {
+                  "name": "create_ticket",
+                  "args": {
+                    "product_model": "X100",
+                    "issue_description": "无法联网"
+                  },
+                  "id": "call_00_2moWUcyU4dc2pxE2auNj9928",
+                  "type": "tool_call"
+                }
+              ],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 778,
+                "output_tokens": 58,
+                "total_tokens": 836,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            },
+            {
+              "content": "{\"ok\": true, \"reused\": true, \"ticket\": {\"ticket_id\": \"T0001\", \"request_id\": \"7c6b1fda-faf9-4a56-90d1-2d46decd86c1\", \"product_model\": \"X100\", \"issue_description\": \"无法联网\", \"status\": \"待处理\", \"created_at\": \"2026-09-28T12:13:11.272484+00:00\"}}",
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "type": "tool",
+              "name": "create_ticket",
+              "id": "f6d3edbb-8b68-4d11-b644-4e4382b1e6ae",
+              "tool_call_id": "call_00_2moWUcyU4dc2pxE2auNj9928",
+              "artifact": null,
+              "status": "success"
+            },
+            {
+              "content": "工单已提交（复用已有工单）：\n\n- 编号：T0001\n- 型号：X100\n- 问题：无法联网\n- 状态：待处理\n\n如需查询进度，可随时告诉我编号。",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 48,
+                  "prompt_tokens": 954,
+                  "total_tokens": 1002,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 826
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "10e5d503-d989-4f55-91ce-f4004e23064e",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-f64f-7c82-af28-6a2536ee3d3f-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 954,
+                "output_tokens": 48,
+                "total_tokens": 1002,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "name": "不承诺修改工单状态",
+      "automated_pass": true,
+      "turns": [
+        {
+          "checks": {
+            "tool_selection": true,
+            "row_count": true,
+            "status_unchanged": true,
+            "answer_keywords": true,
+            "tool_matches_database": true
+          },
+          "automated_pass": true,
+          "calls": [],
+          "results": [],
+          "answer": "我无法修改工单状态，只能查询工单状态、查询 FAQ 和创建工单。\n\n需要我帮你查一下 T0001 的当前状态吗？",
+          "database": [
+            {
+              "ticket_id": "T0001",
+              "request_id": "4b3b8405-6cb7-47c8-a2ef-8badc378f64f",
+              "product_model": "X100",
+              "issue_description": "无法联网",
+              "status": "待处理",
+              "created_at": "2026-09-28T12:13:13.792877+00:00"
+            }
+          ],
+          "human_review": "pending",
+          "input": {
+            "message": "把 T0001 改成已解决。",
+            "tools": [],
+            "allowed_tools": [
+              "get_ticket_status"
+            ],
+            "rows": 1
+          },
+          "request_id": "80d9cc81-89e4-4e25-aa1f-5f2b10dad7e9",
+          "messages": [
+            {
+              "content": "我无法修改工单状态，只能查询工单状态、查询 FAQ 和创建工单。\n\n需要我帮你查一下 T0001 的当前状态吗？",
+              "additional_kwargs": {
+                "refusal": null
+              },
+              "response_metadata": {
+                "token_usage": {
+                  "completion_tokens": 35,
+                  "prompt_tokens": 772,
+                  "total_tokens": 807,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 128,
+                    "image_tokens": null,
+                    "text_tokens": null
+                  },
+                  "prompt_cache_hit_tokens": 128,
+                  "prompt_cache_miss_tokens": 644
+                },
+                "model_provider": "deepseek",
+                "model_name": "deepseek-flash",
+                "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+                "id": "95b63c18-71b1-4ae3-9224-764a7fb69a1b",
+                "finish_reason": "stop",
+                "logprobs": null
+              },
+              "type": "ai",
+              "name": null,
+              "id": "lc_run--01a0e7ee-facc-7890-957a-74d0fdde3509-0",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "usage_metadata": {
+                "input_tokens": 772,
+                "output_tokens": 35,
+                "total_tokens": 807,
+                "input_token_details": {
+                  "cache_read": 128
+                },
+                "output_token_details": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
